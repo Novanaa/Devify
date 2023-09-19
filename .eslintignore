@@ -1,0 +1,2 @@
+/src/app/v1/products/controllers/tests/*.spec.js
+/src/app/v1/main/tests/*.spec.js
