@@ -1,6 +1,7 @@
 import { ProductsModel, productsCategories } from "../models/products.model.js";
 import Response from "../../../../utils/res.js";
 import categories from "../../../../services/categories.js";
+import validator from "validator";
 const response = new Response();
 
 //* GET Products Controllers
@@ -25,6 +26,7 @@ export const getAllProducts = async (req, res) => {
 export const getSingleProduct = async (req, res) => {
   try {
     const { id } = req.params;
+    if (!validator.isNumeric(id)) return response.unprocessable(res);
     const product = await ProductsModel.findOne({ id: parseInt(id) }).select([
       "-__v",
     ]);
@@ -39,6 +41,7 @@ export const getSingleProduct = async (req, res) => {
 export const getSingleProductByUniquekey = async (req, res) => {
   try {
     const { id } = req.params;
+    if (!validator.isMongoId(id)) return response.unprocessable(res);
     const product = await ProductsModel.findOne({ _id: id }).select(["-__v"]);
     if (product == null) return response.notFound(res);
     response.succesWithSingleData(product, "product", res);

@@ -1,9 +1,6 @@
 import path from "path";
-// import fs from "fs";
-import imageExt from "../datas/imageExtension.js";
+import imageExt from "../utils/imageExtension.js";
 import Response from "../utils/res.js";
-// import createLogger from "../utils/logger.js";
-// const logger = createLogger();
 const response = new Response();
 
 class FilesUpload {
