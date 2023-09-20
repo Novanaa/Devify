@@ -37,9 +37,6 @@ const BooksSchema = new mongoose.Schema({
   poster: {
     type: String,
   },
-  createdAt: {
-    type: Date,
-  },
 });
 
 // Convert _id fields name to uniquekey

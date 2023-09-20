@@ -6,6 +6,7 @@ import {
   getAllBookscategories,
   getSingleBookCategory,
 } from "./book.get.js";
+import addBooksData from "./books.post.js";
 
 const books = {
   getAllBooks,
@@ -14,6 +15,7 @@ const books = {
   searchQueriesBooks,
   getAllBookscategories,
   getSingleBookCategory,
+  addBooksData,
 };
 
 export default books;

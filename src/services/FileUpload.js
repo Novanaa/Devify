@@ -8,15 +8,16 @@ class FilesUpload {
     let fileExt;
     let file;
     if (req.files !== null) {
-      if (req.files.image.length > 1)
+      if (!req.files.image) return response.unprocessable(res);
+      if (req.files.image?.length > 1)
         return response.unprocessable(
           res,
           "Multiple images upload does not supported"
         );
       file = req.files.image;
-      file.name !== undefined ? (fileExt = path.extname(file.name)) : null;
-      const fileName = file.md5 + fileExt;
-      if (req.files.image.size > 5000000)
+      file?.name !== undefined ? (fileExt = path.extname(file.name)) : null;
+      const fileName = file?.md5 + fileExt;
+      if (req.files.image?.size > 5000000)
         return response.unprocessable(
           res,
           "The image size must be less than 5mb"

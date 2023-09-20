@@ -8,5 +8,6 @@ router.get("/categories", books.getAllBookscategories);
 router.get("/categories/:category", books.getSingleBookCategory);
 router.get("/:id", books.getSingleBookById);
 router.get("/key/:id", books.getSingleBookByUniquekey);
+router.post("/", books.addBooksData);
 
 export default router;
