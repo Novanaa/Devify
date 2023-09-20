@@ -9,5 +9,7 @@ router.get("/categories/:category", books.getSingleBookCategory);
 router.get("/:id", books.getSingleBookById);
 router.get("/key/:id", books.getSingleBookByUniquekey);
 router.post("/", books.addBooksData);
+router.delete("/:id", books.deleteBookById);
+router.delete("/key/:id", books.deleteBookByUniquekey);
 
 export default router;

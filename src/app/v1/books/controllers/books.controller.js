@@ -7,6 +7,7 @@ import {
   getSingleBookCategory,
 } from "./book.get.js";
 import addBooksData from "./books.post.js";
+import { deleteBookById, deleteBookByUniquekey } from "./book.delete.js";
 
 const books = {
   getAllBooks,
@@ -16,6 +17,8 @@ const books = {
   getAllBookscategories,
   getSingleBookCategory,
   addBooksData,
+  deleteBookById,
+  deleteBookByUniquekey,
 };
 
 export default books;
