@@ -1,5 +1,6 @@
 import FileSystem from "../../../../services/FilesSystem.js";
 import createLogger from "../../../../utils/logger.js";
+import fileHash from "../../../../utils/fileHash.js";
 import Response from "../../../../utils/res.js";
 const response = new Response();
 const logger = createLogger();
@@ -30,7 +31,10 @@ class ProductsServices {
     }
   };
   updateProductsImage = async function ({ ...params }) {
-    const { req, res, srcPath, model, key, id, url } = params;
+    const { req, res, srcPath, model, key, id, url, fileName } = params;
+    const srcPathFileName = srcPath.split("/")[5];
+    const hasehdSrcPathFileName = fileHash(srcPathFileName);
+    const hashedFileName = fileHash(fileName);
     try {
       await model.findOneAndUpdate(
         { [key]: id },
@@ -39,7 +43,8 @@ class ProductsServices {
           image: url,
         }
       );
-      fileSystem.deleteFile(srcPath);
+      if (hasehdSrcPathFileName !== hashedFileName)
+        fileSystem.deleteFile(srcPath);
       response.updated(res);
     } catch (err) {
       response.badRequest(res);

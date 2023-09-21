@@ -81,6 +81,7 @@ export const updateProductsById = async (req, res) => {
         key: "id",
         id,
         url,
+        fileName,
       });
     });
   }
@@ -154,6 +155,7 @@ export const updateProductsByUniquekey = async (req, res) => {
         key: "_id",
         id,
         url,
+        fileName,
       });
     });
   }
