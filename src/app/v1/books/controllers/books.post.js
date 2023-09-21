@@ -2,16 +2,22 @@ import { BooksModel } from "../models/books.model.js";
 import FilesUpload from "../../../../services/FileUpload.js";
 import Response from "../../../../utils/res.js";
 import BooksServices from "../services/BooksServices.js";
+import createLogger from "../../../../utils/logger.js";
+const logger = createLogger();
 const booksServices = new BooksServices();
 const response = new Response();
 const filesUpload = new FilesUpload();
 
 const addBooksData = (req, res) => {
   let url, file, fileName;
-  filesUpload.post(req, res, (f, fName) => {
-    file = f;
-    fileName = fName;
-  });
+  try {
+    filesUpload.post(req, res, (f, fName) => {
+      file = f;
+      fileName = fName;
+    });
+  } catch (err) {
+    logger.error(err);
+  }
   if (
     req.body.image == undefined &&
     file == null &&
