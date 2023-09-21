@@ -1,7 +1,7 @@
 import { BooksModel } from "../models/books.model.js";
 import FilesUpload from "../../../../services/FileUpload.js";
 import Response from "../../../../utils/res.js";
-import BooksServices from "../services/booksServices.js";
+import BooksServices from "../services/BooksServices.js";
 const booksServices = new BooksServices();
 const response = new Response();
 const filesUpload = new FilesUpload();
@@ -12,9 +12,22 @@ const addBooksData = (req, res) => {
     file = f;
     fileName = fName;
   });
-  if (req.body.image !== undefined) {
+  if (
+    req.body.image == undefined &&
+    file == null &&
+    req.body.poster == undefined
+  ) {
+    response.unprocessable(res, "The image field must be filled");
+  }
+  if (req.body.image !== undefined && req.body.poster == undefined) {
     if (file == null || file == undefined) {
       url = req.body.image;
+      booksServices.saveBooks(req, res, BooksModel, url);
+    }
+  }
+  if (req.body.poster !== undefined && req.body.image == undefined) {
+    if (file == null || file == undefined) {
+      url = req.body.poster;
       booksServices.saveBooks(req, res, BooksModel, url);
     }
   }
