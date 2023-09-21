@@ -19,8 +19,8 @@ class Response {
       success: true,
     });
   };
-  updated = function (res, msg) {
-    const messege = msg == undefined ? "Succesfully Updated✨" : msg;
+  updated = function (res, messege) {
+    messege = messege || "Succesfully Updated✨";
     res.status(200).json({
       messege,
       status: 200,
@@ -42,22 +42,19 @@ class Response {
       status: 400,
     });
   };
-  notFound = function (res, msg) {
-    const messege =
-      msg == undefined
-        ? "Oops! The data you are looking for could not be found."
-        : msg;
+  notFound = function (res, messege) {
+    messege =
+      messege || "Oops! The data you are looking for could not be found.";
     res.status(404).json({
       TypeError: "Not Found",
       messege,
       status: 404,
     });
   };
-  unprocessable = function (res, msg) {
-    const messege =
-      msg == undefined
-        ? "The content you provided could not be processed due to errors in the data. Please review your input and make sure it meets the required format and criteria."
-        : msg;
+  unprocessable = function (res, messege) {
+    messege =
+      messege ||
+      "The content you provided could not be processed due to errors in the data. Please review your input and make sure it meets the required format and criteria.";
     res.status(422).json({
       TypeError: "Unprocessable Content",
       messege,

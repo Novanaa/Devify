@@ -14,6 +14,9 @@ const addProducts = (req, res) => {
     file = f;
     fileName = fName;
   });
+  if (req.body.image == undefined && file == null) {
+    response.unprocessable(res, "The image field must be filled");
+  }
   const category = categoryMappings[req.body.category] || null;
   const urlPath = `./public/img/products/${category}/${fileName}`;
   if (req.body.image !== undefined) {

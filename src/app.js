@@ -5,8 +5,9 @@ import FileUpload from "express-fileupload";
 const app = express();
 
 // #
-import productsRoutes from "./app/v1/products/routes/products.routes.js";
 import mainRoutes from "./app/v1/main/routes/main.routes.js";
+import productsRoutes from "./app/v1/products/routes/products.routes.js";
+import booksRoutes from "./app/v1/books/routes/books.routes.js";
 
 //# middlewares
 app.use(express.json());
@@ -17,5 +18,6 @@ app.use(FileUpload());
 // Routes
 app.use("/", mainRoutes);
 app.use("/products", productsRoutes);
+app.use("/books", booksRoutes);
 
 export default app;
