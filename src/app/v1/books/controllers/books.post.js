@@ -20,6 +20,7 @@ const addBooksData = (req, res) => {
   }
   if (
     req.body.image == undefined &&
+    req.files.image == undefined &&
     file == null &&
     req.body.poster == undefined
   ) {

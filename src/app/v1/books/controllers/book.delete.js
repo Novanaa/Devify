@@ -3,6 +3,8 @@ import { BooksModel } from "../models/books.model.js";
 import FileSystem from "../../../../services/FilesSystem.js";
 import posterPath from "../services/posterPath.js";
 import Response from "../../../../utils/res.js";
+import createLogger from "../../../../utils/logger.js";
+const logger = createLogger();
 const response = new Response();
 const fileSystem = new FileSystem();
 
@@ -16,6 +18,7 @@ export const deleteBookById = async (req, res) => {
     fileSystem.deleteFile(srcPath);
     response.deleted(res);
   } catch (err) {
+    logger.error(err);
     response.badRequest(res);
   }
 };
@@ -30,6 +33,7 @@ export const deleteBookByUniquekey = async (req, res) => {
     fileSystem.deleteFile(srcPath);
     response.deleted(res);
   } catch (err) {
+    logger.error(err);
     response.badRequest(res);
   }
 };

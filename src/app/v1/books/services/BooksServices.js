@@ -1,6 +1,8 @@
 import Response from "../../../../utils/res.js";
 import FileSystem from "../../../../services/FilesSystem.js";
 import fileHash from "../../../../utils/fileHash.js";
+import createLogger from "../../../../utils/logger.js";
+const logger = createLogger();
 const fileSystem = new FileSystem();
 const response = new Response();
 
@@ -13,7 +15,7 @@ class BooksServices {
       });
       response.created(res);
     } catch (err) {
-      response.badRequest(res);
+      logger.error(err);
     }
   };
   updateBooks = async function ({ ...params }) {
@@ -32,7 +34,7 @@ class BooksServices {
       if (hashedSrcFilePath !== hashedFileName) fileSystem.deleteFile(srcPath);
       response.updated(res);
     } catch (err) {
-      response.badRequest(res);
+      logger.error(err);
     }
   };
 }

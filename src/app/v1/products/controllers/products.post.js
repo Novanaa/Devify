@@ -20,7 +20,11 @@ const addProducts = (req, res) => {
   } catch (err) {
     logger.error(err);
   }
-  if (req.body.image == undefined && file == null) {
+  if (
+    req.body.image == undefined &&
+    file == null &&
+    req.files.image == undefined
+  ) {
     response.unprocessable(res, "The image field must be filled");
   }
   const category = categoryMappings[req.body.category] || null;

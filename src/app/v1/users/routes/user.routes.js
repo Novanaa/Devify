@@ -6,5 +6,6 @@ router.get("/", users.getAllUsers);
 router.get("/search", users.usersSearchQueries);
 router.get("/:id", users.getSingleUserById);
 router.get("/key/:id", users.getSingleUserByUniquekey);
+router.post("/", users.addUsers);
 
 export default router;

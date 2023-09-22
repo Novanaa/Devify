@@ -15,7 +15,7 @@ class ProductsServices {
       });
       response.created(res);
     } catch (err) {
-      response.badRequest(res);
+      logger.error(err);
     }
   };
   updateProductsImageDirectory = async function ({ ...params }) {
@@ -47,7 +47,7 @@ class ProductsServices {
         fileSystem.deleteFile(srcPath);
       response.updated(res);
     } catch (err) {
-      response.badRequest(res);
+      logger.error(err);
     }
   };
   handleProductsURL = function ({ ...params }) {
