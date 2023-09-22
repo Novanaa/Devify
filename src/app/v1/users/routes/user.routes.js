@@ -7,5 +7,7 @@ router.get("/search", users.usersSearchQueries);
 router.get("/:id", users.getSingleUserById);
 router.get("/key/:id", users.getSingleUserByUniquekey);
 router.post("/", users.addUsers);
+router.delete("/:id", users.deleteUserById);
+router.delete("/key/:id", users.deleteUserByUniquekey);
 
 export default router;
