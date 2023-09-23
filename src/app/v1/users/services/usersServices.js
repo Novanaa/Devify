@@ -1,25 +1,25 @@
 import Response from "../../../../utils/res.js";
-import FileSystem from "../../../../services/FilesSystem.js";
-import fileHash from "../../../../utils/fileHash.js";
 import createLogger from "../../../../utils/logger.js";
-const logger = createLogger();
+import fileHash from "../../../../utils/fileHash.js";
+import FileSystem from "../../../../services/FilesSystem.js";
 const fileSystem = new FileSystem();
+const logger = createLogger();
 const response = new Response();
 
-class BooksServices {
-  saveBooks = async function (req, res, model, url) {
+class UsersServices {
+  saveUser = async function (req, res, model, url) {
     try {
       await model.insertMany({
         ...req.body,
-        poster: url,
+        picture: url,
       });
       response.created(res);
     } catch (err) {
       logger.error(err);
     }
   };
-  updateBooks = async function ({ ...params }) {
-    const { req, res, srcPath, model, key, id, url, fileName } = params;
+  updateUser = async function ({ ...params }) {
+    const { req, res, model, key, id, url, srcPath, fileName } = params;
     const srcPathFileName = srcPath.split("/")[5];
     const hashedFileName = fileHash(fileName);
     const hashedSrcFilePath = fileHash(srcPathFileName);
@@ -28,11 +28,11 @@ class BooksServices {
         { [key]: id },
         {
           ...req.body,
-          poster: url,
+          picture: url,
         }
       );
       if (hashedSrcFilePath !== hashedFileName && req.files == null) {
-        if (req.body.poster !== undefined || req.body.image !== undefined)
+        if (req.body.image !== undefined || req.body.picture !== undefined)
           fileSystem.deleteFile(srcPath);
       }
       response.updated(res);
@@ -42,4 +42,4 @@ class BooksServices {
   };
 }
 
-export default BooksServices;
+export default UsersServices;

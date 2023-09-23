@@ -1,20 +1,20 @@
 import validator from "validator";
-import { BooksModel } from "../models/books.model.js";
-import FileSystem from "../../../../services/FilesSystem.js";
-import posterPath from "../services/posterPath.js";
 import Response from "../../../../utils/res.js";
+import FileSystem from "../../../../services/FilesSystem.js";
+import picturePath from "../services/picturePath.js";
+import { UsersModel } from "../models/user.model.js";
 import createLogger from "../../../../utils/logger.js";
 const logger = createLogger();
-const response = new Response();
 const fileSystem = new FileSystem();
+const response = new Response();
 
-export const deleteBookById = async (req, res) => {
+export const deleteUserById = async (req, res) => {
   const { id } = req.params;
   if (!validator.isNumeric(id)) return response.unprocessable(res);
-  const srcPath = await posterPath("id", id, BooksModel);
+  const srcPath = await picturePath("id", id, UsersModel);
   try {
-    const book = await BooksModel.findOneAndDelete({ id: id });
-    if (book == null) return response.notFound(res);
+    const user = await UsersModel.findOneAndDelete({ id: id });
+    if (user == null) return response.notFound(res);
     fileSystem.deleteFile(srcPath);
     response.deleted(res);
   } catch (err) {
@@ -23,13 +23,13 @@ export const deleteBookById = async (req, res) => {
   }
 };
 
-export const deleteBookByUniquekey = async (req, res) => {
+export const deleteUserByUniquekey = async (req, res) => {
   const { id } = req.params;
   if (!validator.isMongoId(id)) return response.unprocessable(res);
-  const srcPath = await posterPath("_id", id, BooksModel);
+  const srcPath = await picturePath("_id", id, UsersModel);
   try {
-    const book = await BooksModel.findOneAndDelete({ _id: id });
-    if (book == null) return response.notFound(res);
+    const user = await UsersModel.findOneAndDelete({ _id: id });
+    if (user == null) return response.notFound(res);
     fileSystem.deleteFile(srcPath);
     response.deleted(res);
   } catch (err) {

@@ -16,12 +16,12 @@ class FileSystem {
   };
   deleteFile = function (path) {
     path = path || "";
+    if (!fs.existsSync(path)) logger.error("Cannot delete the file");
     if (fs.existsSync(path)) {
       fs.unlink(path, (err) => {
         logger.error(err);
       });
     }
-    if (!fs.existsSync(path)) logger.error("Cannot transfer the file");
   };
 }
 

@@ -15,7 +15,7 @@ class ProductsServices {
       });
       response.created(res);
     } catch (err) {
-      response.badRequest(res);
+      logger.error(err);
     }
   };
   updateProductsImageDirectory = async function ({ ...params }) {
@@ -43,11 +43,12 @@ class ProductsServices {
           image: url,
         }
       );
-      if (hasehdSrcPathFileName !== hashedFileName)
-        fileSystem.deleteFile(srcPath);
+      if (hasehdSrcPathFileName !== hashedFileName && req.files == null) {
+        if (req.body.image !== undefined) fileSystem.deleteFile(srcPath);
+      }
       response.updated(res);
     } catch (err) {
-      response.badRequest(res);
+      logger.error(err);
     }
   };
   handleProductsURL = function ({ ...params }) {

@@ -5,11 +5,13 @@ import { ProductsModel, categoryMappings } from "../models/products.model.js";
 import newImagePath from "../services/newImagePath.js";
 import imageUrl from "../services/imageUrl.js";
 import ProductsServices from "../services/ProductsServices.js";
+import createLogger from "../../../../utils/logger.js";
 import FileSystem from "../../../../services/FilesSystem.js";
 const productsServices = new ProductsServices();
 const filesUpload = new FilesUpload();
 const response = new Response();
 const fileSystem = new FileSystem();
+const logger = createLogger();
 
 //* PATCH  Products Controllers
 //* PATCH Products Data / Update Products Data
@@ -61,10 +63,14 @@ export const updateProductsById = async (req, res) => {
   }
   if (req.files !== null) {
     let file, fileName;
-    filesUpload.patch(req, res, (f, fName) => {
-      file = f;
-      fileName = fName;
-    });
+    try {
+      filesUpload.patch(req, res, (f, fName) => {
+        file = f;
+        fileName = fName;
+      });
+    } catch (err) {
+      logger.error(err);
+    }
     const { url, urlPath } = productsServices.handleProductsURL({
       req,
       oldImageCategory,
@@ -135,10 +141,14 @@ export const updateProductsByUniquekey = async (req, res) => {
   }
   if (req.files !== null) {
     let file, fileName;
-    filesUpload.patch(req, res, (f, fName) => {
-      file = f;
-      fileName = fName;
-    });
+    try {
+      filesUpload.patch(req, res, (f, fName) => {
+        file = f;
+        fileName = fName;
+      });
+    } catch (err) {
+      logger.error(err);
+    }
     const { url, urlPath } = productsServices.handleProductsURL({
       req,
       oldImageCategory,

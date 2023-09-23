@@ -2,6 +2,8 @@ import { ProductsModel, categoryMappings } from "../models/products.model.js";
 import Response from "../../../../utils/res.js";
 import FilesUpload from "../../../../services/FileUpload.js";
 import ProductsServices from "../services/ProductsServices.js";
+import createLogger from "../../../../utils/logger.js";
+const logger = createLogger();
 const productsServices = new ProductsServices();
 const filesUpload = new FilesUpload();
 const response = new Response();
@@ -10,11 +12,19 @@ const response = new Response();
 //* POST New Products Datas
 const addProducts = (req, res) => {
   let file, fileName, url;
-  filesUpload.post(req, res, (f, fName) => {
-    file = f;
-    fileName = fName;
-  });
-  if (req.body.image == undefined && file == null) {
+  try {
+    filesUpload.post(req, res, (f, fName) => {
+      file = f;
+      fileName = fName;
+    });
+  } catch (err) {
+    logger.error(err);
+  }
+  if (
+    req.body.image == undefined &&
+    file == null &&
+    req.files.image == undefined
+  ) {
     response.unprocessable(res, "The image field must be filled");
   }
   const category = categoryMappings[req.body.category] || null;
