@@ -31,7 +31,10 @@ class BooksServices {
           poster: url,
         }
       );
-      if (hashedSrcFilePath !== hashedFileName) fileSystem.deleteFile(srcPath);
+      if (hashedSrcFilePath !== hashedFileName && req.files == null) {
+        if (req.body.poster !== undefined || req.body.image !== undefined)
+          fileSystem.deleteFile(srcPath);
+      }
       response.updated(res);
     } catch (err) {
       logger.error(err);

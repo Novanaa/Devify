@@ -43,8 +43,9 @@ class ProductsServices {
           image: url,
         }
       );
-      if (hasehdSrcPathFileName !== hashedFileName)
-        fileSystem.deleteFile(srcPath);
+      if (hasehdSrcPathFileName !== hashedFileName && req.files == null) {
+        if (req.body.image !== undefined) fileSystem.deleteFile(srcPath);
+      }
       response.updated(res);
     } catch (err) {
       logger.error(err);
