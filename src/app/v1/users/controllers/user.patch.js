@@ -1,34 +1,34 @@
+import { UsersModel } from "../models/user.model.js";
 import validator from "validator";
-import { BooksModel } from "../models/books.model.js";
 import FilesUpload from "../../../../services/FileUpload.js";
-import Response from "../../../../utils/res.js";
 import createLogger from "../../../../utils/logger.js";
-import posterPath from "../services/posterPath.js";
-import BooksServices from "../services/BooksServices.js";
-const booksServices = new BooksServices();
+import Response from "../../../../utils/res.js";
+import picturePath from "../services/picturePath.js";
+import UsersServices from "../services/usersServices.js";
+const fileUpload = new FilesUpload();
 const response = new Response();
-const filesUpload = new FilesUpload();
+const usersServices = new UsersServices();
 const logger = createLogger();
 
-export const updateBookById = async (req, res) => {
+export const updateUserById = async (req, res) => {
   let url, fName;
   const { id } = req.params;
   if (!validator.isNumeric(id)) return response.unprocessable(res);
-  const srcPath = await posterPath("id", id, BooksModel);
+  const srcPath = await picturePath("id", id, UsersModel);
   if (req.files !== null) {
     try {
-      filesUpload.patch(req, res, (file, fileName) => {
+      fileUpload.patch(req, res, (file, fileName) => {
         fName = fileName;
         url = `${req.protocol}://${req.get(
           "host"
-        )}/img/books/poster/${fileName}`;
-        const filePath = `./public/img/books/poster/${fileName}`;
-        file?.mv(filePath, async (err) => {
+        )}/img/users/pictures/${fileName}`;
+        const urlPath = `./public/img/users/pictures/${fileName}`;
+        file?.mv(urlPath, (err) => {
           if (err) return response.unprocessable(res);
-          await booksServices.updateBooks({
+          usersServices.updateUser({
             req,
             res,
-            model: BooksModel,
+            model: UsersModel,
             key: "id",
             id,
             url,
@@ -42,11 +42,11 @@ export const updateBookById = async (req, res) => {
     }
   }
   if (req.files == null) {
-    url = req.body.poster || req.body.image;
-    booksServices.updateBooks({
+    url = req.body.picture || req.body.image;
+    usersServices.updateUser({
       req,
       res,
-      model: BooksModel,
+      model: UsersModel,
       key: "id",
       id,
       url,
@@ -56,25 +56,25 @@ export const updateBookById = async (req, res) => {
   }
 };
 
-export const updateBookUniquekey = async (req, res) => {
+export const updateUserByUniquekey = async (req, res) => {
   let url, fName;
   const { id } = req.params;
   if (!validator.isMongoId(id)) return response.unprocessable(res);
-  const srcPath = await posterPath("_id", id, BooksModel);
+  const srcPath = await picturePath("_id", id, UsersModel);
   if (req.files !== null) {
     try {
-      filesUpload.patch(req, res, (file, fileName) => {
+      fileUpload.patch(req, res, (file, fileName) => {
         fName = fileName;
         url = `${req.protocol}://${req.get(
           "host"
-        )}/img/books/poster/${fileName}`;
-        const filePath = `./public/img/books/poster/${fileName}`;
-        file?.mv(filePath, async (err) => {
+        )}/img/users/pictures/${fileName}`;
+        const urlPath = `./public/img/users/pictures/${fileName}`;
+        file?.mv(urlPath, (err) => {
           if (err) return response.unprocessable(res);
-          await booksServices.updateBooks({
+          usersServices.updateUser({
             req,
             res,
-            model: BooksModel,
+            model: UsersModel,
             key: "_id",
             id,
             url,
@@ -88,11 +88,11 @@ export const updateBookUniquekey = async (req, res) => {
     }
   }
   if (req.files == null) {
-    url = req.body.poster || req.body.image;
-    booksServices.updateBooks({
+    url = req.body.picture || req.body.image;
+    usersServices.updateUser({
       req,
       res,
-      model: BooksModel,
+      model: UsersModel,
       key: "_id",
       id,
       url,

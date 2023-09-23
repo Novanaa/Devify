@@ -8,6 +8,7 @@ const app = express();
 import mainRoutes from "./app/v1/main/routes/main.routes.js";
 import productsRoutes from "./app/v1/products/routes/products.routes.js";
 import booksRoutes from "./app/v1/books/routes/books.routes.js";
+import usersRoutes from "./app/v1/users/routes/user.routes.js";
 
 //# middlewares
 app.use(express.json());
@@ -19,5 +20,6 @@ app.use(FileUpload());
 app.use("/", mainRoutes);
 app.use("/products", productsRoutes);
 app.use("/books", booksRoutes);
+app.use("/users", usersRoutes);
 
 export default app;

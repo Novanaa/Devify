@@ -2,12 +2,13 @@ import path from "path";
 import imageExt from "../utils/imageExtension.js";
 import Response from "../utils/res.js";
 const response = new Response();
+// import createLogger from "../utils/logger.js";
+// const logger = createLogger();
 
 class FilesUpload {
   post = function (req, res, files) {
     let file, fileExt;
     if (req.files !== null) {
-      if (!req.files.image) return response.unprocessable(res);
       if (req.files.image?.length > 1)
         return response.unprocessable(
           res,
@@ -21,11 +22,13 @@ class FilesUpload {
           res,
           "The image size must be less than 5mb"
         );
-      if (!imageExt.includes(fileExt?.toLowerCase()))
-        return response.unprocessable(
-          res,
-          "Images extension does not supported."
-        );
+      if (req.files.image !== undefined || req.files.image !== null) {
+        if (!imageExt.includes(fileExt?.toLowerCase()))
+          return response.unprocessable(
+            res,
+            "Images extension does not supported."
+          );
+      }
       files(file, fileName);
     }
   };
