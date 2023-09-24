@@ -33,6 +33,9 @@ const UsersSchema = new mongoose.Schema({
       type: String,
     },
   },
+  refresh_token: {
+    type: String,
+  },
 });
 
 // convert _id to uniquekey

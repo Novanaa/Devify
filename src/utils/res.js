@@ -34,11 +34,21 @@ class Response {
       success: true,
     });
   };
-  badRequest = function (res) {
+  onLoginSuccess = function (res, token) {
+    res.status(200).json({
+      messege: "You're in! Access granted.✨",
+      status: 200,
+      success: true,
+      token,
+    });
+  };
+  badRequest = function (res, messege) {
+    messege =
+      messege ||
+      "Oops! Your request cannot be processed due to a bad request. Please check your input and try again.";
     res.status(400).json({
       TypeError: "Bad Request",
-      messege:
-        "Oops! Your request cannot be processed due to a bad request. Please check your input and try again.",
+      messege,
       status: 400,
     });
   };
