@@ -1,5 +1,6 @@
-import { UsersModel } from "../models/user.model.js";
 import validator from "validator";
+import { UsersModel } from "../models/user.model.js";
+import Bcrypt from "../../../../services/bcrypt.js";
 import FilesUpload from "../../../../services/FileUpload.js";
 import createLogger from "../../../../utils/logger.js";
 import Response from "../../../../utils/res.js";
@@ -8,11 +9,14 @@ import UsersServices from "../services/usersServices.js";
 const fileUpload = new FilesUpload();
 const response = new Response();
 const usersServices = new UsersServices();
+const bcrypt = new Bcrypt();
 const logger = createLogger();
 
 export const updateUserById = async (req, res) => {
   let url, fName;
   const { id } = req.params;
+  const { password } = req.body;
+  const hashedPassword = bcrypt.hash(password);
   if (!validator.isNumeric(id)) return response.unprocessable(res);
   const srcPath = await picturePath("id", id, UsersModel);
   if (req.files !== null) {
@@ -34,6 +38,7 @@ export const updateUserById = async (req, res) => {
             url,
             srcPath,
             fileName,
+            password: hashedPassword,
           });
         });
       });
@@ -52,6 +57,7 @@ export const updateUserById = async (req, res) => {
       url,
       srcPath,
       fileName: fName,
+      password: hashedPassword,
     });
   }
 };
@@ -59,6 +65,8 @@ export const updateUserById = async (req, res) => {
 export const updateUserByUniquekey = async (req, res) => {
   let url, fName;
   const { id } = req.params;
+  const { password } = req.body;
+  const hashedPassword = bcrypt.hash(password);
   if (!validator.isMongoId(id)) return response.unprocessable(res);
   const srcPath = await picturePath("_id", id, UsersModel);
   if (req.files !== null) {
@@ -80,6 +88,7 @@ export const updateUserByUniquekey = async (req, res) => {
             url,
             srcPath,
             fileName,
+            password: hashedPassword,
           });
         });
       });
@@ -98,6 +107,7 @@ export const updateUserByUniquekey = async (req, res) => {
       url,
       srcPath,
       fileName: fName,
+      password: hashedPassword,
     });
   }
 };
