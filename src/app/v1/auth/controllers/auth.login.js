@@ -30,6 +30,10 @@ async function login(req, res) {
     if (!comparedPassword)
       return response.unprocessable(res, "The password does not match ");
     const { accessToken, refreshToken } = jwt.createToken({ name, email, id });
+    res.cookie("refreshToken", refreshToken, {
+      secure: true,
+      httpOnly: true,
+    });
     await UsersModel.findOneAndUpdate(
       { id: id },
       { refresh_token: refreshToken }
