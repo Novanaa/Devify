@@ -1,4 +1,4 @@
-import "../configs/database/db.js";
+import "../configs/db.js";
 import express from "express";
 import cors from "cors";
 import FileUpload from "express-fileupload";
