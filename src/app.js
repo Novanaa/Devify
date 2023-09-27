@@ -2,6 +2,7 @@ import "../configs/db.js";
 import express from "express";
 import cors from "cors";
 import FileUpload from "express-fileupload";
+import cookieParser from "cookie-parser";
 const app = express();
 
 // # Routes Import
@@ -16,6 +17,7 @@ app.use(express.json());
 app.use(express.static("./public"));
 app.use(cors());
 app.use(FileUpload());
+app.use(cookieParser());
 
 // Routes
 app.use("/", mainRoutes);
