@@ -15,7 +15,7 @@ async function login(req, res) {
   }).select(["id", "email", "name", "password"]);
   try {
     if (user.length < 1)
-      return response.notFound(
+      return response.unauth(
         res,
         "Invalid Login Credentials, The login information you provided is incorrect."
       );

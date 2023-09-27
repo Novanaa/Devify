@@ -17,6 +17,7 @@ function verifyToken(req, res, next) {
     });
   } catch (err) {
     logger.error(err);
+    next();
   }
 }
 
