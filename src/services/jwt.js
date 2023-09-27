@@ -7,7 +7,7 @@ class JsonWebToken {
     const { name = "", email = "", id = 0 } = payload;
     const { JWTACCESSTOKEN, JWTREFRESHTOKEN } = process.env;
     const accessToken = jwt.sign({ id, name, email }, JWTACCESSTOKEN, {
-      expiresIn: "300s",
+      expiresIn: "120s",
     });
     const refreshToken = jwt.sign({ id, name, email }, JWTREFRESHTOKEN, {
       expiresIn: "1d",
