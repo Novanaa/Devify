@@ -71,6 +71,16 @@ class Response {
       status: 422,
     });
   };
+  unauth = function (res, messege) {
+    messege =
+      messege ||
+      "You are not authorized to access this resource. Please provide valid credentials or authentication.";
+    res.status(401).json({
+      TypeError: "Unauthorized",
+      messege,
+      status: 401,
+    });
+  };
 }
 
 export default Response;
