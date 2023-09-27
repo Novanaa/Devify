@@ -9,8 +9,10 @@ const response = new Response();
 class UsersServices {
   saveUser = async function (req, res, model, url, password) {
     try {
+      const users = await model.find();
       await model.insertMany({
         ...req.body,
+        id: users.length + 1,
         picture: url,
         password,
       });
