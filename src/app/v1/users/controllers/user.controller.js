@@ -4,7 +4,6 @@ import {
   getSingleUserByUniquekey,
   usersSearchQueries,
 } from "./user.get.js";
-import addUsers from "./user.post.js";
 import { deleteUserById, deleteUserByUniquekey } from "./user.delete.js";
 import { updateUserById, updateUserByUniquekey } from "./user.patch.js";
 
@@ -13,7 +12,6 @@ const users = {
   getSingleUserById,
   getSingleUserByUniquekey,
   usersSearchQueries,
-  addUsers,
   updateUserById,
   updateUserByUniquekey,
   deleteUserById,

@@ -3,20 +3,27 @@ import Bcrypt from "../../../../services/bcrypt.js";
 import FilesUpload from "../../../../services/FileUpload.js";
 import createLogger from "../../../../utils/logger.js";
 import Response from "../../../../utils/res.js";
-import { UsersModel } from "../models/user.model.js";
-import UsersServices from "../services/usersServices.js";
-import userFieldValidation from "../services/userFieldValidation.js";
+import { UsersModel } from "../../users/models/user.model.js";
+import UsersServices from "../../users/services/usersServices.js";
+import userFieldValidation from "../../users/services/userFieldValidation.js";
 const usersServices = new UsersServices();
 const logger = createLogger();
 const response = new Response();
 const filesUpload = new FilesUpload();
 const bcrypt = new Bcrypt();
 
-async function addUsers(req, res) {
+async function register(req, res) {
   let file, fileName, url;
   const { password, name, email } = req.body;
   const hashedPassword = bcrypt.hash(password);
   try {
+    if (name == undefined || name == "")
+      return response.unprocessable(res, "The name field must be filled");
+    const username = await userFieldValidation(UsersModel);
+    if (validator.isIn(name || "", username))
+      return response.unprocessable(res, "The username is already taken");
+    if (password == "" || password == undefined)
+      return response.unprocessable(res, "The password field must be filled");
     if (
       req.body.image == undefined &&
       file == null &&
@@ -24,13 +31,6 @@ async function addUsers(req, res) {
       req.files?.image == undefined
     )
       return response.unprocessable(res, "The image field must be filled");
-    if (name == undefined)
-      return response.unprocessable(res, "The name field must be filled");
-    const username = await userFieldValidation(UsersModel);
-    if (validator.isIn(name || "", username))
-      return response.unprocessable(res, "The username is already taken");
-    if (password == "" || password == undefined)
-      return response.unprocessable(res, "The password field must be filled");
     if (!validator.isEmail(email))
       return response.unprocessable(
         res,
@@ -71,4 +71,4 @@ async function addUsers(req, res) {
   }
 }
 
-export default addUsers;
+export default register;

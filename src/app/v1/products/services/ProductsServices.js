@@ -9,8 +9,10 @@ const fileSystem = new FileSystem();
 class ProductsServices {
   saveProduct = async function (req, res, model, url) {
     try {
+      const products = await model.find();
       await model.insertMany({
         ...req.body,
+        id: products.length + 1,
         image: url,
       });
       response.created(res);

@@ -1,12 +1,12 @@
 import app from "./app.js";
 import createLogger from "./utils/logger.js";
 const logger = createLogger();
-const port = 8000;
+import { PORT } from "./const/config.js";
 
 function createServer() {
   // app listener
-  app.listen(port, () => {
-    logger.info(`Server running and up in port ${port}`);
+  app.listen(PORT || 8000, () => {
+    logger.info(`Server running and up in http://localhost:${PORT}`);
   });
 }
 
