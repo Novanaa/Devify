@@ -7,10 +7,12 @@ const usersValidation = Joi.object({
   age: Joi.number().max(3),
   gender: Joi.string().max(100),
   picture: Joi.string().max(100),
+  image: Joi.string().optional(),
   address: Joi.object({
     country: Joi.string().max(100),
     city: Joi.string().max(100),
   }),
+  refresh_token: Joi.string().allow(null),
 });
 
 export default usersValidation;
