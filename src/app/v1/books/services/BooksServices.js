@@ -9,8 +9,10 @@ const response = new Response();
 class BooksServices {
   saveBooks = async function (req, res, model, url) {
     try {
+      const books = await model.find();
       await model.insertMany({
         ...req.body,
+        id: books.length + 1,
         poster: url,
       });
       response.created(res);

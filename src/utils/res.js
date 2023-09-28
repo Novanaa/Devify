@@ -42,6 +42,14 @@ class Response {
       token,
     });
   };
+  onLogOutSuccess = function(res) {
+     res.status(200).json({
+       messege:
+         "Logout successful. You have been successfully logged out of your account.",
+       status: 200,
+       success: true,
+     });
+  }
   badRequest = function (res, messege) {
     messege =
       messege ||
@@ -69,6 +77,16 @@ class Response {
       TypeError: "Unprocessable Content",
       messege,
       status: 422,
+    });
+  };
+  unauth = function (res, messege) {
+    messege =
+      messege ||
+      "You are not authorized to access this resource. Please provide valid credentials or authentication.";
+    res.status(401).json({
+      TypeError: "Unauthorized",
+      messege,
+      status: 401,
     });
   };
 }
