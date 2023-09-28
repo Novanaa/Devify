@@ -6,6 +6,7 @@ import Response from "../../../../utils/res.js";
 import { UsersModel } from "../../users/models/user.model.js";
 import UsersServices from "../../users/services/usersServices.js";
 import userFieldValidation from "../../users/services/userFieldValidation.js";
+import usersValidation from "../../../../validations/usersValidation.js";
 const usersServices = new UsersServices();
 const logger = createLogger();
 const response = new Response();
@@ -14,16 +15,14 @@ const bcrypt = new Bcrypt();
 
 async function register(req, res) {
   let file, fileName, url;
-  const { password, name, email } = req.body;
+  const { error, value } = usersValidation.validate(req.body);
+  const { name, password, email } = value;
+  if (error) return response.badRequest(res, error?.details[0].message);
   const hashedPassword = bcrypt.hash(password);
   try {
-    if (name == undefined || name == "")
-      return response.unprocessable(res, "The name field must be filled");
     const username = await userFieldValidation(UsersModel);
     if (validator.isIn(name || "", username))
       return response.unprocessable(res, "The username is already taken");
-    if (password == "" || password == undefined)
-      return response.unprocessable(res, "The password field must be filled");
     if (
       req.body.image == undefined &&
       file == null &&

@@ -13,7 +13,11 @@ async function login(req, res) {
   const { error, value } = usersValidation.validate(req.body);
   if (value instanceof Object && Object.keys(value).length == 0)
     return response.unprocessable(res, "The fields must be filled!");
-  if (error) return response.badRequest(res, error?.details[0].message);
+  if (error)
+    return response.badRequest(
+      res,
+      error?.details[0].message.replace(/\\/g, "")
+    );
   const { name: userInputName, password: userInputPassword } = value;
   const user = await UsersModel.find({
     name: userInputName,
