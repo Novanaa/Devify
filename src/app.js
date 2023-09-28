@@ -21,10 +21,10 @@ app.use(cookieParser());
 
 // Routes
 app.use("/", mainRoutes);
-app.use("/products", productsRoutes);
-app.use("/books", booksRoutes);
-app.use("/users", usersRoutes);
-app.use("/auth", authRoutes);
+app.use("/v1/products", productsRoutes);
+app.use("/v1/books", booksRoutes);
+app.use("/v1/users", usersRoutes);
+app.use("/v1/auth", authRoutes);
 
 // Routes Handling
 import notFound from "./middlewares/404.js";
