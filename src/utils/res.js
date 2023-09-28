@@ -42,18 +42,18 @@ class Response {
       token,
     });
   };
-  onLogOutSuccess = function(res) {
-     res.status(200).json({
-       messege:
-         "Logout successful. You have been successfully logged out of your account.",
-       status: 200,
-       success: true,
-     });
-  }
+  onLogOutSuccess = function (res) {
+    res.status(200).json({
+      messege:
+        "Logout successful. You have been successfully logged out of your account.",
+      status: 200,
+      success: true,
+    });
+  };
   badRequest = function (res, messege) {
     messege =
       messege ||
-      "Oops! Your request cannot be processed due to a bad request. Please check your input and try again.";
+      `Oops! Your request cannot be processed due to a bad request. Please check your input and try again.`;
     res.status(400).json({
       TypeError: "Bad Request",
       messege,
