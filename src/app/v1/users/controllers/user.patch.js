@@ -5,6 +5,8 @@ import FilesUpload from "../../../../services/FileUpload.js";
 import createLogger from "../../../../utils/logger.js";
 import Response from "../../../../utils/res.js";
 import picturePath from "../services/picturePath.js";
+import usersValidations from "../../../../validations/usersValidation.js";
+import validations from "../../../../services/validations.js";
 import UsersServices from "../services/usersServices.js";
 const fileUpload = new FilesUpload();
 const response = new Response();
@@ -15,7 +17,10 @@ const logger = createLogger();
 export const updateUserById = async (req, res) => {
   let url, fName;
   const { id } = req.params;
-  const { password } = req.body;
+  const { error, value } = usersValidations.validate(req.body);
+  if (error || Object.keys(value).length == 0)
+    return validations(value, error, res);
+  const { password, image, picture } = value;
   const hashedPassword = bcrypt.hash(password);
   if (!validator.isNumeric(id)) return response.unprocessable(res);
   const srcPath = await picturePath("id", id, UsersModel);
@@ -39,6 +44,7 @@ export const updateUserById = async (req, res) => {
             srcPath,
             fileName,
             password: hashedPassword,
+            value,
           });
         });
       });
@@ -47,7 +53,7 @@ export const updateUserById = async (req, res) => {
     }
   }
   if (req.files == null) {
-    url = req.body.picture || req.body.image;
+    url = picture || image;
     usersServices.updateUser({
       req,
       res,
@@ -58,6 +64,7 @@ export const updateUserById = async (req, res) => {
       srcPath,
       fileName: fName,
       password: hashedPassword,
+      value,
     });
   }
 };
@@ -65,7 +72,10 @@ export const updateUserById = async (req, res) => {
 export const updateUserByUniquekey = async (req, res) => {
   let url, fName;
   const { id } = req.params;
-  const { password } = req.body;
+  const { error, value } = usersValidations.validate(req.body);
+  if (error || Object.keys(value).length == 0)
+    return validations(value, error, res);
+  const { password, image, picture } = value;
   const hashedPassword = bcrypt.hash(password);
   if (!validator.isMongoId(id)) return response.unprocessable(res);
   const srcPath = await picturePath("_id", id, UsersModel);
@@ -89,6 +99,7 @@ export const updateUserByUniquekey = async (req, res) => {
             srcPath,
             fileName,
             password: hashedPassword,
+            value,
           });
         });
       });
@@ -97,7 +108,7 @@ export const updateUserByUniquekey = async (req, res) => {
     }
   }
   if (req.files == null) {
-    url = req.body.picture || req.body.image;
+    url = picture || image;
     usersServices.updateUser({
       req,
       res,
@@ -108,6 +119,7 @@ export const updateUserByUniquekey = async (req, res) => {
       srcPath,
       fileName: fName,
       password: hashedPassword,
+      value,
     });
   }
 };
