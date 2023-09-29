@@ -1,12 +1,12 @@
 import Joi from "joi";
 
 const usersValidation = Joi.object({
-  name: Joi.string().max(100).required(),
+  name: Joi.string().max(15).required(),
   email: Joi.string().email().required(),
   password: Joi.string().max(16).required(),
   age: Joi.number().max(3),
   gender: Joi.string().max(100),
-  picture: Joi.string().max(100),
+  picture: Joi.string().max(200),
   image: Joi.string().optional(),
   address: Joi.object({
     country: Joi.string().max(100),
