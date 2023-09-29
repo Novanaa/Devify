@@ -7,6 +7,7 @@ import { UsersModel } from "../../users/models/user.model.js";
 import UsersServices from "../../users/services/usersServices.js";
 import userFieldValidation from "../../users/services/userFieldValidation.js";
 import usersValidation from "../../../../validations/usersValidation.js";
+import validations from "../../../../services/validations.js";
 const usersServices = new UsersServices();
 const logger = createLogger();
 const response = new Response();
@@ -16,8 +17,9 @@ const bcrypt = new Bcrypt();
 async function register(req, res) {
   let file, fileName, url;
   const { error, value } = usersValidation.validate(req.body);
+  if (error || Object.keys(value).length == 0)
+    return validations(value, error, res);
   const { name, password, email } = value;
-  if (error) return response.badRequest(res, error?.details[0].message);
   const hashedPassword = bcrypt.hash(password);
   try {
     const username = await userFieldValidation(UsersModel);
@@ -43,18 +45,21 @@ async function register(req, res) {
     } catch (err) {
       logger.error(err);
     }
+    // prettier-ignore
     if (req.body.image !== undefined && req.body.picture == undefined) {
       if (file == null || file == undefined) {
         url = req.body.image;
-        usersServices.saveUser(req, res, UsersModel, url, hashedPassword);
+        usersServices.saveUser(req, res, UsersModel, url, hashedPassword, value);
       }
     }
+    // prettier-ignore
     if (req.body.picture !== undefined && req.body.image == undefined) {
       if (file == null || file == undefined) {
         url = req.body.picture;
-        usersServices.saveUser(req, res, UsersModel, url, hashedPassword);
+        usersServices.saveUser(req, res, UsersModel, url, hashedPassword, value);
       }
     }
+    // prettier-ignore
     if (file !== undefined || file !== null || req.files.image.length < 2) {
       const filePath = `./public/img/users/pictures/${fileName}`;
       url = `${req.protocol}://${req.get(
@@ -62,7 +67,7 @@ async function register(req, res) {
       )}/img/users/pictures/${fileName}`;
       file?.mv(filePath, async (err) => {
         if (err) return response.unprocessable(res);
-        await usersServices.saveUser(req, res, UsersModel, url, hashedPassword);
+        await usersServices.saveUser(req, res, UsersModel, url, hashedPassword, value);
       });
     }
   } catch (err) {

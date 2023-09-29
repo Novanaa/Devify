@@ -3,6 +3,7 @@ import Response from "../../../../utils/res.js";
 import Bcrypt from "../../../../services/bcrypt.js";
 import createLogger from "../../../../utils/logger.js";
 import usersValidation from "../../../../validations/usersValidation.js";
+import validations from "../../../../services/validations.js";
 import JsonWebToken from "../../../../services/jwt.js";
 const jwt = new JsonWebToken();
 const response = new Response();
@@ -11,13 +12,8 @@ const bcrypt = new Bcrypt();
 
 async function login(req, res) {
   const { error, value } = usersValidation.validate(req.body);
-  if (value instanceof Object && Object.keys(value).length == 0)
-    return response.unprocessable(res, "The fields must be filled!");
-  if (error)
-    return response.badRequest(
-      res,
-      error?.details[0].message.replace(/\\/g, "")
-    );
+  if (error || Object.keys(value).length == 0)
+    return validations(value, error, res);
   const { name: userInputName, password: userInputPassword } = value;
   const user = await UsersModel.find({
     name: userInputName,
