@@ -7,11 +7,11 @@ const fileSystem = new FileSystem();
 const response = new Response();
 
 class BooksServices {
-  saveBooks = async function (req, res, model, url) {
+  saveBooks = async function (req, res, model, url, value) {
     try {
       const books = await model.find();
       await model.insertMany({
-        ...req.body,
+        ...value,
         id: books.length + 1,
         poster: url,
       });
@@ -21,7 +21,8 @@ class BooksServices {
     }
   };
   updateBooks = async function ({ ...params }) {
-    const { req, res, srcPath, model, key, id, url, fileName } = params;
+    // prettier-ignore
+    const { req, res, srcPath, model, key, id, url, fileName, value } = params;
     const srcPathFileName = srcPath.split("/")[5];
     const hashedFileName = fileHash(fileName);
     const hashedSrcFilePath = fileHash(srcPathFileName);
@@ -29,12 +30,12 @@ class BooksServices {
       await model.findOneAndUpdate(
         { [key]: id },
         {
-          ...req.body,
+          ...value,
           poster: url,
         }
       );
       if (hashedSrcFilePath !== hashedFileName && req.files == null) {
-        if (req.body.poster !== undefined || req.body.image !== undefined)
+        if (value.poster !== undefined || value.image !== undefined)
           fileSystem.deleteFile(srcPath);
       }
       response.updated(res);

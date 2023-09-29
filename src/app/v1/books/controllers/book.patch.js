@@ -2,9 +2,11 @@ import validator from "validator";
 import { BooksModel } from "../models/books.model.js";
 import FilesUpload from "../../../../services/FileUpload.js";
 import Response from "../../../../utils/res.js";
+import booksValidation from "../../../../validations/booksValidation.js";
 import createLogger from "../../../../utils/logger.js";
 import posterPath from "../services/posterPath.js";
 import BooksServices from "../services/BooksServices.js";
+import validations from "../../../../services/validations.js";
 const booksServices = new BooksServices();
 const response = new Response();
 const filesUpload = new FilesUpload();
@@ -13,6 +15,9 @@ const logger = createLogger();
 export const updateBookById = async (req, res) => {
   let url, fName;
   const { id } = req.params;
+  const { error, value } = booksValidation.validate(req.body);
+  if (error || Object.keys(value).length == 0)
+    return validations(value, error, res);
   if (!validator.isNumeric(id)) return response.unprocessable(res);
   const srcPath = await posterPath("id", id, BooksModel);
   if (req.files !== null) {
@@ -34,6 +39,7 @@ export const updateBookById = async (req, res) => {
             url,
             srcPath,
             fileName,
+            value,
           });
         });
       });
@@ -42,7 +48,7 @@ export const updateBookById = async (req, res) => {
     }
   }
   if (req.files == null) {
-    url = req.body.poster || req.body.image;
+    url = value.poster || value.image;
     booksServices.updateBooks({
       req,
       res,
@@ -52,6 +58,7 @@ export const updateBookById = async (req, res) => {
       url,
       srcPath,
       fileName: fName,
+      value,
     });
   }
 };
@@ -59,6 +66,9 @@ export const updateBookById = async (req, res) => {
 export const updateBookUniquekey = async (req, res) => {
   let url, fName;
   const { id } = req.params;
+  const { error, value } = booksValidation.validate(req.body);
+  if (error || Object.keys(value).length == 0)
+    return validations(value, error, res);
   if (!validator.isMongoId(id)) return response.unprocessable(res);
   const srcPath = await posterPath("_id", id, BooksModel);
   if (req.files !== null) {
@@ -80,6 +90,7 @@ export const updateBookUniquekey = async (req, res) => {
             url,
             srcPath,
             fileName,
+            value,
           });
         });
       });
@@ -88,7 +99,7 @@ export const updateBookUniquekey = async (req, res) => {
     }
   }
   if (req.files == null) {
-    url = req.body.poster || req.body.image;
+    url = value.poster || value.image;
     booksServices.updateBooks({
       req,
       res,
@@ -98,6 +109,7 @@ export const updateBookUniquekey = async (req, res) => {
       url,
       srcPath,
       fileName: fName,
+      value,
     });
   }
 };
