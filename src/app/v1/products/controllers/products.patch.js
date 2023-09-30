@@ -7,6 +7,7 @@ import imageUrl from "../services/imageUrl.js";
 import ProductsServices from "../services/ProductsServices.js";
 import createLogger from "../../../../utils/logger.js";
 import FileSystem from "../../../../services/FilesSystem.js";
+import productsValidation from "../../../../validations/productsValidation.js";
 const productsServices = new ProductsServices();
 const filesUpload = new FilesUpload();
 const response = new Response();
@@ -18,6 +19,9 @@ const logger = createLogger();
 export const updateProductsById = async (req, res) => {
   const { id } = req.params;
   let srcPath, oldImageCategory, oldImagePath, dstFile, newImageUrl;
+  const { value } = productsValidation.validate(req.body);
+  if (value instanceof Object && Object.keys(value).length == 0)
+    return response.unprocessable(res, "The fields must be filled!");
   if (!validator.isNumeric(id))
     return response.unprocessable(res, "The request id is not valid");
   const category = categoryMappings[req.body.category] || null;
@@ -33,7 +37,6 @@ export const updateProductsById = async (req, res) => {
     });
     if (req.body.category !== undefined && category !== oldImageCategory) {
       await productsServices.updateProductsImageDirectory({
-        req,
         res,
         srcPath,
         dstFile,
@@ -41,6 +44,7 @@ export const updateProductsById = async (req, res) => {
         key: "id",
         id,
         newImageUrl,
+        value,
       });
     }
     if (
@@ -88,6 +92,7 @@ export const updateProductsById = async (req, res) => {
         id,
         url,
         fileName,
+        value,
       });
     });
   }
@@ -96,6 +101,9 @@ export const updateProductsById = async (req, res) => {
 export const updateProductsByUniquekey = async (req, res) => {
   const { id } = req.params;
   let srcPath, oldImageCategory, oldImagePath, dstFile, newImageUrl;
+  const { value } = productsValidation.validate(req.body);
+  if (value instanceof Object && Object.keys(value).length == 0)
+    return response.unprocessable(res, "The fields must be filled!");
   if (!validator.isMongoId(id))
     return response.unprocessable(res, "The request id is not a uniquekey");
   const category = categoryMappings[req.body.category] || null;
@@ -111,7 +119,6 @@ export const updateProductsByUniquekey = async (req, res) => {
     });
     if (req.body.category !== undefined && category !== oldImageCategory) {
       await productsServices.updateProductsImageDirectory({
-        req,
         res,
         srcPath,
         dstFile,
@@ -119,6 +126,7 @@ export const updateProductsByUniquekey = async (req, res) => {
         key: "_id",
         id,
         newImageUrl,
+        value,
       });
     }
     if (
@@ -166,6 +174,7 @@ export const updateProductsByUniquekey = async (req, res) => {
         id,
         url,
         fileName,
+        value,
       });
     });
   }
