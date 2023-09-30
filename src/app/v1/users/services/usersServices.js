@@ -7,11 +7,11 @@ const logger = createLogger();
 const response = new Response();
 
 class UsersServices {
-  saveUser = async function (req, res, model, url, password) {
+  saveUser = async function (req, res, model, url, password, value) {
     try {
       const users = await model.find();
       await model.insertMany({
-        ...req.body,
+        ...value,
         id: users.length + 1,
         picture: url,
         password,
@@ -22,7 +22,8 @@ class UsersServices {
     }
   };
   updateUser = async function ({ ...params }) {
-    const { req, res, model, key, id, url, srcPath, fileName, password } =
+    // prettier-ignore
+    const { req, res, model, key, id, url, srcPath, fileName, password, value } =
       params;
     const srcPathFileName = srcPath.split("/")[5];
     const hashedFileName = fileHash(fileName);
@@ -31,13 +32,13 @@ class UsersServices {
       await model.findOneAndUpdate(
         { [key]: id },
         {
-          ...req.body,
+          ...value,
           picture: url,
           password,
         }
       );
       if (hashedSrcFilePath !== hashedFileName && req.files == null) {
-        if (req.body.image !== undefined || req.body.picture !== undefined)
+        if (value.image !== undefined || value.picture !== undefined)
           fileSystem.deleteFile(srcPath);
       }
       response.updated(res);
