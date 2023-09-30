@@ -3,6 +3,7 @@ import Response from "../../../../utils/res.js";
 import Bcrypt from "../../../../services/bcrypt.js";
 import createLogger from "../../../../utils/logger.js";
 import usersValidation from "../../../../validations/usersValidation.js";
+import loginUser from "../services/loginUser.js";
 import validations from "../../../../services/validations.js";
 import JsonWebToken from "../../../../services/jwt.js";
 const jwt = new JsonWebToken();
@@ -25,20 +26,19 @@ async function login(req, res) {
         "Invalid Login Credentials, The login information you provided is incorrect."
       );
     const { name = "", email = "", id = 0, password = "" } = user[0];
-    const comparedPassword = bcrypt.compare(userInputPassword, password);
-    if (!comparedPassword)
-      return response.unprocessable(res, "The password does not match");
+    const passPatern = /^\$2[aby]\$[0-9]{2}\$[./A-Za-z0-9]{53}$/;
     const { accessToken, refreshToken } = jwt.createToken({ name, email, id });
-    await UsersModel.findOneAndUpdate(
-      { id: id },
-      { refresh_token: refreshToken }
-    );
-    res.cookie("refreshToken", refreshToken, {
-      maxAge: 24 * 60 * 60 * 1000,
-      secure: true,
-      httpOnly: true,
-    });
-    response.onLoginSuccess(res, accessToken);
+    if (!passPatern.test(password)) {
+      if (userInputPassword !== password)
+        return response.unprocessable(res, "The password does not match");
+      loginUser(UsersModel, id, accessToken, refreshToken, res);
+    }
+    if (passPatern.test(password)) {
+      const comparedPassword = bcrypt.compare(userInputPassword, password);
+      if (!comparedPassword)
+        return response.unprocessable(res, "The password does not match");
+      loginUser(UsersModel, id, accessToken, refreshToken, res);
+    }
   } catch (err) {
     logger.error(err);
   }
