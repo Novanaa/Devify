@@ -2,6 +2,8 @@ import { ProductsModel, categoryMappings } from "../models/products.model.js";
 import Response from "../../../../utils/res.js";
 import FilesUpload from "../../../../services/FileUpload.js";
 import ProductsServices from "../services/ProductsServices.js";
+import productsValidation from "../../../../validations/productsValidation.js";
+import validations from "../../../../services/validations.js";
 import createLogger from "../../../../utils/logger.js";
 const logger = createLogger();
 const productsServices = new ProductsServices();
@@ -12,6 +14,9 @@ const response = new Response();
 //* POST New Products Datas
 const addProducts = (req, res) => {
   let file, fileName, url;
+  const { error, value } = productsValidation.validate(req.body);
+  if (error || Object.keys(value).length == 0)
+    return validations(value, error, res);
   try {
     filesUpload.post(req, res, (f, fName) => {
       file = f;
@@ -20,23 +25,18 @@ const addProducts = (req, res) => {
   } catch (err) {
     logger.error(err);
   }
-  if (
-    req.body.image == undefined &&
-    file == null &&
-    req.files.image == undefined
-  ) {
-    response.unprocessable(res, "The image field must be filled");
-  }
-  const category = categoryMappings[req.body.category] || null;
+  if (value.image == undefined && file == null)
+    return response.unprocessable(res, "The image field must be filled");
+  const category = categoryMappings[value.category] || null;
   const urlPath = `./public/img/products/${category}/${fileName}`;
-  if (req.body.image !== undefined) {
+  if (value.image !== undefined) {
     if (file == null || file == undefined) {
-      url = req.body.image;
-      productsServices.saveProduct(req, res, ProductsModel, url);
+      url = value.image;
+      productsServices.saveProduct(req, res, ProductsModel, url, value);
     }
   }
   if (file !== undefined || file !== null || req.files.image.length < 2) {
-    if (req.body.category == undefined)
+    if (value.category == undefined)
       return response.unprocessable(res, "The category field must be filled");
     if (category == null)
       return response.unprocessable(
@@ -48,7 +48,7 @@ const addProducts = (req, res) => {
     )}/img/products/${category}/${fileName}`;
     file?.mv(urlPath, async (err) => {
       if (err) return response.unprocessable(res);
-      productsServices.saveProduct(req, res, ProductsModel, url);
+      productsServices.saveProduct(req, res, ProductsModel, url, value);
     });
   }
 };
