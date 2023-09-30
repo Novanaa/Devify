@@ -7,11 +7,11 @@ const logger = createLogger();
 const fileSystem = new FileSystem();
 
 class ProductsServices {
-  saveProduct = async function (req, res, model, url) {
+  saveProduct = async function (req, res, model, url, value) {
     try {
       const products = await model.find();
       await model.insertMany({
-        ...req.body,
+        ...value,
         id: products.length + 1,
         image: url,
       });
@@ -21,19 +21,20 @@ class ProductsServices {
     }
   };
   updateProductsImageDirectory = async function ({ ...params }) {
-    const { req, res, srcPath, dstFile, model, key, id, newImageUrl } = params;
+    const { res, srcPath, dstFile, model, key, id, newImageUrl, value } =
+      params;
     try {
       fileSystem.copyFileAndDelete(srcPath, dstFile, res);
       await model.findOneAndUpdate(
         { [key]: id },
-        { ...req.body, image: newImageUrl }
+        { ...value, image: newImageUrl }
       );
     } catch (err) {
       logger.error(err);
     }
   };
   updateProductsImage = async function ({ ...params }) {
-    const { req, res, srcPath, model, key, id, url, fileName } = params;
+    const { req, res, srcPath, model, key, id, url, fileName, value } = params;
     const srcPathFileName = srcPath.split("/")[5];
     const hasehdSrcPathFileName = fileHash(srcPathFileName);
     const hashedFileName = fileHash(fileName);
@@ -41,12 +42,12 @@ class ProductsServices {
       await model.findOneAndUpdate(
         { [key]: id },
         {
-          ...req.body,
+          ...value,
           image: url,
         }
       );
       if (hasehdSrcPathFileName !== hashedFileName && req.files == null) {
-        if (req.body.image !== undefined) fileSystem.deleteFile(srcPath);
+        if (value.image !== undefined) fileSystem.deleteFile(srcPath);
       }
       response.updated(res);
     } catch (err) {
