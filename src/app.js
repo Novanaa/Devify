@@ -11,6 +11,7 @@ import productsRoutes from "./app/v1/products/routes/products.routes.js";
 import booksRoutes from "./app/v1/books/routes/books.routes.js";
 import usersRoutes from "./app/v1/users/routes/user.routes.js";
 import authRoutes from "./app/v1/auth/routes/auth.routes.js";
+import handleRequestError from "./middlewares/handleRequestError.js";
 
 //# Middlewares
 app.use(express.json());
@@ -18,6 +19,7 @@ app.use(express.static("./public"));
 app.use(cors());
 app.use(FileUpload());
 app.use(cookieParser());
+app.use(handleRequestError);
 
 // Routes
 app.use("/", mainRoutes);
