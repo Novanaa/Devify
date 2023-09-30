@@ -15,9 +15,9 @@ const logger = createLogger();
 export const updateBookById = async (req, res) => {
   let url, fName;
   const { id } = req.params;
-  const { error, value } = booksValidation.validate(req.body);
-  if (error || Object.keys(value).length == 0)
-    return validations(value, error, res);
+  const { value } = booksValidation.validate(req.body);
+  if (value instanceof Object && Object.keys(value).length == 0)
+    return response.unprocessable(res, "The fields must be filled!");
   if (!validator.isNumeric(id)) return response.unprocessable(res);
   const srcPath = await posterPath("id", id, BooksModel);
   if (req.files !== null) {
