@@ -1,2 +1,10 @@
 /src/app/v1/products/controllers/tests/*.spec.js
+/src/app/v1/books/controllers/tests/*.spec.js
+/src/app/v1/users/controllers/tests/*.spec.js
+/src/app/v1/auth/controllers/tests/*.spec.js
+/src/app/v1/users/services/tests/*.spec.js
+/src/app/v1/products/services/tests/*.spec.js
+/src/app/v1/books/services/tests/*.spec.js
 /src/app/v1/main/tests/*.spec.js
+/src/utils/tests/*.spec.js
+/src/services/tests/*.spec.js
