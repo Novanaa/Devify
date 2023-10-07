@@ -5,9 +5,12 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "test": "env-cmd -f .env.dev jest --testTimeout=10000",
+    "test:production": "env-cmd -f .env.production jest --testTimeout=10000",
+    "test:dev": "env-cmd -f .env.dev jest --testTimeout=10000",
+    "test:staging": "env-cmd -f .env.staging jest --testTimeout=10000",
     "start": "env-cmd -f .env.production node ./src/server.js",
     "dev": "env-cmd -f .env.dev nodemon ./src/server.js",
+    "staging": "env-cmd -f .env.staging nodemon ./src/server.js",
     "lint": "npx eslint ."
   },
   "keywords": [],
