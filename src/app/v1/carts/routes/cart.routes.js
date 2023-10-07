@@ -5,5 +5,6 @@ const router = express.Router();
 
 router.get("/", carts.getAllCarts);
 router.get("/:id", verifyToken, carts.getSingleCartsById);
+router.post("/", carts.addCarts);
 
 export default router;

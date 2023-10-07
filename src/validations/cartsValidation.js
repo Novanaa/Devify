@@ -1,7 +1,6 @@
 import Joi from "joi";
 
 const cartsValidation = Joi.object({
-  id: Joi.number().required(),
   userId: Joi.number().required(),
   products: Joi.array()
     .items(
