@@ -195,6 +195,19 @@
     "poster": "https://api-devify.my.id/img/books/poster/15.jpg"
   },
   {
+    "id": 16,
+    "title": "Astrophysics for People in a Hurry.",
+    "synopsis": "Khaled Hosseini's powerful novel, The Kite Runner, follows the lives of Amir and Hassan, two childhood friends from different social classes in Afghanistan. Set against the backdrop of political turmoil and social upheaval, the story explores themes of guilt, redemption, and the enduring bond between friends. As the narrative spans decades and continents, The Kite Runner offers a poignant and emotional journey of love, sacrifice, and the search for forgiveness.",
+    "author": "Neil deGrasse Tyson",
+    "category": "Non-fiction",
+    "publisher": "W. W. Norton & Company",
+    "published": "May 2, 2017",
+    "language": "English",
+    "rating": 4.6,
+    "pages": 244,
+    "poster": "https://api-devify.my.id/img/books/poster/16.jpg"
+  },
+  {
     "id": 17,
     "title": "Sapiens: A Brief History of Humankind",
     "synopsis": "Yuval Noah Harari's Sapiens: A Brief History of Humankind is a captivating journey through time, offering readers an unprecedented understanding of the forces that have shaped our species and the world we inhabit. Harari's unique blend of historical analysis and visionary thinking provides a compelling perspective on the human story, prompting us to contemplate our place in the vast expanse of history and the potential paths that lie ahead. Whether you're a history enthusiast or a curious explorer, Sapiens offers an enlightening and thought-provoking exploration of the past and a glimpse into the potential future of Homo sapiens.",
