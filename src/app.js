@@ -13,6 +13,7 @@ import usersRoutes from "./app/v1/users/routes/user.routes.js";
 import authRoutes from "./app/v1/auth/routes/auth.routes.js";
 import cartsRoutes from "./app/v1/carts/routes/cart.routes.js";
 import handleRequestError from "./middlewares/handleRequestError.js";
+import rateLimitter from "./middlewares/rateLimit.js";
 
 //# Middlewares
 app.use(express.json());
@@ -21,6 +22,7 @@ app.use(cors());
 app.use(FileUpload());
 app.use(cookieParser());
 app.use(handleRequestError);
+app.use(rateLimitter);
 
 // Routes
 app.use("/", mainRoutes);
