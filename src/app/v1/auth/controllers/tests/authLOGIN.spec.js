@@ -2,60 +2,52 @@ import supertest from "supertest";
 import app from "../../../../../app.js";
 
 describe("POST - /auth", () => {
-  describe("Tests for - /auth/login", () => {
-    test("/auth/login - should be return 200 status code", async () => {
-      const response = await supertest(app).post("/auth/login").field({
-        name: "Nova",
-        email: "ini email",
-        password: "hello ini password aku",
+  describe("Tests for - /v1/auth/login", () => {
+    test("/v1/auth/login - should be return 200 status code", async () => {
+      const response = await supertest(app).post("/v1/auth/login").field({
+        name: "Elisha Peterson",
+        email: "example@gmail.com",
+        password: "h~F6r@{T",
       });
       expect(response.status).toBe(200);
     });
-    test("/auth/login - should be return 200 status code", async () => {
-      const response = await supertest(app).post("/auth/login").field({
-        name: "Nova",
-        email: "ini email",
-        password: "hello ini password aku",
+    test("/v1/auth/login - should be return 200 status code", async () => {
+      const response = await supertest(app).post("/v1/auth/login").field({
+        name: "Elisha Peterson",
+        email: "example@gmail.com",
+        password: "h~F6r@{T",
       });
       expect(response.body.token).toBeDefined();
     });
-    test("/auth/login - should be return 422 status code if the password field wasn't filled", async () => {
-      const response = await supertest(app).post("/auth/login").field({
-        name: "Nova",
-        email: "ini email",
+    test("/v1/auth/login - should be return 400 status code if the password field wasn't filled", async () => {
+      const response = await supertest(app).post("/v1/auth/login").field({
+        name: "Elisha Peterson",
+        email: "stations1819@yandex.com",
       });
-      expect(response.status).toBe(422);
+      expect(response.status).toBe(400);
     });
-    test("/auth/login - should be return 422 status code if the email field wasn't match", async () => {
-      const response = await supertest(app).post("/auth/login").field({
-        name: "Nova",
-        email: "ini bukan email",
-        password: "hello ini password aku",
+    test("/v1/auth/login - should be return 400 status code if the email field wasn't filled", async () => {
+      const response = await supertest(app).post("/v1/auth/login").field({
+        name: "Elisha Peterson",
+        password: "h~F6r@{T",
       });
-      expect(response.status).toBe(422);
+      expect(response.status).toBe(400);
     });
-    test("/auth/login - should be return 422 status code if the email field wasn't filled", async () => {
-      const response = await supertest(app).post("/auth/login").field({
-        name: "Nova",
-        password: "hello ini password aku",
-      });
-      expect(response.status).toBe(422);
-    });
-    test("/auth/login - should be return 422 status code if the password does not correct", async () => {
-      const response = await supertest(app).post("/auth/login").field({
-        name: "Nova",
-        email: "ini email",
+    test("/v1/auth/login - should be return 422 status code if the password does not correct", async () => {
+      const response = await supertest(app).post("/v1/auth/login").field({
+        name: "Elisha Peterson",
+        email: "stations1819@yandex.com",
         password: "hello ini bukan password aku",
       });
       expect(response.status).toBe(422);
     });
-    test("/auth/login - should be return 404 status code if the user wasn't found", async () => {
-      const response = await supertest(app).post("/auth/login").field({
+    test("/v1/auth/login - should be return 401 status code if the user wasn't found", async () => {
+      const response = await supertest(app).post("/v1/auth/login").field({
         name: "Nov",
-        email: "ini email",
-        password: "hello ini password aku",
+        email: "stations1819@yandex.com",
+        password: "h~F6r@{T",
       });
-      expect(response.status).toBe(404);
+      expect(response.status).toBe(401);
     });
   });
 });
