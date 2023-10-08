@@ -29,7 +29,7 @@ describe("DELETE - carts", () => {
     });
     test("should be return 200 status code", async () => {
       const response = await supertest(app).delete(
-        "/v1/carts/key/6520b95b412402f0368e04ea"
+        "/v1/carts/key/65222a2b8eaba3b9ddbaabd6"
       );
       expect(response.status).toBe(200);
     });

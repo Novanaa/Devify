@@ -18,7 +18,7 @@ describe("PATCH - carts", () => {
       expect(response.status).toBe(422);
     });
     test("should be return 200 status code", async () => {
-      const response = await supertest(app).patch("/v1/carts/1").field({
+      const response = await supertest(app).patch("/v1/carts/2").field({
         delivery_cost: 10,
         free_delivery: false,
       });
@@ -46,7 +46,7 @@ describe("PATCH - carts", () => {
     });
     test("should be return 200 status code", async () => {
       const response = await supertest(app)
-        .patch("/v1/carts/key/6519312500df9423f8d42d07")
+        .patch("/v1/carts/key/6521c470dd6a09edfd2c6692")
         .field({
           delivery_cost: 10,
           free_delivery: false,

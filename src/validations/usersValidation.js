@@ -4,7 +4,7 @@ const usersValidation = Joi.object({
   name: Joi.string().max(15).required(),
   email: Joi.string().email().required(),
   password: Joi.string().min(7).required(),
-  age: Joi.number().max(3),
+  age: Joi.number().min(3),
   gender: Joi.string().max(100),
   picture: Joi.string().max(200),
   image: Joi.string().optional(),
