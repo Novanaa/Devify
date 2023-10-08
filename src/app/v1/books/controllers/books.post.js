@@ -15,7 +15,7 @@ const addBooksData = (req, res) => {
   const { error, value } = booksValidation.validate(req.body);
   if (error || Object.keys(value).length == 0)
     return validations(value, error, res);
-  if (value.image == undefined && file == null && value.poster == undefined)
+  if (value.poster == undefined && req.files == undefined)
     return response.unprocessable(res, "The image field must be filled");
   try {
     filesUpload.post(req, res, (f, fName) => {

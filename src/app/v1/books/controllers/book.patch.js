@@ -6,7 +6,6 @@ import booksValidation from "../../../../validations/booksValidation.js";
 import createLogger from "../../../../utils/logger.js";
 import posterPath from "../services/posterPath.js";
 import BooksServices from "../services/BooksServices.js";
-import validations from "../../../../services/validations.js";
 const booksServices = new BooksServices();
 const response = new Response();
 const filesUpload = new FilesUpload();
@@ -66,9 +65,9 @@ export const updateBookById = async (req, res) => {
 export const updateBookUniquekey = async (req, res) => {
   let url, fName;
   const { id } = req.params;
-  const { error, value } = booksValidation.validate(req.body);
-  if (error || Object.keys(value).length == 0)
-    return validations(value, error, res);
+  const { value } = booksValidation.validate(req.body);
+  if (value instanceof Object && Object.keys(value).length == 0)
+    return response.unprocessable(res, "The fields must be filled!");
   if (!validator.isMongoId(id)) return response.unprocessable(res);
   const srcPath = await posterPath("_id", id, BooksModel);
   if (req.files !== null) {
