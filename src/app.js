@@ -11,6 +11,7 @@ import productsRoutes from "./app/v1/products/routes/products.routes.js";
 import booksRoutes from "./app/v1/books/routes/books.routes.js";
 import usersRoutes from "./app/v1/users/routes/user.routes.js";
 import authRoutes from "./app/v1/auth/routes/auth.routes.js";
+import cartsRoutes from "./app/v1/carts/routes/cart.routes.js";
 import handleRequestError from "./middlewares/handleRequestError.js";
 
 //# Middlewares
@@ -27,6 +28,7 @@ app.use("/v1/products", productsRoutes);
 app.use("/v1/books", booksRoutes);
 app.use("/v1/users", usersRoutes);
 app.use("/v1/auth", authRoutes);
+app.use("/v1/carts", cartsRoutes);
 
 // Routes Handling
 import notFound from "./middlewares/404.js";

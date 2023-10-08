@@ -1,5 +1,6 @@
 .env.production
 .env.dev
+.env.staging
 node_modules
 coverage
-tests
+
