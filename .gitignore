@@ -1,4 +1,9 @@
 .env.production
 .env.dev
+.env.staging
 node_modules
 coverage
+<<<<<<< HEAD
+=======
+
+>>>>>>> 358319228d995037e476ce913d10c6e86a224631
