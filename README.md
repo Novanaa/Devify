@@ -1,10 +1,8 @@
-<p align="center">
-    <a href="https://devify.my.id">
-        <h1 align="center">Devify</h1>
-    </a>
-</p>
+# Devify
 
 <a href="https://devify.my.id">**Devify**</a> is a Fake API designed to provide developers with a testing and development environment for their applications
+
+With Devify, developers can mimic the behavior of real APIs without relying on actual backend systems or production data. This helps to streamline the development process by eliminating dependencies and potential bottlenecks.
 
 ## Why?
 
@@ -66,30 +64,6 @@ Devify is not just your ordinary fake API tool, it's a feature-rich powerhouse d
 | Dynamic Data Schemas     | Devify enables users to dynamically define data schemas, allowing them to generate data with varying structures as per project requirements        |
 
 ## Routes
-
-### Products
-
-#### GET
-
-- /v1/products - All Products
-- /v1/products/&lt;id&gt; - Single Product
-- /v1/products/search?q=&lt;query&gt; - Search Queries Products
-- /v1/products/categories - All Categories
-- /v1/products/categories/jewelry - Single Product Category
-
-#### POST
-
-- /v1/products - Add Products
-
-#### PATCH
-
-- /v1/products/&lt;id&gt; - Update Single Product By ID
-- /v1/products/key/&lt;id&gt; - Update Single Product By Uniquekey
-
-#### DELETE
-
-- /v1/products/&lt;id&gt; - Delete Single Product By ID
-- /v1/products/key/&lt;id&gt; - Delete Single Product By Uniquekey
 
 #### Visit https://devify.my.id/docs/v1/routes to view the full documentation.
 
