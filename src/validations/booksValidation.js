@@ -8,7 +8,7 @@ const booksValidation = Joi.object({
   publisher: Joi.string(),
   published: Joi.string(),
   language: Joi.string(),
-  rating: Joi.number().default(2.0),
+  rating: Joi.number().default(0),
   pages: Joi.number(),
   poster: Joi.string(),
 });
