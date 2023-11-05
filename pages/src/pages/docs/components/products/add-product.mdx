@@ -1,0 +1,230 @@
+---
+    title: Add Product
+    description: Add Product
+    content:
+        - How to Use It?
+        - Fetching Data
+        - HTTP Client Module
+        - Payloads
+    slug:
+        - how-to-use-it
+        - fetching-data
+        - http-client-module
+        - payloads
+    next:
+        - title: Update Product
+        - link: /docs/v1/products/update-product
+---
+
+# Add Product
+
+Devify seamlessly integrates file upload functionality into your development environment. With just a few lines of code, **developers can implement a product management system that accepts and stores various types of files associated with each product.**
+
+**Allows you to streamline the process of adding products by providing a straightforward way to upload product images, descriptions, and other essential data.** Devify offers a user-friendly interface where you can upload product images in various formats, ensuring that your application's database is populated with diverse and realistic data.
+
+---
+
+## How to Use It?
+
+To access the comprehensive array of product data, you have various efficient options available. **You can utilize tools such as [Postman](https://postman.com) or harness the capabilities of [cURL](https://curl.se) to seamlessly retrieve the JSON data from Devify's products endpoint.**
+
+If you're employing [cURL](https://curl.se), you can use it to initiate HTTP requests directly from the command line or within your scripts. Below are some typical scenarios and illustrative examples:
+
+```bash
+$ curl -X POST -F "image=@/path/to/your/file.jpg" -F "title=This is a title" -F "description=This is a description" -F "price=10" -F "category=jewelry" https://api-devify.my.id/v1/products
+```
+
+The image field must be start with **@** for example: **@C:/Users/Administrator/Documents/image.png**
+
+---
+
+## Fetching Data
+
+**Adding a product with file uploads is a crucial feature in many applications, and Devify simplifies this task. Developers can easily upload files, such as product images or descriptions, and associate them with the corresponding product data.** This feature is invaluable for e-commerce platforms and various other applications that rely on product information.
+
+Additionally, fetching data is a fundamental operation when it comes to interacting with an API. With Devify, **developers can effortlessly retrieve product information, categories, or any other data relevant to their application.** This streamlined process ensures that developers can quickly access the data they need for testing and development.
+
+### Add Product with Url Image
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+let content = new FormData();
+content.append("image", "https://....");
+content.append("title", "This is my title.");
+content.append("description", "This is my description.");
+content.append("price", 10);
+content.append("category", "jewelry");
+
+async function products() {
+  try {
+    const response = await fetch(`${baseUrl}/v1/products`, {
+      method: "POST",
+      body: content,
+    });
+    const result = await response.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+
+products().then((datas) => console.log(datas));
+```
+
+OR
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+let content = new FormData();
+content.append("image", "https://....");
+content.append("title", "This is my title.");
+content.append("description", "This is my description.");
+content.append("price", 10);
+content.append("category", "jewelry");
+
+fetch(`${baseUrl}/v1/products`, {
+  method: "POST",
+  body: content,
+})
+  .then((res) => res.json())
+  .then((result) => console.log(result));
+```
+
+### Add Product with Files upload
+
+```js
+const baseUrl = "https://api-devify.my.id";
+const file = fileInput.files[0];
+
+let content = new FormData();
+content.append("image", file);
+content.append("title", "This is my title.");
+content.append("description", "This is my description.");
+content.append("price", 10);
+content.append("category", "jewelry");
+
+async function products() {
+  try {
+    const response = await fetch(`${baseUrl}/v1/products`, {
+      method: "POST",
+      body: content,
+    });
+    const result = await response.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+
+products().then((datas) => console.log(datas));
+```
+
+OR
+
+```js
+const baseUrl = "https://api-devify.my.id";
+const file = fileInput.files[0];
+
+let content = new FormData();
+content.append("image", file);
+content.append("title", "This is my title.");
+content.append("description", "This is my description.");
+content.append("price", 10);
+content.append("category", "jewelry");
+
+fetch(`${baseUrl}/v1/products`, {
+  method: "POST",
+  body: content,
+})
+  .then((res) => res.json())
+  .then((result) => console.log(result));
+```
+
+---
+
+## HTTP Client Module
+
+One of the critical aspects of application development is the ability to handle file uploads. In a world where multimedia content plays a pivotal role, being able to upload product images and files is a valuable skill. **To make this process seamless and efficient, Devify, much like the popular HTTP client module [Axios](https://axios-http.com), offers a robust solution.**
+
+**Using the Devify API, you can initiate a POST request to add a product with a file upload.** You'll need to specify the product details and include the file you wish to upload. The API will handle the rest, ensuring your data is securely stored and associated with the product.
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+const file = fileInput.files[0];
+
+let content = new FormData();
+content.append("image", file);
+content.append("title", "This is my title.");
+content.append("description", "This is my description.");
+content.append("price", 10);
+content.append("category", "jewelry");
+
+async function addProduct() {
+  try {
+    const res = await axios.post(`${baseUrl}/v1/products`, { content });
+
+    return res;
+  } catch (err) {
+    return null;
+  }
+}
+
+addProduct().then((result) => console.log(result));
+```
+
+OR
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+const file = fileInput.files[0];
+
+let content = new FormData();
+content.append("image", file);
+content.append("title", "This is my title.");
+content.append("description", "This is my description.");
+content.append("price", 10);
+content.append("category", "jewelry");
+
+axios
+  .post(`${baseUrl}/v1/products`, { content })
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+```
+
+---
+
+## Payloads
+
+| Payload     | Data Types | Required |
+| ----------- | ---------- | -------- |
+| Title       | String     | Yes      |
+| Description | String     | Yes      |
+| Price       | Integer    | Yes      |
+| Category    | String     | Yes      |
+| Image       | String     | Yes      |
+
+For full documentation visit [Payloads Pages](/docs/v1/payloads)
+
+```json
+{
+  "title": "This is a Title",
+  "descripton": "This is a Description",
+  "price": 10,
+  "category": "jewelry",
+  "image": "...."
+}
+```
+
+---
+
+**Devify empowers developers with the capability to simulate real-world scenarios**, and the feature to add products with file uploads is just one example of how versatile and developer-friendly this Fake API is. **By following the steps outlined in this guide, you can effectively use this feature to enhance your testing and development processes.**
+
+---

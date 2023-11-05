@@ -1,0 +1,313 @@
+.container {
+  padding: 8.5rem 0 5rem 0;
+}
+.contentWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 0.8rem;
+}
+.title {
+  font-family: "Plus", sans-serif;
+  font-weight: 700;
+  font-size: 2.7rem;
+  color: #e7c4eb;
+}
+.title::before {
+  content: "The Power of Constructive Feedback";
+  padding: 0.4rem;
+  z-index: 0;
+  position: absolute;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px #e7c4eb;
+  opacity: 0.8;
+}
+.description {
+  width: 50%;
+  color: #bcb0be;
+  font-size: 0.94rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.228);
+  padding: 0 0 1.2rem 0;
+}
+.description span {
+  color: #ead4ed;
+  font-weight: 600;
+}
+.form {
+  top: 1rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.form div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.form div.inputWrapper:nth-child(3) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.276);
+  padding: 0 0 1.3rem 0;
+}
+.form div label {
+  display: flex;
+  justify-content: flex-start;
+  font-weight: 500;
+}
+.form div input,
+.form div textarea {
+  border-radius: 5px;
+  padding: 0.9rem 0 0.9rem 1rem;
+  width: 35rem;
+  font-size: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.195);
+  background: #1f1f1f;
+  resize: none;
+}
+.form div input:hover,
+.form div textarea:hover {
+  background: #2b2b2b;
+}
+.form div input:-webkit-autofill,
+.form div input:-webkit-autofill:hover,
+.form div input:-webkit-autofill:focus,
+.form div textarea:-webkit-autofill,
+.form div textarea:-webkit-autofill:hover,
+.form div textarea:-webkit-autofill:focus {
+  background: #212121;
+}
+.form span.checkboxWrapper {
+  display: flex;
+  gap: 0.5rem;
+  position: relative;
+  align-items: flex-start;
+  width: 35rem;
+  top: 0.7rem;
+}
+.checkbox {
+  position: relative;
+  top: 0.15rem;
+  scale: 1.1;
+}
+.checkboxTitle {
+  text-align: start;
+  color: #a495a7;
+  font-size: 0.87rem;
+}
+.checkbox a {
+  color: #ead4ed;
+  font-weight: 500;
+  border-bottom: 1px solid rgb(255, 255, 255);
+}
+.form div button {
+  top: 1.5rem;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.276);
+  border-radius: 5px;
+  background: #ead4ed;
+  color: #121212;
+  height: 2.5rem;
+  transition: all 0.2s;
+  font-size: 0.87rem;
+  font-family: "Plus", sans-serif;
+}
+.form div button:disabled {
+  background: #a893aa;
+  cursor: no-drop;
+}
+.form div button:disabled:hover {
+  background: #a893aa;
+  cursor: no-drop;
+}
+.form div button:hover {
+  background: #ccb3cf;
+}
+.emptyField {
+  font-size: 0.9rem;
+  opacity: 0.75;
+  position: relative;
+  top: 0.1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.276);
+  padding: 0 0 0.6rem 0;
+}
+.isChecked {
+  font-size: 0.8rem;
+  color: rgb(255, 45, 45);
+  position: relative;
+  top: 0.8rem;
+  text-align: start;
+}
+
+/* Media Queries */
+/* Desktop */
+@media screen and (width >= 1600px) {
+  .description {
+    width: 45%;
+    font-size: 1rem;
+  }
+  .container {
+    padding: 9.5rem 0 5.5rem 0;
+  }
+}
+
+/* Tablet */
+@media screen and (width <= 884px) {
+  .container {
+    padding: 9rem 0 4rem 0;
+  }
+  .title {
+    font-family: "Plus", sans-serif;
+    font-weight: 700;
+    font-size: 2.3rem;
+    color: #e7c4eb;
+  }
+  .description {
+    width: 60%;
+    color: #bcb0be;
+    font-size: 0.94rem;
+  }
+}
+@media screen and (width <= 820px) {
+  .title {
+    font-family: "Plus", sans-serif;
+    font-weight: 700;
+    font-size: 2.2rem;
+    color: #e7c4eb;
+  }
+  .description {
+    width: 70%;
+    color: #bcb0be;
+    font-size: 0.94rem;
+  }
+}
+
+/* Mobile */
+@media screen and (width <= 428px) {
+  .title {
+    font-family: "Plus", sans-serif;
+    font-weight: 700;
+    font-size: 1.9rem;
+    color: #e7c4eb;
+  }
+  .title::before {
+    padding: 0.3rem 0.6rem 0 0;
+  }
+  .description {
+    width: 88%;
+    color: #bcb0be;
+    font-size: 0.9rem;
+  }
+  .container {
+    padding: 8rem 0 4rem 0;
+  }
+  .form div input,
+  .form div textarea {
+    border-radius: 5px;
+    padding: 0.9rem 0 0.9rem 1rem;
+    width: 85vw;
+    font-size: 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.195);
+    background: #1f1f1f;
+    resize: none;
+  }
+  .form span.checkboxWrapper {
+    width: 85vw;
+  }
+  .checkboxTitle {
+    text-align: start;
+    color: #a495a7;
+    font-size: 0.82rem;
+  }
+}
+@media screen and (width <= 393px) {
+  .title {
+    font-family: "Plus", sans-serif;
+    font-weight: 700;
+    font-size: 1.7rem;
+    color: #e7c4eb;
+  }
+  .title::before {
+    padding: 0.3rem 0.6rem 0 0;
+  }
+  .description {
+    width: 90%;
+    color: #bcb0be;
+    font-size: 0.9rem;
+  }
+}
+@media screen and (width <= 375px) {
+  .title {
+    font-family: "Plus", sans-serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: #e7c4eb;
+  }
+  .title::before {
+    padding: 0.3rem 0.6rem 0 0;
+  }
+  .description {
+    width: 80%;
+    color: #bcb0be;
+    font-size: 0.9rem;
+  }
+  .form div input,
+  .form div textarea {
+    border-radius: 5px;
+    padding: 0.9rem 0 0.9rem 1rem;
+    width: 82vw;
+    font-size: 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.195);
+    background: #1f1f1f;
+    resize: none;
+  }
+  .form span.checkboxWrapper {
+    width: 82vw;
+  }
+}
+@media screen and (width <= 362px) {
+  .title {
+    font-family: "Jakarta Plus Sans", sans-serif;
+    font-weight: 700;
+    font-size: 1.55rem;
+    color: #e7c4eb;
+  }
+  .title::before {
+    padding: 0.3rem 0.6rem 0 0;
+  }
+  .description {
+    width: 80%;
+    color: #bcb0be;
+    font-size: 0.86rem;
+  }
+}
+@media screen and (width <= 320px) {
+  .title {
+    font-family: "Jakarta Plus Sans", sans-serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: #e7c4eb;
+  }
+  .title::before {
+    padding: 0.3rem 0.6rem 0 0;
+  }
+  .description {
+    width: 90%;
+    color: #bcb0be;
+    font-size: 0.82rem;
+  }
+  .form div input,
+  .form div textarea {
+    border-radius: 5px;
+    padding: 0.9rem 0 0.9rem 1rem;
+    width: 88vw;
+    font-size: 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.195);
+    background: #1f1f1f;
+    resize: none;
+  }
+  .form span.checkboxWrapper {
+    width: 88vw;
+  }
+}

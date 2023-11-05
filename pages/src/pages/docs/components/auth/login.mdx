@@ -1,0 +1,176 @@
+---
+    title: Login
+    description: Login User
+    content: 
+        - How to Use It?
+        - Fetching Data
+        - HTTP Client Module
+        - Cookies
+        - Payloads
+    slug:
+        - how-to-use-it
+        - fetching-data
+        - http-client-module
+        - cookies
+        - payloads
+    next: 
+        - title: Logout
+        - link: /docs/v1/auth/logout
+---
+
+# Login
+
+Devify, a Fake API designed for developers, offers a robust LoginUser API that serves as a valuable resource for testing and development environments in application development. **The LoginUser API provides developers with a streamlined method to authenticate and access user accounts within their applications, ensuring a seamless and secure user experience.**
+
+With the LoginUser API, developers can simulate the process of user login, test various authentication methods, and refine their applications' security features. **This API enables developers to experiment with different scenarios, making it an ideal tool for troubleshooting, debugging, and enhancing user authentication mechanisms.**
+
+---
+
+## How to Use It?
+
+**With a test user account in place, it's time to make a login request using the LoginUser API.** Typically, this involves sending a POST request to the API endpoint with the user's credentials as parameters. Make sure to follow the API documentation for the correct format and authentication method.
+
+You can utilize tools such as [Postman](https://postman.com) or harness the capabilities of [cURL](https://curl.se) to gracefully retrieve the JSON data from **Devify's auth endpoint.**
+
+If you opt for [cURL](https://curl.se), you can employ it to issue HTTP requests directly from the command line or incorporate it into your scripts. Below are some typical scenarios and illustrative examples:
+
+```bash
+$ curl -o C:\output.json --cookie-jar C:\cookies.json --cookie C:\cookies.txt -X POST -F "name=Nova" -F "email=nova@gmail.com" -F "password=Your secret passowrd" https://api-devify.my.id/v1/auth/login
+```
+
+OR
+
+```bash
+$ curl -X POST --cookie C:\cookies.txt --cookie-jar C:\cookies.json -F "name=Nova" -F "email=nova@gmail.com" -F "password=Your secret passowrd" https://api-devify.my.id/v1/auth/login
+```
+
+---
+
+## Fetching Data
+
+Developers often need a reliable testing and development environment to fine-tune their applications before they go live. In this regard, Devify stands out as an invaluable resource. **Devify is a Fake API meticulously designed to cater to the specific needs of developers, offering a simulated yet fully functional platform for application testing.**
+
+### Examples
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+let content = new FormData();
+content.append("name", "Nova");
+content.append("email", "nova@gmail.com");
+content.append("password", "Your secret passowrd");
+
+async function login() {
+  try {
+    const response = await fetch(`${baseUrl}/v1/auth/login`, {
+      method: "POST",
+      body: content,
+    });
+    const result = await response.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+
+login().then((datas) => console.log(datas));
+```
+
+OR
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+let content = new FormData();
+content.append("name", "Nova");
+content.append("email", "nova@gmail.com");
+content.append("password", "Your secret passowrd");
+
+fetch(`${baseUrl}/v1/auth/login`, {
+  method: "POST",
+  body: content,
+})
+  .then((res) => res.json())
+  .then((result) => console.log(result));
+```
+
+---
+
+## HTTP Client Module
+
+The LoginUser API is a critical component of Devify, a simulated environment designed to empower developers with a robust testing and development environment for their applications. Utilizing the HTTP Client Module, such as [Axios](https://axios-http.com), **developers can seamlessly interact with the LoginUser API to manage user authentication and access control.**
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+const file = fileInput.files[0];
+
+let content = new FormData();
+content.append("name", "Nova");
+content.append("email", "nova@gmail.com");
+content.append("password", "Your secret passowrd");
+
+async function login() {
+  try {
+    const res = await axios.post(`${baseUrl}/v1/auth/login`, { content });
+
+    return res;
+  } catch (err) {
+    return null;
+  }
+}
+
+login().then((result) => console.log(result));
+```
+
+OR
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+const file = fileInput.files[0];
+
+let content = new FormData();
+content.append("name", "Nova");
+content.append("email", "nova@gmail.com");
+content.append("password", "Your secret passowrd");
+
+axios
+  .post(`${baseUrl}/v1/auth/login`, { content })
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+```
+
+---
+
+## Cookies
+
+**One crucial aspect of the cookies you receive from Devify's API is the refreshToken.** This token plays a pivotal role in user authentication and session management. When requesting this cookie, it's essential to store it securely on the client side and use it in subsequent requests to obtain new access tokens when the previous ones expire. **The maxAge of 24 hours for the refreshToken cookie means that it is valid for one day, after which it will expire and require reauthentication.**
+
+**Devify's API employs the httpOnly attribute for cookies, which means that the cookies are not accessible via JavaScript on the client side.** This adds an additional layer of security, making it more challenging for malicious scripts to access and potentially misuse the cookies.
+
+Moreover, **Devify ensures the secure attribute is set for these cookies. This means that the cookies will only be transmitted over secure, encrypted connections (HTTPS)**, further safeguarding user data from eavesdropping and interception.
+
+---
+
+## Payloads
+
+| Payload  | Data Types | Required | Min | Max | Default |
+| -------- | ---------- | -------- | --- | --- | ------- |
+| Name     | String     | Yes      | -   | 15  | -       |
+| Email    | String     | Yes      | -   | -   | -       |
+| Password | String     | Yes      | 7   | -   | -       |
+| Picture  | String     | Yes      | -   | 200 | -       |
+
+```json
+{
+  "name": "Nova",
+  "email": "nova@gmail.com",
+  "password": "Your secret passowrd"
+}
+```
+
+---

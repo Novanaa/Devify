@@ -1,0 +1,127 @@
+---
+    title: Search Users
+    description: Search Users
+    content:
+        - How to Use It?
+        - Fetching Data
+        - HTTP Client Module
+        - Query Parameters
+    slug:
+        - how-to-use-it
+        - fetching-data
+        - http-client-module
+        - query-parameters
+    next:
+        - title: Update User
+        - link: /docs/v1/users/update-user
+---
+
+# Search Users
+
+**The Devify platform not only simplifies the user search process but also offers a range of other features that enhance your development experience.** So, if you're looking for a reliable and customizable environment to refine your applications, Devify's user search is just one of the many tools at your disposal
+
+**Developers can tailor their search queries to retrieve user information by username, email, unique identifiers, or any other relevant criteria.** By using Devify, you can confidently refine your application's user search functionality, making it more robust and responsive to user needs.
+
+---
+
+## How to Use It?
+
+To access the full array of user data, you have several effective options available. You can utilize tools like [Postman](https://postman.com) or utilize the capabilities of [cURL](https://curl.se) to gracefully retrieve JSON data from Devify's users endpoint.
+
+If you're using [cURL](https://curl.se), you can employ it for making HTTP requests directly from the command line or within your scripts. Here are some typical use cases and examples:
+
+```bash
+$ curl -o C:\output.json -X GET "https://api-devify.my.id/v1/users/search?q=john"
+```
+
+OR
+
+```bash
+$ curl -X GET "https://api-devify.my.id/v1/users/search?q=john"
+```
+
+---
+
+## Fetching Data
+
+One critical aspect of application development is the ability to search and retrieve user data efficiently. With Devify, **developers can simulate real-world scenarios by using the "Search Query Users" feature.**
+
+**This tool simplifies the testing process and helps developers save time and resources, as it eliminates the need to create and manage a database solely for testing purposes.** Additionally, Devify provides a secure and controlled environment, safeguarding sensitive data while allowing for thorough application testing.
+
+### Examples
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+async function users() {
+  try {
+    const response = await fetch(`${baseUrl}/v1/users/search?q=john`);
+    const result = await response.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+
+users().then((datas) => console.log(datas));
+```
+
+OR
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+fetch(`${baseUrl}/v1/users/search?q=john`)
+  .then((res) => res.json())
+  .then((result) => console.log(result));
+```
+
+---
+
+## HTTP Client Module
+
+**One common task that developers frequently encounter is making search queries to retrieve user information from Devify.** This can be accomplished using various HTTP client libraries, and in this article, we'll focus on how to do it using [Axios](https://axios-http.com), a popular **JavaScript** HTTP client.
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+async function users() {
+  try {
+    const res = await axios.get(`${baseUrl}/v1/users/search?q=john`);
+
+    return res;
+  } catch (err) {
+    return null;
+  }
+}
+
+users().then((result) => console.log(result));
+```
+
+OR
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+axios
+  .get(`${baseUrl}/v1/users/search?q=john`)
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+```
+
+Upon receiving a response from Devify, you can process the data as needed. In our example, we log the search results to the console. However, you can incorporate this data into your application for further testing and development.
+
+---
+
+## Query Parameters
+
+| Params | Data Types | Required |
+| ------ | ---------- | -------- |
+| q      | String     | Yes      |
+
+---

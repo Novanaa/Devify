@@ -1,0 +1,131 @@
+---
+    title: All Categories
+    description: All Categories
+    content:
+        - How to Use It?
+        - Fetching Data
+        - HTTP Client Module
+        - Lists Categories
+    slug:
+        - how-to-use-it
+        - fetching-data
+        - http-client-module
+        - lists-categories
+    next:
+        - title: Single Categories
+        - link: /docs/v1/books/categories/single-categories
+---
+
+# All Categories
+
+This feature allows developers to effortlessly retrieve a comprehensive list of book categories within their applications. **Whether you're working on an e-commerce platform, a digital library, or any application that deals with books, Devify's simplifies the process of categorizing and organizing your book collection.**
+
+By accessing this endpoint, you can retrieve a structured list of book genres, from science fiction and fantasy to non-fiction and self-help. **The categorization provides a user-friendly experience for your application's users, allowing them to explore books that match their interests with ease.**
+
+---
+
+## How to Use It?
+
+To access the full array of book categories data, you have several convenient options available. You can utilize tools such as [Postman](https://postman.com) or harness the capabilities of [cURL](https://curl.se) to gracefully retrieve the JSON data from Devify's books endpoint.
+
+If you choose to use [cURL](https://curl.se), you can employ it to initiate HTTP requests either via the command line or within your scripts. Here are some typical scenarios and illustrations:
+
+```bash
+$ curl -o C:\output.json -X GET "https://api-devify.my.id/v1/books/categories"
+```
+
+OR
+
+```bash
+$ curl -X GET "https://api-devify.my.id/v1/books/categories"
+```
+
+---
+
+## Fetching Data
+
+**One of the fundamental functionalities offered by Devify is the ability to retrieve all book categories, providing developers with a seamless mechanism for fetching data.** This is particularly valuable when building applications that involve bookstores, libraries, or any project related to the literary world.
+
+### Examples
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+async function books() {
+  try {
+    const response = await fetch(`${baseUrl}/v1/books/categories`);
+    const result = await response.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+
+books().then((datas) => console.log(datas));
+```
+
+OR
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+fetch(`${baseUrl}/v1/books/categories`)
+  .then((res) => res.json())
+  .then((result) => console.log(result));
+```
+
+---
+
+## HTTP Client Module
+
+If you're working on an application that involves books and **you need to retrieve a list of all book categories, you can do so using an HTTP client module like [Axios](https://axios-http.com).** [Axios](https://axios-http.com) is a popular JavaScript library for making HTTP requests, and it's well-suited for working with APIs, including Devify.
+
+To get all book categories from Devify, follow these steps using [Axios](https://axios-http.com):
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+async function books() {
+  try {
+    const res = await axios.get(`${baseUrl}/v1/books/categories`);
+
+    return res;
+  } catch (err) {
+    return null;
+  }
+}
+
+books().then((result) => console.log(result));
+```
+
+OR
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+axios
+  .get(`${baseUrl}/v1/books/categories`)
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+```
+
+---
+
+## Lists Categories
+
+| Category    | Description                                                                                                                                                                                                                                                    |
+| ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Cosmology   | Cosmology is a captivating field of study that delves into the origins, structure, and evolution of the universe. Books in this category explore the mysteries of the cosmos, from the Big Bang theory to the nature of dark matter and dark energy            |
+| Psychology  | Psychology, the science of the mind and behavior, is a diverse and intriguing category of books. It covers a wide range of topics, from understanding human cognition and emotions to delving into various psychological disorders and therapeutic approaches. |
+| Finance     | Finance books are essential resources for those looking to navigate the complex world of money management and investment                                                                                                                                       |
+| Science     | The science category encompasses a broad spectrum of disciplines, including biology, chemistry, physics, and more.                                                                                                                                             |
+| Fiction     | Fiction books transport readers to imaginative worlds and introduce them to a diverse array of characters and stories.                                                                                                                                         |
+| Non-fiction | Non-fiction books offer readers the opportunity to explore real-life events, biographies, autobiographies, and informative works that provide insights into history, culture, and various aspects of our world.                                                |
+| History     | History books are a window into the past, allowing readers to gain a deeper understanding of the events, people, and cultures that have shaped our world.                                                                                                      |
+
+---

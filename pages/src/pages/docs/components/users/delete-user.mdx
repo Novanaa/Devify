@@ -1,0 +1,208 @@
+---
+    title: Delete User
+    description: Delete User
+    content:
+        - How to Use It?
+        - Fetching Data
+        - HTTP Client Module
+        - Query Parameters
+    slug:
+        - how-to-use-it
+        - fetching-data
+        - http-client-module
+        - query-parameters
+    next:
+        - title: Introduction
+        - link: /docs/v1
+---
+
+# Delete User
+
+**Deleting a user on Devify is a straightforward process, making it easy to manage your user base during the development and testing phases of your application.** Whether you're cleaning up test data or removing inactive accounts, Devify's user management tools simplify the process, allowing you to focus on building and refining your application with confidence.
+
+**The process of deleting a user in Devify is straightforward and intuitive, adhering to industry-standard best practices.** Developers can initiate the user deletion operation through HTTP requests, making it an easy and seamless process.
+
+---
+
+## How to Use It?
+
+To access the entire array of user data, you have various efficient options available. You can utilize tools such as [Postman](https://postman.com) or harness the capabilities of [cURL](https://curl.se) to gracefully retrieve JSON data from Devify's user endpoint.
+
+When using [cURL](https://curl.se), you can employ it to execute HTTP requests through the command line or within your scripts. Below are some typical use cases and examples:
+
+```bash
+$ curl -X DELETE "https://api-devify.my.id/v1/users/1"
+```
+
+OR
+
+```bash
+$ curl -X DELETE "https://api-devify.my.id/v1/users/key/64a975166d8d44a6a0b70cf0"
+```
+
+---
+
+## Fetching Data
+
+**Devify simplifies the process of deleting a user. It provides a user-friendly and developer-centric API for removing user accounts.** Here's a high-level overview of the steps to delete a user in Devify:
+
+### Delete User By ID
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+async function deleteUser() {
+  try {
+    const res = await fetch(`${baseUrl}/v1/users/1`, { method: "DELETE" });
+    const result = await res.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+
+deleteUser().then((datas) => console.log(datas));
+```
+
+### Delete User By Uniquekey
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+async function deleteUser() {
+  try {
+    const res = await fetch(
+      `${baseUrl}/v1/users/key/64a975166d8d44a6a0b70cf0`,
+      { method: "DELETE" }
+    );
+    const result = await res.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+
+deleteUser().then((datas) => console.log(datas));
+```
+
+OR
+
+### Delete User By ID
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+fetch(`${baseUrl}/v1/users/1`, { method: "DELETE" })
+  .then((res) => res.json())
+  .then((result) => console.log(result))
+  .catch((err) => console.log(err));
+```
+
+### Delete User By Uniquekey
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+fetch(`${baseUrl}/v1/users/key/64a975166d8d44a6a0b70cf0`, {
+  method: "DELETE",
+})
+  .then((res) => res.json())
+  .then((result) => console.log(result))
+  .catch((err) => console.log(err));
+```
+
+---
+
+## HTTP Client Module
+
+To delete a user using [Axios](https://axios-http.com) and **Devify**, you'll first need to set up your development environment, including installing [Axios](https://axios-http.com). Once you have [Axios](https://axios-http.com) at your disposal, you can make a DELETE request to the **Devify** API, simulating the action of deleting a user account. Here's a simple example:
+
+### Delete User By ID
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+async function deleteUser() {
+  try {
+    const res = await axios.delete(`${baseUrl}/v1/users/1`);
+
+    return res;
+  } catch (err) {
+    return null;
+  }
+}
+
+deleteUser().then((result) => console.log(result));
+```
+
+### Delete User By Uniquekey
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+async function deleteUser() {
+  try {
+    const res = await axios.delete(
+      `${baseUrl}/v1/users/key/64a975166d8d44a6a0b70cf0`
+    );
+
+    return res;
+  } catch (err) {
+    return null;
+  }
+}
+
+deleteUser().then((result) => console.log(result));
+```
+
+OR
+
+### Delete User By ID
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+axios
+  .delete(`${baseUrl}/v1/users/1`)
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+```
+
+### Delete User By Uniquekey
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+axios
+  .delete(`${baseUrl}/v1/users/key/64a975166d8d44a6a0b70cf0`)
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+```
+
+---
+
+## Query Parameters
+
+### Delete User By ID
+
+| Params | Data Types | Required |
+| ------ | ---------- | -------- |
+| ID     | Integer    | Yes      |
+
+### Delete User By Uniquekey
+
+| Params    | Data Types | Required |
+| --------- | ---------- | -------- |
+| Uniquekey | String     | Yes      |
+
+---

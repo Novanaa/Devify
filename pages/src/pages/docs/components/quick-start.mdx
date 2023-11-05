@@ -1,0 +1,745 @@
+---
+    title: Quick Start
+    description: Let's begin this journey
+    content: 
+        - How to Use It
+        - Examples Codes
+        - Let's begin this journey
+    slug:
+        - how-to-use-it
+        - examples-codes
+        - lets-begin-this-journey
+    next: 
+        - title: Resources
+        - link: /docs/v1/resources
+---
+
+# Quick Start
+
+Welcome to Devify Documentation, your gateway to a versatile and hassle-free testing and development environment for your applications.
+
+---
+
+## How to Use It
+
+Devify is your go-to solution for creating, testing, and refining your applications. Designed as a Fake API, it's tailored to meet the needs of developers like you who seek a reliable testing and development environment. Whether you're building a new web or mobile application, or fine-tuning an existing one, Devify has got you covered.
+
+In this section we will talking about how to start using Devify. It's very simple you can use tools like [Postman](https://www.postman.com) to geting data from Devify or [cURL](https://curl.se).
+
+For example if your use [cURL](https://curl.se), you can run the following command in your command line:
+
+```bash
+$ curl -o C:\output.json -X GET "https://api-devify.my.id/v1/products"
+```
+
+OR
+
+```bash
+$ curl -X GET "https://api-devify.my.id/v1/products"
+```
+
+---
+
+### Fetching Data
+
+You can also use a programing language like **Javascript** or **TypeScript**
+
+---
+
+#### Example using Javascript
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+async function products() {
+  try {
+    const response = await fetch(`${baseUrl}/v1/products?limit=3`);
+    const result = await response.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+
+products().then((datas) => console.log(datas));
+```
+
+OR
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+fetch(`${baseUrl}/v1/products`)
+  .then((res) => res.json())
+  .then((result) => console.log(result));
+```
+
+#### Start your Application
+
+```bash
+$ node main.js
+```
+
+#### Response
+
+```json
+[
+  {
+    "id": 1,
+    "title": "...",
+    "description": "...",
+    "price": "...",
+    "category": "...",
+    "location": "...",
+    "rating": "...",
+    "stock": "...",
+    "image": "..."
+  },
+  {
+    "id": 3,
+    "title": "...",
+    "description": "...",
+    "price": "...",
+    "category": "...",
+    "location": "...",
+    "rating": "...",
+    "stock": "...",
+    "image": "..."
+  }
+]
+```
+
+---
+
+#### Example using TypeScript
+
+```ts
+const baseUrl: string = "https://api-devify.my.id";
+
+async function products(): Promise<any> {
+  try {
+    const response = await fetch(`${baseUrl}/v1/products?limit=3`);
+    const result = await response.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+
+products().then((datas: any) => console.log(datas));
+```
+
+OR
+
+```ts
+const baseUrl: string = "https://api-devify.my.id";
+
+fetch(`${baseUrl}/v1/products`)
+  .then((res: Response) => res.json())
+  .then((result: any) => console.log(result))
+  .catch((err: any) => console.log(err));
+```
+
+#### Response
+
+```json
+[
+  {
+    "id": 1,
+    "title": "...",
+    "description": "...",
+    "price": "...",
+    "category": "...",
+    "location": "...",
+    "rating": "...",
+    "stock": "...",
+    "image": "..."
+  },
+  {
+    "id": 3,
+    "title": "...",
+    "description": "...",
+    "price": "...",
+    "category": "...",
+    "location": "...",
+    "rating": "...",
+    "stock": "...",
+    "image": "..."
+  }
+]
+```
+
+---
+
+## Examples Codes
+
+Devify, a fictitious API, is a playground designed to offer developers a safe and versatile testing environment for their applications. It serves as a valuable resource for developers to experiment with various HTTP methods and fine-tune their coding skills.
+
+Devify supports a wide range of HTTP methods, allowing developers to gain hands-on experience in working with APIs. Here are some examples of how to use these methods in your development projects:
+
+---
+
+### Retrieve Data
+
+Whether you're working on web applications, mobile apps, or any other software project, Devify simplifies the process of acquiring dummy data.
+
+You can make GET requests to obtain the data they need, simulating various scenarios and data structures. This enables thorough testing, debugging, and the creation of reliable code.
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+async function products() {
+  try {
+    const response = await fetch(`${baseUrl}/v1/products?limit=3`);
+    const result = await response.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+
+products().then((datas) => console.log(datas));
+```
+
+OR
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+fetch(`${baseUrl}/v1/products`)
+  .then((res) => res.json())
+  .then((result) => console.log(result))
+  .catch((err) => console.log(err));
+```
+
+---
+
+If you're using [Axios](https://axios-http.com), you can simplify making HTTP requests in JavaScript. Axios is a popular library for making HTTP requests and is commonly used for handling API calls. Here's how you can use Axios to make an HTTP request in JavaScript:
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+axios
+  .get(`${baseUrl}v1/products`)
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+```
+
+OR
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+async function products() {
+  try {
+    const res = await axios.get(`${baseUrl}/v1/products`);
+
+    return res;
+  } catch (err) {
+    return null;
+  }
+}
+
+products().then((result) => console.log(result));
+```
+
+For full documentation view [All Products](v1/docs/products/all-products)
+
+---
+
+### Create Data
+
+Devify allows you to customize your data to fit the specific requirements of your application. You can define data structures, attributes, and relationships, tailoring the generated data to match your exact needs.
+
+The quick data creation process accelerates your development cycle. This agility lets you focus more on coding and refining your application, reducing the time needed for data setup.
+
+```js
+const baseUrl = "https://api-devify.my.id";
+const file = fileInput.files[0];
+
+let content = new FormData();
+content.append("image", file);
+content.append("title", "This is my title.");
+content.append("description", "This is my description.");
+content.append("price", 10);
+content.append("category", "jewelry");
+
+async function addProduct() {
+  try {
+    const res = await fetch(`${baseUrl}/v1/products`, {
+      method: "POST",
+      body: content,
+    });
+    const result = await res.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+
+addProduct().then((result) => console.log(result));
+```
+
+OR
+
+```js
+const baseUrl = "https://api-devify.my.id";
+const file = fileInput.files[0];
+
+let content = new FormData();
+content.append("image", file);
+content.append("title", "This is my title.");
+content.append("description", "This is my description.");
+content.append("price", 10);
+content.append("category", "jewelry");
+
+fetch(`${baseUrl}/v1/products`, {
+  method: "POST",
+  body: content,
+})
+  .then((res) => res.json())
+  .then((result) => console.log(result))
+  .catch((err) => console.log(err));
+```
+
+---
+
+If you're using [Axios](https://axios-http.com) to make HTTP requests in your JavaScript code, you can continue your statement as follows:
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+const file = fileInput.files[0];
+
+let content = new FormData();
+content.append("image", file);
+content.append("title", "This is my title.");
+content.append("description", "This is my description.");
+content.append("price", 10);
+content.append("category", "jewelry");
+
+async function addProduct() {
+  try {
+    const res = await axios.post(`${baseUrl}/v1/products`, { content });
+
+    return res;
+  } catch (err) {
+    return null;
+  }
+}
+
+addProduct().then((result) => console.log(result));
+```
+
+OR
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+const file = fileInput.files[0];
+
+let content = new FormData();
+content.append("image", file);
+content.append("title", "This is my title.");
+content.append("description", "This is my description.");
+content.append("price", 10);
+content.append("category", "jewelry");
+
+axios
+  .post(`${baseUrl}/v1/products`, { content })
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+```
+
+For full documentation view [Add Product](v1/docs/products/add-product)
+
+---
+
+### Update Data
+
+Devify's straightforward and intuitive API endpoints make it easy to implement product updates into your development workflow. By using the provided endpoints, you can simulate real-world scenarios, ensuring that your application can handle changes in product data efficiently.
+
+With Devify, you can modify a product's attributes, such as its name, description, price, and availability, allowing you to test your application's handling of product updates in a safe and controlled environment.
+
+This is a valuable resource for developers who want to ensure their applications are responsive to changes in product information while avoiding any potential mishaps that could occur in a live system.
+
+### Update Product By ID
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+let content = new FormData();
+content.append("image", file);
+content.append("title", "This is my title. (updated)");
+content.append("description", "This is my description. (updated)");
+content.append("price", 15);
+content.append("category", "mens");
+
+async function updateProduct() {
+  try {
+    const res = await fetch(`${baseUrl}/v1/products/1`, {
+      method: "PATCH",
+      body: content,
+    });
+    const result = await res.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+
+updateProduct().then((result) => console.log(result));
+```
+
+### Update Product By Uniquekey
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+let content = new FormData();
+content.append("image", file);
+content.append("title", "This is my title. (updated)");
+content.append("description", "This is my description. (updated)");
+content.append("price", 15);
+content.append("category", "mens");
+
+async function updateProduct() {
+  try {
+    const res = await fetch(
+      `${baseUrl}/v1/products/key/650698cfb8318065fca250ef`,
+      {
+        method: "PATCH",
+        body: content,
+      }
+    );
+    const result = await res.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+
+updateProduct().then((result) => console.log(result));
+```
+
+OR
+
+### Update Product By ID
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+let content = new FormData();
+content.append("image", file);
+content.append("title", "This is my title. (updated)");
+content.append("description", "This is my description. (updated)");
+content.append("price", 15);
+content.append("category", "mens");
+
+fetch(`${baseUrl}/v1/products/1`, {
+  method: "PATCH",
+  body: content,
+})
+  .then((res) => res.json())
+  .then((result) => console.log(result))
+  .catch((err) => console.log(err));
+```
+
+### Update Product By Uniquekey
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+let content = new FormData();
+content.append("image", file);
+content.append("title", "This is my title. (updated)");
+content.append("description", "This is my description. (updated)");
+content.append("price", 15);
+content.append("category", "mens");
+
+fetch(`${baseUrl}/v1/products/key/650698cfb8318065fca250ef`, {
+  method: "PATCH",
+  body: content,
+})
+  .then((res) => res.json())
+  .then((result) => console.log(result))
+  .catch((err) => console.log(err));
+```
+
+---
+
+If you're using [Axios](https://axios-http.com), you can make PATCH requests in your JavaScript code to retrieve data from a URL. Axios is a popular JavaScript library for making HTTP requests.
+
+### Update Product By ID
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+let content = new FormData();
+content.append("image", file);
+content.append("title", "This is my title. (updated)");
+content.append("description", "This is my description. (updated)");
+content.append("price", 15);
+content.append("category", "mens");
+
+async function updateProduct() {
+  try {
+    const res = await axios.patch(`${baseUrl}/v1/products/1`, { content });
+
+    return res;
+  } catch (err) {
+    return null;
+  }
+}
+
+updateProduct().then((result) => console.log(result));
+```
+
+### Update Product By Uniquekey
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+let content = new FormData();
+content.append("image", file);
+content.append("title", "This is my title. (updated)");
+content.append("description", "This is my description. (updated)");
+content.append("price", 15);
+content.append("category", "mens");
+
+async function updateProduct() {
+  try {
+    const res = await axios.patch(
+      `${baseUrl}/v1/products/key/650698cfb8318065fca250ef`,
+      { content }
+    );
+
+    return res;
+  } catch (err) {
+    return null;
+  }
+}
+
+updateProduct().then((result) => console.log(result));
+```
+
+OR
+
+### Update Product By ID
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+let content = new FormData();
+content.append("image", file);
+content.append("title", "This is my title. (updated)");
+content.append("description", "This is my description. (updated)");
+content.append("price", 15);
+content.append("category", "mens");
+
+axios
+  .patch(`${baseUrl}/v1/products/1`, { content })
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+```
+
+### Update Product By Uniquekey
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+let content = new FormData();
+content.append("image", file);
+content.append("title", "This is my title. (updated)");
+content.append("description", "This is my description. (updated)");
+content.append("price", 15);
+content.append("category", "mens");
+
+axios
+  .patch(`${baseUrl}/v1/products/key/650698cfb8318065fca250ef`, { content })
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+```
+
+Devify's straightforward approach to updating product information simplifies the development process. It empowers developers to make real-time adjustments and improvements to their projects while maintaining data integrity.
+
+So, whether you're refining your software or perfecting your app's user experience, Devify is here to provide you with a reliable, dynamic, and easy-to-use environment for all your development needs.
+
+For full documentation view [Update Product](v1/docs/products/update-product)
+
+---
+
+### Remove Data
+
+To remove data using Devify, you can make HTTP requests to the specific API endpoints designed for data deletion. These endpoints are typically accessible through HTTP DELETE requests.
+
+You can specify the resource or data you want to remove by providing the necessary parameters, such as IDs or unique keys, depending on your API structure.
+
+For example, if you want to delete a specific product, you can send an HTTP DELETE request to the "v1/products/1" or "v1/products/key/650698cfb8318065fca250ef" endpoint. Devify will handle the data removal process, allowing you to keep your testing and development environment tidy and up to date.
+
+### Delete Product By ID
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+async function deleteProduct() {
+  try {
+    const res = await fetch(`${baseUrl}/v1/products/1`, { method: "DELETE" });
+    const result = await res.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+```
+
+### Delete Product By Uniquekey
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+async function deleteProduct() {
+  try {
+    const res = await fetch(
+      `${baseUrl}/v1/products/key/650698cfb8318065fca250ef`,
+      { method: "DELETE" }
+    );
+    const result = await res.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+```
+
+OR
+
+### Delete Product By ID
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+fetch(`${baseUrl}/v1/products/1`, { method: "DELETE" })
+  .then((res) => res.json())
+  .then((result) => console.log(result))
+  .catch((err) => console.log(err));
+```
+
+### Delete Product By Uniquekey
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+fetch(`${baseUrl}/v1/products/key/650698cfb8318065fca250ef`, {
+  method: "DELETE",
+})
+  .then((res) => res.json())
+  .then((result) => console.log(result))
+  .catch((err) => console.log(err));
+```
+
+---
+
+If you're using [Axios](https://axios-http.com), integrating Devify with your API testing and development process is a breeze. Axios, a popular JavaScript library for making HTTP requests, can seamlessly connect with Devify to ensure a smooth testing experience
+
+### Delete Product By ID
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+async function deleteProduct() {
+  try {
+    const res = await axios.delete(`${baseUrl}/v1/products/1`);
+
+    return res;
+  } catch (err) {
+    return null;
+  }
+}
+
+deleteProduct().then((result) => console.log(result));
+```
+
+### Delete Product By Uniquekey
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+async function deleteProduct() {
+  try {
+    const res = await axios.delete(
+      `${baseUrl}/v1/products/key/650698cfb8318065fca250ef`
+    );
+
+    return res;
+  } catch (err) {
+    return null;
+  }
+}
+
+deleteProduct().then((result) => console.log(result));
+```
+
+OR
+
+### Delete Product By ID
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+axios
+  .delete(`${baseUrl}/v1/products/1`)
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+```
+
+### Delete Product By Uniquekey
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+axios
+  .delete(`${baseUrl}/v1/products/key/650698cfb8318065fca250ef`)
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+```
+
+For full documentation view [Delete Product](v1/docs/products/delete-product)
+
+---
+
+## Let's begin this journey
+
+In a nutshell, Devify is the ultimate companion for developers, providing a risk-free space to hone your coding skills, test your applications, and ensure they are robust and reliable. So, dive in, sign up, and start harnessing the power of Devify for your development projects. Get ready to take your coding skills to new heights!
+
+---

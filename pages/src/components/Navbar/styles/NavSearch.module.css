@@ -1,0 +1,321 @@
+.NavSearch {
+  padding: 5rem 1rem 0rem 0rem;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  background-color: #00000073;
+  display: flex;
+  justify-content: center;
+}
+.navClose {
+  display: none;
+  transform: scale(0);
+  -webkit-transform: scale(0);
+  -o-transform: scale(0);
+  -moz-transform: scale(0);
+  opacity: 0;
+}
+.navSearchContainer {
+  border: 1px solid rgba(255, 255, 255, 0.195);
+  position: fixed;
+  filter: drop-shadow(0 15px 10px rgba(255, 255, 255, 0.04))
+    drop-shadow(0 4px 3px rgba(255, 255, 255, 0.1));
+  top: 7rem;
+  width: 34rem;
+  height: 31rem;
+  display: flex;
+  border-radius: 5px;
+  background: #0f0f0f;
+  overflow: hidden;
+}
+.navWrapper {
+  overflow: hidden;
+  width: 34.5rem;
+}
+.navSearchHeaderWrapper {
+  padding: 1rem 1rem 1.1rem 1rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.195);
+}
+.searchIcons {
+  top: 0.82rem;
+  left: 1.35rem;
+  z-index: 3;
+  position: relative;
+}
+.navCancelBtn {
+  display: none;
+}
+.navSearchInput {
+  position: relative;
+  right: 0.7rem;
+  padding: 0rem 1rem 0rem 2.5rem;
+  width: 34rem;
+  height: 3rem;
+  border-radius: 5px;
+  font-size: 0.95rem;
+  background: #1f1f1f;
+  border: 1px solid rgba(255, 255, 255, 0.132);
+}
+.navSearchInput::placeholder {
+  font-size: 0.85rem;
+}
+.navLabelWrapper {
+  display: flex;
+  position: fixed;
+  z-index: 1;
+  background: #0f0f0f;
+  padding-top: 0.5rem;
+  width: 32.8rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.195);
+}
+.navLabel {
+  width: 30.2rem;
+  position: relative;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  left: 1.5rem;
+  opacity: 0.9;
+  font-size: 0.98rem;
+  margin-bottom: 0.5rem;
+}
+.showLabelBorder {
+  width: 33.8rem;
+}
+.hideLabel {
+  transform: scale(0);
+  -webkit-transform: scale(0);
+  -o-transform: scale(0);
+  -moz-transform: scale(0);
+  display: none;
+}
+.navSearchContentContainer {
+  margin: 0.3rem 0rem 0rem 0rem;
+  position: fixed;
+  left: 1.5rem;
+  width: 32.3rem;
+  overflow-y: scroll;
+  height: 22.75rem;
+}
+.navSearchContentContainerHidden {
+  overflow-y: hidden;
+}
+.navSearchContentWrapper {
+  margin: 0.5rem 0rem 0rem 0rem;
+  width: 30.7rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 0.7rem;
+}
+.navSearchContentLabel {
+  top: 2.2rem;
+}
+.navSearchContent {
+  border: 1px solid rgba(255, 255, 255, 0.195);
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.9rem 0.9rem 0.9rem 1rem;
+}
+.navSearchContent:hover {
+  background: #242424;
+}
+.navSearchFooterWrapper {
+  width: 34rem;
+  height: 2.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.195);
+  background: #0f0f0f;
+  z-index: 2;
+  position: fixed;
+  bottom: 0;
+}
+.navSearchContentTitle {
+  font-size: 0.97rem;
+  opacity: 0.9;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.navSearchContentImagesPlaceholder {
+  opacity: 0.8;
+}
+.emptyDatasResultContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 19.8rem;
+  overflow: hidden;
+  opacity: 0.9;
+}
+.emptyDatasResultWrapper {
+  gap: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 0rem 0.8rem 0rem 0rem;
+  opacity: 0.9;
+}
+.emptyResultMessege {
+  font-size: 1.1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+}
+.warningMessege {
+  opacity: 0.86;
+  font-size: 0.84rem;
+}
+.backBtnWrapper {
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+  position: relative;
+  top: 0.3rem;
+  transition: all 0.08s;
+  border: 1px solid rgba(255, 255, 255, 0.467);
+  border-radius: 5px;
+  padding: 0.65rem 0.75rem 0.65rem 0.75rem;
+}
+.backBtnWrapper:hover {
+  background: #202020;
+  opacity: 1;
+}
+.backBtnWrapper:hover .leftArrow {
+  transition: all 0.2s;
+  transform: translateX(-2px);
+}
+.backBtn {
+  font-size: 0.76rem;
+}
+.loadingComponentWrapper {
+  width: 30.7rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  bottom: 0.7rem;
+}
+.skeletonLoading {
+  margin: 0.7rem 0rem 0rem 0rem;
+  height: 2.96rem;
+}
+
+/* Media Queries */
+@media screen and (width >= 1920px) {
+  .navSearchContainer {
+    top: 10rem;
+    margin-top: 3rem;
+  }
+}
+@media screen and (width >= 1600px) {
+  .navSearchContainer {
+    top: 10rem;
+  }
+}
+
+/* laptop */
+@media screen and (width <= 1280px) {
+  .navSearchContainer {
+    top: 11.5rem;
+  }
+}
+
+/* Tablet */
+@media screen and (width <= 884px) {
+  .navSearchContainer {
+    top: 12rem;
+  }
+}
+@media screen and (width <= 834px) {
+  .navSearchContainer {
+    top: 14rem;
+  }
+}
+@media screen and (width <= 768px) {
+  .navSearchContainer {
+    top: 11rem;
+  }
+}
+
+/* Mobile */
+@media screen and (width <= 428px) {
+  .navSearchContainer {
+    top: 0rem;
+    height: 100vh;
+    width: 100vw;
+  }
+  .navSearchHeaderWrapper {
+    padding: 1.35rem 1rem 1.1rem 1rem;
+    gap: 0rem;
+    align-items: center;
+  }
+  .navCancelBtn {
+    display: block;
+  }
+  .searchIcons {
+    top: 0;
+    left: 1rem;
+  }
+  .navSearchInput {
+    right: 1rem;
+    top: 0rem;
+    width: 76vw;
+    height: 2.95rem;
+  }
+  .navLabelWrapper {
+    width: 100vw;
+  }
+  .navLabel {
+    width: 86vw;
+  }
+  .showLabelBorder {
+    width: 100vw;
+  }
+  .navSearchContentContainer {
+    width: 93vw;
+    left: 1.27rem;
+    height: 81vh;
+  }
+  .loadingComponentWrapper {
+    width: 88.9vw;
+  }
+  .navSearchContentWrapper {
+    width: 88.9vw;
+  }
+  .navSearchFooterWrapper {
+    height: 3.2rem;
+  }
+  .emptyDatasResultContainer {
+    height: 53vh;
+  }
+  .emptyDatasResultWrapper {
+    margin: 0rem 0rem 0rem 0.2rem;
+  }
+}
+@media screen and (width <= 375px) {
+  .navSearchContentContainer {
+    left: 1.38rem;
+  }
+  .navSearchInput {
+    right: 0.6rem;
+    width: 80vw;
+  }
+  .searchIcons {
+    left: 1.3rem;
+  }
+}
+@media screen and (width <= 362px) {
+  .navSearchContentContainer {
+    height: 74vh;
+  }
+}

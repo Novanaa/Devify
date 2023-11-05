@@ -1,0 +1,395 @@
+.componentWrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 4rem 11rem;
+  align-items: center;
+  height: 90vh;
+  border-top: 1px solid rgba(255, 255, 255, 0.136);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+  gap: 2rem;
+  background: #161616;
+}
+.contentComponentWrapper {
+  flex: 1.15;
+  display: flex;
+}
+.headComponentWrapper {
+  flex: 1.35;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+.componentTitle {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 700;
+  font-size: 1.9rem;
+  color: #e7c4eb;
+}
+.componentTitle::before {
+  content: "Accelerate Web Development";
+  padding: 0.4rem;
+  z-index: 0;
+  position: absolute;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px #e7c4eb;
+  opacity: 0.8;
+}
+.componentDescription {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  width: 90%;
+  opacity: 0.75;
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
+}
+
+/* Media Queries */
+/* Desktop */
+@media screen and (width >= 1920px) {
+  .componentWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 55vh;
+    gap: 0rem;
+  }
+  .contentComponentWrapper {
+    flex: 1.35;
+    display: flex;
+  }
+  .headComponentWrapper {
+    flex: 1.35;
+    position: relative;
+    left: 10.3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+  }
+  .componentDescription {
+    padding: 0rem 9rem 0rem 0rem;
+  }
+}
+@media screen and (width >= 1600px) {
+  .componentWrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 4rem 12rem;
+    align-items: center;
+    height: 55vh;
+    gap: 0rem;
+  }
+  .componentTitle {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 700;
+    font-size: 2.2rem;
+    color: #e7c4eb;
+  }
+  .componentDescription {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    width: 82%;
+    opacity: 0.75;
+    letter-spacing: 0.5px;
+    font-size: 1.05rem;
+  }
+}
+@media (width >= 1600px) and (height >= 1080px) {
+  .componentWrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 4rem 14.5rem;
+    align-items: center;
+    height: 60vh;
+    gap: 0rem;
+  }
+}
+
+/* Tablet */
+@media screen and (width <= 1280px) {
+  .componentWrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 4rem 9.2rem;
+    align-items: center;
+    height: 90vh;
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    gap: 2rem;
+    background: #161616;
+  }
+  .componentWrapper {
+    height: 85vh;
+  }
+  .componentTitle {
+    white-space: nowrap;
+  }
+  .componentDescription {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    width: 85%;
+    opacity: 0.75;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+  }
+  .contentComponentWrapper {
+    flex: 1.1;
+    display: flex;
+  }
+  .headComponentWrapper {
+    flex: 1.3;
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+  }
+}
+@media screen and (width <= 884px) {
+  .componentWrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 4rem 11rem;
+    align-items: center;
+    width: 99.5vw;
+    height: 90vh;
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    gap: 2rem;
+    background: #161616;
+  }
+  .componentWrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+    padding: 6.5rem 11rem;
+    align-items: center;
+    height: 67vh;
+    gap: 1.5rem;
+  }
+  .componentTitle {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    color: #e7c4eb;
+  }
+  .componentDescription {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    width: 75%;
+    opacity: 0.75;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+  }
+}
+@media screen and (width <= 800px) {
+  .componentWrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+    padding: 7.2rem 11rem;
+    align-items: center;
+    height: 60vh;
+    gap: 1.5rem;
+  }
+}
+@media screen and (width <= 768px) {
+  .componentWrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+    padding: 7.8rem 10rem 7.8rem 10rem;
+    align-items: center;
+    height: 80vh;
+    gap: 1.5rem;
+  }
+}
+
+/* Mobile */
+@media screen and (width <= 428px) {
+  .componentWrapper {
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+    padding: 5.8rem 1.5rem 0rem 1.5rem;
+    align-items: center;
+    height: 76vh;
+    gap: 1.5rem;
+    overflow: hidden;
+  }
+  .contentComponentWrapper {
+    width: 100vw;
+    overflow: hidden;
+    rotate: -0.8deg;
+    transform: translateX(-2rem);
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 5px 5px rgba(255, 255, 255, 0.4);
+    position: relative;
+    z-index: 1;
+  }
+  .componentTitle {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 700;
+    font-size: 1.55rem;
+    color: #e7c4eb;
+  }
+  .componentDescription {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    width: 85%;
+    opacity: 0.75;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (width <= 414px) {
+  .componentWrapper {
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+    padding: 5.8rem 1rem 0rem 1rem;
+    align-items: center;
+    height: 76vh;
+    gap: 1.5rem;
+    overflow: hidden;
+  }
+  .componentDescription {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    width: 85%;
+    opacity: 0.75;
+    letter-spacing: 0.5px;
+    font-size: 0.83rem;
+  }
+}
+@media screen and (width <= 393px) {
+  .componentWrapper {
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+    padding: 5.8rem 1rem 0rem 1rem;
+    align-items: center;
+    height: 78vh;
+    gap: 1.5rem;
+    overflow: hidden;
+  }
+  .componentTitle {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 700;
+    font-size: 1.45rem;
+    color: #e7c4eb;
+  }
+  .componentDescription {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    width: 85%;
+    opacity: 0.75;
+    letter-spacing: 0.5px;
+    font-size: 0.8rem;
+  }
+}
+@media screen and (width <= 375px) {
+  .componentWrapper {
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+    padding: 5rem 0.8rem 0rem 0.8rem;
+    align-items: center;
+    height: 80vh;
+    gap: 1.5rem;
+    overflow: hidden;
+  }
+  .componentTitle {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 700;
+    font-size: 1.35rem;
+    color: #e7c4eb;
+  }
+  .componentTitle::before {
+    margin: -0.1rem 0rem 0rem 0rem;
+  }
+  .componentDescription {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    width: 90%;
+    opacity: 0.75;
+    letter-spacing: 0.5px;
+    font-size: 0.78rem;
+  }
+}
+@media screen and (width <= 362px) {
+  .componentWrapper {
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+    padding: 6rem 0.8rem 0rem 0.8rem;
+    align-items: center;
+    height: 80vh;
+    gap: 1.5rem;
+    overflow: hidden;
+  }
+  .componentTitle {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 700;
+    font-size: 1.36rem;
+    color: #e7c4eb;
+  }
+  .componentDescription {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    width: 95%;
+    opacity: 0.75;
+    letter-spacing: 0.5px;
+    font-size: 0.74rem;
+  }
+}
+@media (width <= 362px) and (height <= 780px) {
+  .componentWrapper {
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+    padding: 6rem 0.8rem 0rem 0.8rem;
+    align-items: center;
+    height: 90vh;
+    gap: 1.5rem;
+    overflow: hidden;
+  }
+}
+@media (width <= 362px) and (height <= 880px) and (height >= 830px) {
+  .componentWrapper {
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+    padding: 8rem 0.8rem 0rem 0.8rem;
+    align-items: center;
+    height: 78vh;
+    gap: 1.5rem;
+    overflow: hidden;
+  }
+}
+@media screen and (width <= 320px) {
+  .componentWrapper {
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+    padding: 5rem 1.8rem 0rem 1.8rem;
+    align-items: center;
+    height: 115vh;
+    gap: 1.5rem;
+    overflow: hidden;
+  }
+  .contentComponentWrapper {
+    transform: translateX(-1.8rem);
+  }
+  .componentTitle {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 700;
+    font-size: 1.32rem;
+    color: #e7c4eb;
+  }
+  .componentDescription {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    width: 95%;
+    opacity: 0.75;
+    letter-spacing: 0.5px;
+    font-size: 0.72rem;
+  }
+}

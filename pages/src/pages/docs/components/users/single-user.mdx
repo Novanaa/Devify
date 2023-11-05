@@ -1,0 +1,201 @@
+---
+    title: Single User
+    description: Single User
+    content:
+        - How to Use It?
+        - Fetching Data
+        - HTTP Client Module
+        - Query Parameters
+    slug:
+        - how-to-use-it
+        - fetching-data
+        - http-client-module
+        - query-parameters
+    next:
+        - title: Search Users
+        - link: /docs/v1/users/search-users
+---
+
+# Single User
+
+Devify is a valuable tool for developers, providing a simulated API environment for testing and development. When it comes to accessing specific user data, **Devify makes the process seamless. With a simple HTTP request, developers can retrieve the details of a single user from the Devify database.**
+
+In the realm of application development, the ability to retrieve a single user's information is paramount. It's a fundamental operation, **allowing developers to access and manipulate specific user data. Devify simplifies this process, offering a streamlined and user-friendly endpoint for developers to query user details with ease.**
+
+---
+
+## How to Use It?
+
+To securely access the full array of user data, you have several effective options available. You can utilize tools like [Postman](https://postman.com) or harness the capabilities of [cURL](https://curl.se) to gracefully retrieve JSON data from Devify's users endpoint.
+
+If you're using [cURL](https://curl.se), you can employ it to send HTTP requests from the command line or within your scripts. Here are some typical scenarios and examples:
+
+```bash
+$ curl -o C:\output.json -X GET "https://api-devify.my.id/v1/users/1"
+```
+
+OR
+
+```bash
+$ curl -X GET "https://api-devify.my.id/v1/users/1"
+```
+
+---
+
+## Fetching Data
+
+When it comes to fetching data for a single user, Devify excels in providing a simulated API response that mimics real-world scenarios. **Developers can interact with Devify's API to learn how to access user information, including their profile details, preferences, and more.**
+
+### Single User By ID
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+async function users() {
+  try {
+    const response = await fetch(`${baseUrl}/v1/users/1`);
+    const result = await response.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+
+users().then((datas) => console.log(datas));
+```
+
+OR
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+fetch(`${baseUrl}/v1/users/1`)
+  .then((res) => res.json())
+  .then((result) => console.log(result));
+```
+
+### Single User By Uniquekey
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+async function users() {
+  try {
+    const response = await fetch(
+      `${baseUrl}/v1/users/key/64a975166d8d44a6a0b70cf0`
+    );
+    const result = await response.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+
+users().then((datas) => console.log(datas));
+```
+
+OR
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+fetch(`${baseUrl}/v1/users/key/64a975166d8d44a6a0b70cf0`)
+  .then((res) => res.json())
+  .then((result) => console.log(result));
+```
+
+---
+
+## HTTP Client Module
+
+Devify is a versatile Fake API specially crafted to cater to the needs of developers, offering a robust testing and development environment for their applications. When working with Devify, **you can effortlessly retrieve data for a single user by making HTTP requests using an HTTP client module like [Axios](https://axios-http.com).**
+
+### Single Product By ID
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+async function users() {
+  try {
+    const res = await axios.get(`${baseUrl}/v1/users/1`);
+
+    return res;
+  } catch (err) {
+    return null;
+  }
+}
+
+users().then((result) => console.log(result));
+```
+
+OR
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+axios
+  .get(`${baseUrl}/v1/users/1`)
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+```
+
+### Single Product By Uniquekey
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+async function users() {
+  try {
+    const res = await axios.get(
+      `${baseUrl}/v1/users/key/64a975166d8d44a6a0b70cf0`
+    );
+
+    return res;
+  } catch (err) {
+    return null;
+  }
+}
+
+users().then((result) => console.log(result));
+```
+
+OR
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+axios
+  .get(`${baseUrl}/v1/users/key/64a975166d8d44a6a0b70cf0`)
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+```
+
+**That's it! You have successfully fetched data for a single user from the Devify API using [Axios](https://axios-http.com).** This is a crucial step in testing and developing your application, ensuring that it functions as expected with real data.
+
+---
+
+## Query Parameters
+
+### Single User By ID
+
+| Params | Data Types | Required |
+| ------ | ---------- | -------- |
+| ID     | Integer    | Yes      |
+
+### Single User By Uniquekey
+
+| Params    | Data Types | Required |
+| --------- | ---------- | -------- |
+| Uniquekey | String     | Yes      |
+
+---

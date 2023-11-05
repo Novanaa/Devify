@@ -1,0 +1,117 @@
+.mobileNav {
+  display: none;
+  position: fixed;
+  z-index: 3;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000cb;
+  overflow: hidden;
+}
+.navMobileBrandWrapper {
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-between;
+  padding: 1.1rem 2rem 1rem 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.195);
+}
+.navMobieBrandBtnWrapper {
+  display: flex;
+  gap: 0.7rem;
+}
+.navMobilListWrapper {
+  position: relative;
+  top: 2rem;
+  margin: 0rem 2rem;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1.7rem;
+}
+.navMobilListWrapper li {
+  font-size: 1.1rem;
+  opacity: 0.7;
+  transition: all 0.2s;
+  font-weight: 300;
+}
+.navMobilListWrapper li:hover {
+  opacity: 1;
+}
+.showMobileNav {
+  display: block;
+}
+.navMobileContentWrapper {
+  position: fixed;
+  margin: 0rem 2rem;
+  position: relative;
+  top: 0.2rem;
+}
+.navLangWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+.navLangContentWrapper {
+  position: relative;
+  top: 0.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.229);
+  width: 10.4rem;
+  height: 4.5rem;
+  display: none;
+  border-radius: 5px;
+  background-color: #111111cb;
+}
+.showNavLang {
+  display: block;
+}
+.langContentWrapper {
+  gap: 0.3rem;
+  display: flex;
+  align-items: center;
+  margin: 0.6rem 0rem 0rem 1.5rem;
+}
+.navMobileLinkWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 81.5vw;
+  margin: 1.8rem 0rem 0rem 0rem;
+  opacity: 0.7;
+  gap: 1.2rem;
+  border-radius: 5px;
+  padding: 0.3rem;
+  background-color: #111111cb;
+  border: 1px solid rgba(255, 255, 255, 0.229);
+}
+.dropdownIndicatorAnimation {
+  transition: transform 0.2s;
+  transform: rotate(180deg);
+}
+
+/* Media Queries */
+@media screen and (width <= 393px) {
+  .navMobileContentWrapper {
+    top: 0.9rem;
+  }
+}
+@media screen and (width <= 375px) {
+  .navMobileContentWrapper {
+    top: 1.3rem;
+  }
+}
+@media screen and (width <= 362px) {
+  .navMobileContentWrapper {
+    top: 0.9rem;
+  }
+  .navMobilListWrapper li {
+    font-size: 1rem;
+  }
+}
+@media screen and (width <= 320px) {
+  .navMobilListWrapper {
+    gap: 1.2rem;
+  }
+  .navMobileContentWrapper {
+    top: 1.9rem;
+  }
+}

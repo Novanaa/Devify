@@ -1,0 +1,197 @@
+---
+    title: Add Cart
+    description: Add Cart
+    content:
+        - How to Use It?
+        - Fetching Data
+        - HTTP Client Module
+        - Payloads
+    slug:
+        - how-to-use-it
+        - fetching-data
+        - http-client-module
+        - payloads
+    next:
+        - title: Update Cart
+        - link: /docs/v1/carts/update-cart
+---
+
+# Add Cart
+
+**Devify offers an intuitive API for adding items to a cart, allowing you to understand the process, perfect the user interface, and fine-tune your application's performance.** It's the ideal environment for developers who want to ensure that their cart functionality is smooth, reliable, and user-friendly.
+
+Adding items to your cart is a fundamental aspect of e-commerce and online shopping applications. With Devify, developers can simulate this process effectively, **enabling them to test and fine-tune their cart management system with ease.**
+
+---
+
+## How to Use It?
+
+To access the full array of cart data, you have various effective options at your disposal. You can utilize tools like [Postman](https://postman.com) or harness the capabilities of [cURL](https://curl.se) to gracefully retrieve the JSON data from Devify's carts endpoint.
+
+If you're using [cURL](https://curl.se), you can employ it to send HTTP requests from the command line or within your scripts. Here are some typical scenarios and examples:
+
+```bash
+$ curl -X POST -d '{
+  "userId": 5,
+  "products": [
+    {
+      "productsId": 1,
+      "quantity": 1,
+      "price": 21.99
+    }
+  ]
+}' https://api-devify.my.id/v1/carts
+```
+
+---
+
+## Fetching Data
+
+In the world of application development, managing shopping carts is a fundamental aspect. With Devify, **you can effortlessly create and manipulate shopping carts to mimic real-world scenarios.** The process involves adding items to a cart and then fetching data related to these carts.
+
+By utilizing Devify's, **you can simulate various user interactions, such as adding products to a cart, adjusting quantities, or removing items.** This functionality is essential for testing the robustness and efficiency of e-commerce and shopping applications
+
+### Examples
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+async function carts() {
+  try {
+    const response = await fetch(`${baseUrl}/v1/carts`, {
+      method: "POST",
+      body: JSON.stringify({
+        userId: 5,
+        products: [
+          {
+            productsId: 1,
+            quantity: 1,
+            price: 21.99,
+          },
+        ],
+      }),
+    });
+    const result = await response.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+
+carts().then((datas) => console.log(datas));
+```
+
+OR
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+fetch(`${baseUrl}/v1/products`, {
+  method: "POST",
+  body: JSON.stringify({
+    userId: 5,
+    products: [
+      {
+        productsId: 1,
+        quantity: 1,
+        price: 21.99,
+      },
+    ],
+  }),
+})
+  .then((res) => res.json())
+  .then((result) => console.log(result));
+```
+
+---
+
+## HTTP Client Module
+
+Developers often encounter the need to interact with APIs in their applications, whether it's for fetching data, submitting forms, or managing user interactions.
+
+A popular choice for making HTTP requests from the client-side is [Axios](https://axios-http.com), a promise-based **JavaScript** library. In this tutorial, we'll demonstrate how to use [Axios](https://axios-http.com) to add a cart in a hypothetical scenario, working with a Fake API known as **Devify**.
+
+### Examples
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+const payload = {
+  userId: 5,
+  products: [
+    {
+      productsId: 1,
+      quantity: 1,
+      price: 21.99,
+    },
+  ],
+};
+
+async function carts() {
+  try {
+    const res = await axios.post(`${baseUrl}/v1/carts`, payload);
+
+    return res;
+  } catch (err) {
+    return null;
+  }
+}
+
+carts().then((result) => console.log(result));
+```
+
+OR
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+const payload = {
+  userId: 5,
+  products: [
+    {
+      productsId: 1,
+      quantity: 1,
+      price: 21.99,
+    },
+  ],
+};
+
+axios
+  .post(`${baseUrl}/v1/carts/1`, payload)
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+```
+
+---
+
+## Payloads
+
+| Payload    | Data Types | Required |
+| ---------- | ---------- | -------- |
+| UserId     | Integer    | Yes      |
+| Products   | Arrays     | Yes      |
+| ProductsId | Integer    | Yes      |
+| Quantity   | Integer    | Yes      |
+| Price      | Integer    | Yes      |
+
+For full documentation visit [Payloads Pages](/docs/v1/payloads)
+
+```json
+{
+  "userId": 5,
+  "products": [
+    {
+      "productsId": 1,
+      "quantity": 1,
+      "price": 21.99
+    }
+  ]
+}
+```
+
+---

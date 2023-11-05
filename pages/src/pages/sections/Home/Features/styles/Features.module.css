@@ -1,0 +1,354 @@
+.container {
+  position: relative;
+  height: 118vh;
+  margin: 5.5rem 0 0 0;
+  right: 0.1rem;
+  padding: 2.8rem 0 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.136);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+  background: #161616;
+}
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contentTitle {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 700;
+  font-size: 2.4rem;
+  color: #e7c4eb;
+}
+.contentTitle::before {
+  content: "Features";
+  padding: 0.4rem;
+  z-index: 0;
+  position: absolute;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px #e7c4eb;
+  opacity: 0.8;
+}
+.cardsContainer {
+  position: relative;
+  top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 23rem);
+  gap: 1rem;
+}
+.cardWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  border-radius: 5px;
+  padding: 1rem 1rem 1.1rem 1rem;
+  background: #191919;
+  border: 1px solid rgba(255, 255, 255, 0.136);
+}
+.cardWrapper:hover {
+  background: #212121;
+  border: 1px solid rgba(255, 255, 255, 0.222);
+}
+.cardWrapper:nth-child(8) {
+  grid-column: 2 / span 2;
+  justify-content: center;
+  align-items: center;
+}
+.cardImage {
+  align-self: center;
+  justify-self: center;
+  object-fit: contain;
+}
+.cardDescription {
+  color: #e7c4eb;
+  opacity: 0.75;
+  font-size: 0.82rem;
+}
+.cardTitle {
+  color: #e7c4eb;
+  font-size: 1.2rem;
+}
+
+/* Media Queries */
+/* Desktop */
+@media screen and (width >= 1600px) {
+  .container {
+    position: relative;
+    height: 71.5vh;
+    margin: 7.6rem 0 0 0;
+    right: 0.2rem;
+    padding: 2.8rem 0 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+  }
+}
+@media (width >= 1600px) and (height >= 1200px) {
+  .container {
+    position: relative;
+    height: 65vh;
+    margin: 7.6rem 0 0 0;
+    right: 0.2rem;
+    padding: 2.8rem 0 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+  }
+}
+
+/* Laptop */
+@media screen and (width <= 1280px) {
+  .container {
+    position: relative;
+    height: 97vh;
+    margin: 5.5rem 0 0 0;
+    right: 0.1rem;
+    padding: 2.8rem 0 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+  }
+}
+
+/* Tablet */
+@media screen and (width <= 884px) {
+  .container {
+    position: relative;
+    height: 101vh;
+    margin: 8rem 0 0 0;
+    right: 0.1rem;
+    padding: 2.8rem 0 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+  }
+  .cardsContainer {
+    position: relative;
+    top: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 23rem);
+    gap: 1rem;
+  }
+  .cardWrapper:nth-child(8) {
+    grid-column: 2 / span 1;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media screen and (width <= 834px) {
+  .container {
+    position: relative;
+    height: 100vh;
+    margin: 8rem 0 0 0;
+    right: 0.1rem;
+    padding: 3.5rem 0 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+  }
+}
+@media screen and (width <= 820px) {
+  .container {
+    position: relative;
+    height: 100vh;
+    margin: 8rem 0 0 0;
+    right: 0rem;
+    padding: 3.5rem 0 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+  }
+}
+@media screen and (width <= 800px) {
+  .container {
+    position: relative;
+    height: 88vh;
+    margin: 8rem 0 0 0;
+    right: 0rem;
+    padding: 3.5rem 0 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+  }
+  .cardsContainer {
+    position: relative;
+    top: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 22rem);
+    gap: 1rem;
+  }
+}
+@media screen and (width <= 768px) {
+  .container {
+    position: relative;
+    height: 119vh;
+    margin: 8rem 0 0 0;
+    right: 0rem;
+    padding: 3.5rem 0 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+  }
+  .cardsContainer {
+    position: relative;
+    top: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 21.5rem);
+    gap: 1rem;
+  }
+}
+
+/* Mobile */
+@media screen and (width <= 428px) {
+  .container {
+    position: relative;
+    height: 187vh;
+    margin: 8rem 0 0 0;
+    right: 0rem;
+    padding: 2.5rem 0 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+  }
+  .cardsContainer {
+    position: relative;
+    top: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(1, 86vw);
+    gap: 1rem;
+  }
+  .cardWrapper:nth-child(8) {
+    grid-column: 2 / span 1;
+    justify-content: center;
+    align-items: center;
+    display: none;
+  }
+}
+@media screen and (width <= 414px) {
+  .container {
+    position: relative;
+    height: 193vh;
+    margin: 8rem 0 0 0;
+    right: 0rem;
+    padding: 2.5rem 0 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+  }
+  .cardsContainer {
+    position: relative;
+    top: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(1, 90vw);
+    gap: 1rem;
+  }
+}
+@media screen and (width <= 393px) {
+  .container {
+    position: relative;
+    height: 199vh;
+    margin: 6.5rem 0 0 0;
+    right: 0rem;
+    padding: 2.5rem 0 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+  }
+}
+@media (width <= 390px) and (height <= 884px) {
+  .container {
+    position: relative;
+    height: 206vh;
+    margin: 6.5rem 0 0 0;
+    right: 0rem;
+    padding: 2.5rem 0 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+  }
+}
+@media screen and (width <= 375px) {
+  .container {
+    position: relative;
+    height: 219vh;
+    margin: 6.5rem 0 0 0;
+    right: 0rem;
+    padding: 2.5rem 0 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+  }
+  .cardsContainer {
+    position: relative;
+    top: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(1, 89vw);
+    gap: 1rem;
+  }
+}
+@media screen and (width <= 362px) {
+  .container {
+    position: relative;
+    height: 221vh;
+    margin: 5.5rem 0 0 0;
+    padding: 2.5rem 0 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+  }
+  .cardsContainer {
+    position: relative;
+    top: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(1, 87vw);
+    gap: 1rem;
+    left: 0.1rem;
+  }
+}
+@media (width <= 362px) and (height >= 840px) {
+  .container {
+    position: relative;
+    height: 202vh;
+    margin: 5.5rem 0 0 0;
+    padding: 2.5rem 0 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+  }
+}
+/* @media (width <= 362px) and (height <= 780px) {
+  .container {
+    position: relative;
+    height: 230vh;
+    margin: 0rem 0 0 0;
+    padding: 2.5rem 0 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+  }
+} */
+@media (width <= 362px) and (height <= 760px) {
+  .container {
+    position: relative;
+    height: 248vh;
+    margin: 5rem 0 0 0;
+    left: 0rem;
+    padding: 2.5rem 0 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+  }
+}
+@media screen and (width <= 320px) {
+  .container {
+    position: relative;
+    height: 328vh;
+    margin: 5rem 0 0 0;
+    left: 0rem;
+    right: 0.2rem;
+    padding: 2.5rem 0 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+  }
+}

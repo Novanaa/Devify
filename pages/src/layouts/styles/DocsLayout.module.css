@@ -1,0 +1,96 @@
+.container {
+  display: flex;
+}
+.mainChildren {
+  /* border: 1px solid white; */
+  margin: 8rem 3.5rem 8rem 20.2rem;
+  /* position: relative;
+  top: 2rem; */
+  width: 100%;
+}
+
+/* Media Queries */
+/* Laptop */
+@media screen and (width >= 1600px) {
+  .mainChildren {
+    width: 61%;
+    margin: 8rem 7rem 8rem 33rem;
+    /* border: 1px solid white; */
+  }
+}
+@media screen and (width >= 1920px) {
+  .mainChildren {
+    width: 61%;
+    margin: 8rem 7rem 8rem 39rem;
+    /* border: 1px solid white; */
+  }
+}
+
+/* Tablet */
+@media screen and (width <= 884px) {
+  .mainChildren {
+    margin: 8rem 14rem 8rem 19rem;
+    width: 92%;
+  }
+}
+@media screen and (width <= 834px) {
+  .mainChildren {
+    margin: 8rem 16rem 8rem 19.5rem;
+    width: 59%;
+  }
+}
+@media screen and (width <= 800px) {
+  .mainChildren {
+    margin: 8rem 16rem 8rem 19.5rem;
+    width: 57%;
+  }
+}
+@media screen and (width <= 768px) {
+  .mainChildren {
+    margin: 8rem 18rem 8rem 19.5rem;
+    width: 56%;
+    /* border: 1px solid white; */
+  }
+}
+
+/* Mobile */
+@media screen and (width <= 428px) {
+  .container {
+    flex-direction: column;
+    width: 100%;
+  }
+  .mainChildren {
+    margin: 7rem 5rem 8rem 1.8rem;
+    width: 87.5%;
+  }
+}
+@media screen and (width <= 393px) {
+  .mainChildren {
+    margin: 7rem 5rem 8rem 1.8rem;
+    width: 87.2%;
+  }
+}
+@media screen and (width <= 375px) {
+  .mainChildren {
+    margin: 7rem 5rem 8rem 1.65rem;
+    width: 87.2%;
+  }
+}
+@media screen and (width <= 375px) {
+  .mainChildren {
+    margin: 7rem 5rem 8rem 1.65rem;
+    width: 87.2%;
+  }
+}
+@media screen and (width <= 362px) {
+  .mainChildren {
+    margin: 7rem 5rem 8rem 1.57rem;
+    width: 87.2%;
+  }
+}
+@media screen and (width <= 320px) {
+  .mainChildren {
+    margin: 7rem 5rem 8rem 1.1rem;
+    width: 87.2%;
+  }
+}

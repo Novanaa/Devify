@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Simple Integration",
+    "description": "Implementing Mock API is a breeze. Its Free allows developers to effortlessly integrate with Devify placeholder data in no time",
+    "icon": "/images/icons/fire.png"
+  },
+  {
+    "id": 2,
+    "title": "Time-Saving",
+    "description": "Eliminate waiting time for backend data. Start frontend development with Devify instantaneous placeholder data, ensuring optimal productivity.",
+    "icon": "/images/icons/clock.png"
+  },
+  {
+    "id": 3,
+    "title": "Variability",
+    "description": "Unlock innovation, accelerate your progress, and redefine development with Devify dynamic resources. Embrace the future of coding today.",
+    "icon": "/images/icons/layers.png"
+  },
+  {
+    "id": 4,
+    "title": "Accelerating Web Development",
+    "description": "Say goodbye to delays. Devify accelerates your web development, testing for an efficient development cycle.",
+    "icon": "/images/icons/speed.png"
+  },
+  {
+    "id": 5,
+    "title": "Free to Use",
+    "description": "Fuel your creativity without spending a dime. Fake API offers you a free ticket to innovative development.",
+    "icon": "/images/icons/money.png"
+  },
+  {
+    "id": 6,
+    "title": "File Upload Image",
+    "description": "Experience a new dimension of creativity. Fake API now empowers you to seamlessly upload image files, expanding your development possibilities.",
+    "icon": "/images/icons/image.png"
+  }
+]

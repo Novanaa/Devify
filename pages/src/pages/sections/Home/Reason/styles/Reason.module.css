@@ -1,0 +1,309 @@
+.container {
+  width: 98.6vw;
+  position: relative;
+  top: 1.7rem;
+  height: 100vh;
+  padding: 4rem 0rem 0rem 0rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.136);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+  background: #161616;
+}
+.contentWrapper {
+  width: 98.1vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+}
+.contentTitle {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 700;
+  font-size: 2.4rem;
+  color: #e7c4eb;
+}
+.contentTitle::before {
+  content: "Why Devify?";
+  padding: 0.4rem;
+  z-index: 0;
+  position: absolute;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px #e7c4eb;
+  opacity: 0.8;
+}
+.contentDescription {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  opacity: 0.7;
+  font-size: 0.9rem;
+  color: #e7c4eb;
+}
+.cardsContentContainer {
+  gap: 1.2rem;
+  position: relative;
+  top: 1.5rem;
+  left: 0.12rem;
+  display: grid;
+  grid-template-columns: repeat(3, 20.5rem);
+}
+.cardsContentWrapper {
+  cursor: default;
+  border-radius: 5px;
+  background: #191919;
+  border: 1px solid rgba(255, 255, 255, 0.136);
+  padding: 1.2rem 2.2rem 0.9rem 1rem;
+  height: 10.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  transition: all 0.15s;
+}
+.cardsContentWrapper:hover {
+  background: #212121;
+  border: 1px solid rgba(255, 255, 255, 0.222);
+}
+.cardImages {
+  opacity: 0.8;
+}
+.cardContentTitle {
+  color: #e7c4eb;
+  font-size: 1.4rem;
+}
+.cardContentDescription {
+  color: #e7c4eb;
+  opacity: 0.75;
+  font-size: 0.82rem;
+}
+.loadingComponentContainer {
+  gap: 1.2rem;
+  position: relative;
+  top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 20.5rem);
+}
+.skeletonLoading {
+  border: 1px solid rgba(255, 255, 255, 0.136);
+  height: 10.2rem;
+  padding: 1.2rem 2.2rem 0.9rem 1rem;
+}
+
+/* Media Queries */
+/* Desktop */
+@media screen and (width >= 1920px) {
+  .container {
+    height: 54vh;
+    padding: 5rem 0rem 0rem 0rem;
+  }
+}
+@media screen and (width >= 1600px) {
+  .container {
+    width: 100vw;
+    height: 59vh;
+    padding: 5rem 0rem 0rem 0rem;
+  }
+  .contentWrapper {
+    width: 98.8vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+  }
+}
+@media (width >= 1600px) and (height > 1100px) {
+  .container {
+    height: 56vh;
+    padding: 5rem 0rem 0rem 0rem;
+  }
+}
+
+/* Laptop */
+@media screen and (width <= 1280px) {
+  .container {
+    padding: 5rem 0rem 0rem 0rem;
+    height: 83vh;
+    top: 1rem;
+    /* width: 98.6vw; */
+  }
+}
+
+/* Tablet */
+@media screen and (width <= 884px) {
+  .container {
+    padding: 4rem 0rem 0rem 0rem;
+    height: 73vh;
+    top: 1rem;
+  }
+  .cardsContentContainer {
+    grid-template-columns: repeat(2, 20.5rem);
+  }
+  .loadingComponentContainer {
+    grid-template-columns: repeat(2, 20.5rem);
+  }
+}
+@media screen and (width <= 800px) {
+  .container {
+    padding: 4rem 0rem 0rem 0rem;
+    height: 65vh;
+    top: 1rem;
+  }
+}
+@media screen and (width <= 768px) {
+  .container {
+    padding: 4.5rem 0rem 0rem 0rem;
+    height: 88vh;
+    top: 1rem;
+  }
+}
+
+/* Mobile */
+@media screen and (width <= 428px) {
+  .cardsContentWrapper:nth-child(4) {
+    display: none;
+  }
+  .cardsContentWrapper:nth-child(5) {
+    display: none;
+  }
+  .cardsContentWrapper:nth-child(6) {
+    display: none;
+  }
+  .container {
+    padding: 3.5rem 0rem 0rem 0rem;
+    height: 92vh;
+    top: 1rem;
+  }
+  .contentTitle {
+    font-size: 2.2rem;
+  }
+  .contentDescription {
+    text-align: center;
+    padding: 0rem 3rem;
+  }
+  .cardsContentContainer {
+    grid-template-columns: repeat(1, 87vw);
+  }
+  .loadingComponentContainer {
+    grid-template-columns: repeat(1, 87vw);
+  }
+}
+@media screen and (width <= 414px) {
+  .container {
+    padding: 3.5rem 0rem 0rem 0rem;
+    height: 96vh;
+    top: 1rem;
+  }
+}
+@media (width <= 412px) and (height <= 915px) {
+  .container {
+    padding: 3.5rem 0rem 0rem 0rem;
+    height: 92vh;
+    top: 1rem;
+  }
+}
+@media screen and (width <= 393px) {
+  .cardsContentContainer {
+    gap: 1.2rem;
+    position: relative;
+    top: 0.5rem;
+    display: grid;
+    left: 0.37rem;
+  }
+  .container {
+    padding: 3.5rem 0rem 0rem 0rem;
+    height: 98vh;
+    top: 1rem;
+  }
+  .contentTitle {
+    font-size: 2rem;
+  }
+  .contentDescription {
+    text-align: center;
+    padding: 0rem 2.5rem;
+    font-size: 0.82rem;
+  }
+}
+@media screen and (width <= 375px) {
+  .container {
+    padding: 3rem 0rem 0rem 0rem;
+    height: 100vh;
+    top: 1rem;
+  }
+  .cardsContentContainer {
+    top: 1rem;
+  }
+  .contentTitle {
+    font-size: 1.9rem;
+  }
+  .contentDescription {
+    text-align: center;
+    padding: 0rem 2rem;
+    font-size: 0.82rem;
+  }
+}
+@media screen and (width <= 362px) {
+  .container {
+    padding: 3rem 0rem 0rem 0rem;
+    height: 95.5vh;
+    top: 0rem;
+  }
+  .cardsContentContainer {
+    top: 0rem;
+    left: 0.2rem;
+    grid-template-columns: repeat(1, 85vw);
+    height: 10rem;
+  }
+  .loadingComponentContainer {
+    top: 0rem;
+    grid-template-columns: repeat(1, 85vw);
+  }
+  .cardsContentWrapper {
+    padding: 1.2rem 1.5rem 0.8rem 1rem;
+  }
+  .cardContentTitle {
+    font-size: 1.25rem;
+  }
+  .cardContentDescription {
+    font-size: 0.77rem;
+  }
+  .contentTitle {
+    font-size: 1.9rem;
+  }
+  .contentDescription {
+    text-align: center;
+    padding: 0rem 1.8rem;
+    font-size: 0.75rem;
+  }
+}
+@media (width <= 360px) and (height < 760px) {
+  .container {
+    padding: 3rem 0rem 0rem 0rem;
+    height: 105vh;
+    top: 0rem;
+  }
+}
+@media screen and (width <= 320px) {
+  .container {
+    padding: 2rem 0rem 0rem 0rem;
+    height: 134vh;
+    top: 1rem;
+  }
+  .cardsContentContainer {
+    top: 0.8rem;
+    grid-template-columns: repeat(1, 85vw);
+    height: 10rem;
+  }
+  .loadingComponentContainer {
+    top: 0.8rem;
+    grid-template-columns: repeat(1, 85vw);
+  }
+  .cardsContentWrapper {
+    padding: 1.2rem 1.4rem 0.9rem 1rem;
+  }
+  .contentTitle {
+    font-size: 1.7rem;
+  }
+  .contentDescription {
+    text-align: center;
+    padding: 0rem 1.8rem;
+    font-size: 0.65rem;
+  }
+}

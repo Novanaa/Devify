@@ -1,0 +1,224 @@
+---
+    title: Add Book
+    description: Add Book
+    content:
+        - How to Use It?
+        - Fetching Data
+        - HTTP Client Module
+        - Payloads
+    slug:
+        - how-to-use-it
+        - fetching-data
+        - http-client-module
+        - payloads
+    next:
+        - title: Update Book
+        - link: /docs/v1/books/update-book
+---
+
+# Add Book
+
+Devify, a Fake API, is a developer's best friend when it comes to creating, testing, and developing applications. **It offers a robust environment that allows developers to experiment and perfect their coding skills.**
+
+Adding a book is an essential step when working on applications that involve cataloging or managing digital libraries. **In a real-world scenario, this action would typically be employed for creating, updating, or modifying book records in a database.**
+
+---
+
+## How to Use It?
+
+To add a book, you have several sophisticated options available. You can utilize tools like [Postman](https://postman.com) or harness the capability of [cURL](https://curl.se) to gracefully retrieve JSON data from Devify's book endpoint.
+
+If you're using [cURL](https://curl.se), you can employ it to issue HTTP requests via the command line or within your scripts. Below are some prevalent scenarios and illustrations:
+
+```bash
+$ curl -X POST -F "image=@/path/to/your/file.jpg" -F "title=This is a title" -F "synopsis=This is a synopsis" -F "author=Nova" -F "category=history" https://api-devify.my.id/v1/books
+```
+
+The image field must be start with **@** for example: **@C:/Users/Administrator/Documents/image.png**
+
+---
+
+## Fetching Data
+
+**One of the fundamental operations in application development is the ability to add new books to a database and efficiently retrieve the data associated with them.** Devify simplifies this task by offering a user-friendly
+
+**Developers can utilize this endpoint to add new books to their virtual database and, subsequently, fetch data related to these books.** This feature is invaluable for testing and debugging purposes, allowing developers to simulate real-world scenarios where new data is constantly being added to the system.
+
+### Add Book with Url Image
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+let content = new FormData();
+content.append("poster", "https://....");
+content.append("title", "This is my title.");
+content.append("synopsis", "This is my synopsis.");
+content.append("author", "Nova");
+content.append("category", "history");
+
+async function books() {
+  try {
+    const response = await fetch(`${baseUrl}/v1/books`, {
+      method: "POST",
+      body: content,
+    });
+    const result = await response.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+
+books().then((datas) => console.log(datas));
+```
+
+OR
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+let content = new FormData();
+content.append("poster", "https://....");
+content.append("title", "This is my title.");
+content.append("synopsis", "This is my synopsis.");
+content.append("author", "Nova");
+content.append("category", "history");
+
+fetch(`${baseUrl}/v1/books`, {
+  method: "POST",
+  body: content,
+})
+  .then((res) => res.json())
+  .then((result) => console.log(result));
+```
+
+### Add Book with Files upload
+
+```js
+const baseUrl = "https://api-devify.my.id";
+const file = fileInput.files[0];
+
+let content = new FormData();
+content.append("image", file);
+content.append("title", "This is my title.");
+content.append("synopsis", "This is my synopsis.");
+content.append("author", "Nova");
+content.append("category", "history");
+
+async function books() {
+  try {
+    const response = await fetch(`${baseUrl}/v1/books`, {
+      method: "POST",
+      body: content,
+    });
+    const result = await response.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+
+books().then((datas) => console.log(datas));
+```
+
+OR
+
+```js
+const baseUrl = "https://api-devify.my.id";
+const file = fileInput.files[0];
+
+let content = new FormData();
+content.append("image", file);
+content.append("title", "This is my title.");
+content.append("synopsis", "This is my synopsis.");
+content.append("author", "Nova");
+content.append("category", "history");
+
+fetch(`${baseUrl}/v1/books`, {
+  method: "POST",
+  body: content,
+})
+  .then((res) => res.json())
+  .then((result) => console.log(result));
+```
+
+---
+
+## HTTP Client Module
+
+One of the most popular HTTP client modules for making API requests in **JavaScript** is [Axios](https://axios-http.com). [Axios](https://axios-http.com) simplifies the process of sending HTTP requests and handling responses, **making it an ideal choice for interacting with Devify.**
+
+To add a book using Axios and Devify, you can send a POST request to Devify's book-related endpoint. Here's a basic example in **JavaScript**:
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+const file = fileInput.files[0];
+
+let content = new FormData();
+content.append("image", file);
+content.append("title", "This is my title.");
+content.append("synopsis", "This is my synopsis.");
+content.append("author", "Nova");
+content.append("category", "history");
+
+async function addBook() {
+  try {
+    const res = await axios.post(`${baseUrl}/v1/books`, { content });
+
+    return res;
+  } catch (err) {
+    return null;
+  }
+}
+
+addBook().then((result) => console.log(result));
+```
+
+OR
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+const file = fileInput.files[0];
+
+let content = new FormData();
+content.append("image", file);
+content.append("title", "This is my title.");
+content.append("synopsis", "This is my synopsis.");
+content.append("author", "Nova");
+content.append("category", "history");
+
+axios
+  .post(`${baseUrl}/v1/books`, { content })
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+```
+
+---
+
+## Payloads
+
+| Payload  | Data Types | Required |
+| -------- | ---------- | -------- |
+| Title    | String     | Yes      |
+| Synopsis | String     | No       |
+| Author   | String     | Yes      |
+| Category | String     | Yes      |
+| Poster   | String     | Yes      |
+
+```json
+{
+  "title": "This is a title",
+  "synopsis": "This is a synopsis",
+  "author": "Nova",
+  "category": "history",
+  "poster": "https://..."
+}
+```
+
+---

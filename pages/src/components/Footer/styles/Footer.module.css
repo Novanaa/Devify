@@ -1,0 +1,242 @@
+.container {
+  position: relative;
+  top: 6rem;
+  width: 98.5vw;
+  right: 0.45rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.136);
+  background: #161616;
+  padding: 3.5rem 8rem 4rem 8rem;
+}
+.contentWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.contentProfileWrapper {
+  border: 1px solid rgba(255, 255, 255, 0.136);
+  border-radius: 5px;
+  padding: 0.7rem 1.1rem;
+  align-self: start;
+  display: flex;
+  gap: 0.5rem;
+  transition: 0.15s all;
+  align-items: center;
+}
+.contentProfileWrapper:hover {
+  background: rgb(30, 30, 30);
+  border: 1px solid rgba(255, 255, 255, 0.222);
+}
+.profileImage {
+  border-radius: 50%;
+}
+.profileTitle {
+  opacity: 0.75;
+  font-size: 0.88rem;
+}
+.contentLinkContainer {
+  display: flex;
+  gap: 3.5rem;
+}
+.contentLinkCtaWrapper {
+  top: 0.7rem;
+  font-size: 0.9rem;
+  opacity: 0.7;
+  position: relative;
+  gap: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.15s;
+}
+.copyright {
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+/* Media Queries */
+/* Destop */
+@media screen and (width >= 1920px) {
+  .container {
+    position: relative;
+    top: 11rem;
+    width: 100vw;
+    right: 0.7rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+    padding: 3.5rem 13.5rem 4rem 12.5rem;
+  }
+  .wrapper {
+    margin: 0 7rem 0 5.5rem;
+  }
+}
+@media screen and (width >= 1600px) {
+  .container {
+    position: relative;
+    top: 11rem;
+    width: 100vw;
+    right: 0.7rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+    padding: 3.5rem 13.5rem 4rem 12.5rem;
+  }
+}
+@media (width >= 1600px) and (height >= 1200px) {
+  .container {
+    position: relative;
+    top: 10rem;
+    width: 100vw;
+    right: 0.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+    padding: 3.5rem 11rem 4rem 11rem;
+  }
+}
+
+/* Laptop */
+@media screen and (width <= 1280px) {
+  .container {
+    position: relative;
+    top: 8.5rem;
+    width: 99.5vw;
+    right: 0.45rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+    padding: 3.5rem 8rem 4rem 8rem;
+  }
+}
+
+/* Tablet */
+@media screen and (width <= 884px) {
+  .container {
+    position: relative;
+    top: 8.5rem;
+    width: 99.5vw;
+    right: 0.45rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+    padding: 3.5rem 3rem 4.5rem 3rem;
+  }
+  .contentLinkContainer {
+    display: flex;
+    gap: 2.5rem;
+  }
+  .copyright {
+    position: relative;
+    top: 1.7rem;
+  }
+}
+@media screen and (width <= 834px) {
+  .container {
+    position: relative;
+    top: 8.5rem;
+    width: 99.5vw;
+    right: 0.45rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+    padding: 3.5rem 2rem 4.5rem 2rem;
+  }
+  .contentLinkContainer {
+    display: flex;
+    gap: 1.5rem;
+  }
+}
+@media screen and (width <= 800px) {
+  .container {
+    position: relative;
+    top: 8.5rem;
+    width: 99.5vw;
+    right: 0.45rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+    padding: 3.5rem 1.5rem 4.5rem 1.8rem;
+  }
+}
+
+/* Mobile */
+@media screen and (width <= 428px) {
+  .container {
+    position: relative;
+    top: 8.5rem;
+    width: 99.5vw;
+    right: 0.45rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+    padding: 2.5rem 1.5rem 7rem 2rem;
+  }
+  .contentWrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  .contentLinkContainer {
+    position: relative;
+    top: 1.5rem;
+    display: flex;
+    left: 0.2rem;
+    flex-wrap: wrap;
+    gap: 2.7rem;
+  }
+  .contentProfileWrapper {
+    border: 1px solid rgba(255, 255, 255, 0.136);
+    border-radius: 5px;
+    padding: 0.7rem 0rem;
+    width: 87vw;
+    justify-content: center;
+    align-self: start;
+    display: flex;
+    gap: 0.5rem;
+    transition: 0.15s all;
+  }
+  .copyright {
+    top: 4rem;
+  }
+}
+@media screen and (width <= 414px) {
+  .copyright {
+    top: 4.5rem;
+  }
+}
+@media screen and (width <= 375px) {
+  .container {
+    position: relative;
+    top: 8.5rem;
+    width: 99.5vw;
+    right: 0.45rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+    padding: 2.5rem 1.5rem 7rem 2.1rem;
+  }
+  .contentProfileWrapper {
+    border: 1px solid rgba(255, 255, 255, 0.136);
+    border-radius: 5px;
+    padding: 0.7rem 0rem;
+    width: 86.5vw;
+    justify-content: center;
+    align-self: start;
+    display: flex;
+    gap: 0.5rem;
+    transition: 0.15s all;
+  }
+}
+@media screen and (width <= 362px) {
+  .container {
+    position: relative;
+    top: 8.5rem;
+    width: 99.5vw;
+    right: 0.45rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+    padding: 2.5rem 1.5rem 7rem 2rem;
+  }
+}
+@media screen and (width <= 320px) {
+  .contentProfileWrapper {
+    border: 1px solid rgba(255, 255, 255, 0.136);
+    border-radius: 5px;
+    padding: 0.7rem 0rem;
+    width: 84.5vw;
+    justify-content: center;
+    align-self: start;
+    display: flex;
+    gap: 0.5rem;
+    transition: 0.15s all;
+  }
+}

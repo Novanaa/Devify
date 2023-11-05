@@ -1,0 +1,113 @@
+---
+    title: Single Categories
+    description: Single Categories
+    content:
+        - How to Use It?
+        - Fetching Data
+        - HTTP Client Module
+    slug:
+        - how-to-use-it
+        - fetching-data
+        - http-client-module
+    next:
+        - title: Search Books
+        - link: /docs/v1/books/search-books
+---
+
+# Single Categories
+
+Devify is a powerful and versatile Fake API designed to cater to **the needs of developers by providing them with an ideal testing and development environment for their applications.** When it comes to organizing and retrieving specific categories of data..
+
+Developers often require precise and targeted data to fine-tune their applications. **Devify allows developers to fetch individual categories of data with ease. Whether you're building an e-commerce platform and need to retrieve product categories, or you're developing a content management.**
+
+---
+
+## How to Use It?
+
+To access the full array of single-category book data, you have several efficient options available. You can utilize tools such as [Postman](https://postman.com) or harness the capabilities of [cURL](https://curl.se) to gracefully retrieve the JSON data from Devify's books endpoint.
+
+If you're using [cURL](https://curl.se), you can employ it to initiate HTTP requests either directly from the command line or within your scripts. Here are some typical use cases and examples:
+
+```bash
+$ curl -o C:\output.json -X GET "https://api-devify.my.id/v1/books/categories/history"
+```
+
+OR
+
+```bash
+$ curl -X GET "https://api-devify.my.id/v1/books/categories/history"
+```
+
+---
+
+## Fetching Data
+
+In a world where efficient data retrieval is paramount, Devify steps in as a powerful ally. **This function allows developers to access specific categories within their applications effortlessly. With a user-friendly interface and well-documented endpoints, Devify simplifies the process of obtaining single categories, making it an essential tool in a developer's toolkit.**
+
+### Examples
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+async function books() {
+  try {
+    const response = await fetch(`${baseUrl}/v1/books/categories/history`);
+    const result = await response.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+
+books().then((datas) => console.log(datas));
+```
+
+OR
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+fetch(`${baseUrl}/v1/books/categories/history`)
+  .then((res) => res.json())
+  .then((result) => console.log(result));
+```
+
+---
+
+## HTTP Client Module
+
+**This HTTP Client Module simplifies the process of making HTTP requests to the Devify server.** It emulates the functionality of popular HTTP client libraries like [Axios](https://axios-http.com), providing developers with a familiar and user-friendly interface for communicating with the Devify API.
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+async function books() {
+  try {
+    const res = await axios.get(`${baseUrl}/v1/books/categories/fiction`);
+
+    return res;
+  } catch (err) {
+    return null;
+  }
+}
+
+books().then((result) => console.log(result));
+```
+
+OR
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+axios
+  .get(`${baseUrl}/v1/books/categories/fiction`)
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+```
+
+---

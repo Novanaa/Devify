@@ -1,0 +1,535 @@
+.container {
+  position: relative;
+  margin: 4.5rem 0rem 0rem 0rem;
+  top: 1rem;
+  padding: 5rem 7.5rem;
+  height: 100vh;
+  border-top: 1px solid rgba(255, 255, 255, 0.136);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+  background: #161616;
+}
+.wrapper {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.contentWrapper {
+  flex-direction: column;
+  display: flex;
+  gap: 0.7rem;
+}
+.contentTitle {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 700;
+  font-size: 2.3rem;
+  color: #e7c4eb;
+}
+.contentTitle::before {
+  content: "Diverse Use Cases Unveiled";
+  padding: 0.4rem;
+  z-index: 0;
+  position: absolute;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px #e7c4eb;
+  opacity: 0.8;
+}
+.contentDescription {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  opacity: 0.75;
+  font-size: 0.9rem;
+  color: #e7c4eb;
+  width: 70%;
+}
+.cardsContainer {
+  gap: 1rem;
+  display: grid;
+  position: relative;
+  top: 2rem;
+  grid-template-columns: repeat(3, 23.5rem);
+}
+.cardWrapper {
+  border-radius: 5px;
+  padding: 1.1rem 1rem 1.2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.136);
+  background: #151515;
+}
+.cardWrapper:hover {
+  background: #171717;
+  border: 1px solid rgba(255, 255, 255, 0.222);
+}
+.cardImage {
+  object-fit: contain;
+  justify-self: center;
+  align-self: center;
+}
+.cardTitle {
+  font-size: 1.3rem;
+}
+.cardDescription {
+  opacity: 0.75;
+  color: #e7c4eb;
+  font-size: 0.8rem;
+}
+
+/* Media Queries */
+/* Desktop */
+@media screen and (width >= 1600px) {
+  .container {
+    position: relative;
+    margin: 5.5rem 0rem 0rem 0rem;
+    top: 1rem;
+    padding: 6.3rem 12rem;
+    height: 62vh;
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+  }
+  .contentDescription {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    opacity: 0.75;
+    font-size: 0.9rem;
+    color: #e7c4eb;
+    width: 60%;
+  }
+  .cardsContainer {
+    gap: 1rem;
+    display: grid;
+    position: relative;
+    top: 2rem;
+    grid-template-columns: repeat(3, 24.5rem);
+  }
+  .cardWrapper {
+    border-radius: 5px;
+    padding: 1.1rem 1rem 1.3rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.136);
+    background: #151515;
+  }
+}
+@media (width >= 1600px) and (height > 1080px) {
+  .container {
+    position: relative;
+    margin: 5.5rem 0rem 0rem 0rem;
+    top: 1rem;
+    padding: 6.3rem 12rem;
+    height: 56vh;
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+  }
+}
+
+/* Laptop */
+@media screen and (width <= 1280px) {
+  .container {
+    position: relative;
+    margin: 5rem 0rem 0rem 0rem;
+    top: 1rem;
+    padding: 5rem 7.5rem;
+    height: 80vh;
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+  }
+}
+
+/* Tablet */
+@media screen and (width <= 884px) {
+  .container {
+    position: relative;
+    margin: 5rem 0rem 0rem 0rem;
+    top: 1rem;
+    padding: 4rem 7.5rem;
+    height: 90vh;
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+  }
+  .cardsContainer {
+    gap: 1rem;
+    display: grid;
+    position: relative;
+    top: 2rem;
+    grid-template-columns: repeat(2, 23.5rem);
+  }
+}
+@media screen and (width <= 834px) {
+  .container {
+    position: relative;
+    margin: 5rem 0rem 0rem 0rem;
+    top: 1rem;
+    padding: 4.4rem 7.8rem;
+    height: 89vh;
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+  }
+  .cardsContainer {
+    gap: 1rem;
+    display: grid;
+    position: relative;
+    top: 2rem;
+    grid-template-columns: repeat(2, 22.7rem);
+  }
+  .cardWrapper {
+    border-radius: 5px;
+    padding: 1.3rem 1.3rem 1.2rem 1.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.136);
+    background: #151515;
+  }
+  .cardImage {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    justify-self: center;
+    align-self: center;
+  }
+}
+@media screen and (width <= 820px) {
+  .container {
+    position: relative;
+    margin: 5rem 0rem 0rem 0rem;
+    top: 1rem;
+    padding: 4.2rem 8.4rem;
+    height: 89vh;
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+  }
+  .cardsContainer {
+    gap: 1rem;
+    display: grid;
+    position: relative;
+    top: 2rem;
+    grid-template-columns: repeat(2, 22.3rem);
+  }
+}
+@media screen and (width <= 800px) {
+  .container {
+    position: relative;
+    margin: 5rem 0rem 0rem 0rem;
+    top: 1rem;
+    padding: 4rem 8.9rem;
+    height: 77.8vh;
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+  }
+  .cardsContainer {
+    gap: 1rem;
+    display: grid;
+    position: relative;
+    top: 2rem;
+    grid-template-columns: repeat(2, 22.1rem);
+  }
+}
+@media screen and (width <= 768px) {
+  .container {
+    position: relative;
+    margin: 5rem 0rem 0rem 0rem;
+    top: 1rem;
+    padding: 3.8rem 10.5rem;
+    height: 104vh;
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+  }
+  .cardsContainer {
+    gap: 1rem;
+    display: grid;
+    position: relative;
+    top: 2rem;
+    grid-template-columns: repeat(2, 21.6rem);
+  }
+}
+
+/* Mobile */
+@media screen and (width <= 428px) {
+  .container {
+    position: relative;
+    margin: 5rem 0rem 0rem 0rem;
+    top: 1rem;
+    padding: 2.8rem 10.5rem;
+    height: 158vh;
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+  }
+  .cardsContainer {
+    gap: 1rem;
+    display: grid;
+    position: relative;
+    top: 1rem;
+    grid-template-columns: repeat(1, 83vw);
+  }
+  .cardWrapper {
+    border-radius: 5px;
+    padding: 1.3rem 1.3rem 1.4rem 1.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.136);
+    background: #151515;
+  }
+  .contentTitle {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 700;
+    font-size: 2.15rem;
+    text-align: center;
+    color: #e7c4eb;
+  }
+  .contentTitle::before {
+    content: "Diverse Use Cases Unveiled";
+    padding: 0.4rem 3.2rem 0.4rem 0.4rem;
+    z-index: 0;
+    position: absolute;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px #e7c4eb;
+    opacity: 0.8;
+  }
+  .contentDescription {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    opacity: 0.75;
+    font-size: 0.9rem;
+    color: #e7c4eb;
+    width: 98%;
+    text-align: center;
+    font-size: 0.8rem;
+  }
+}
+@media screen and (width <= 414px) {
+  .container {
+    position: relative;
+    margin: 5rem 0rem 0rem 0rem;
+    top: 1rem;
+    padding: 2.8rem 10.5rem;
+    height: 162vh;
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+  }
+  .cardsContainer {
+    gap: 1rem;
+    display: grid;
+    position: relative;
+    top: 1rem;
+    grid-template-columns: repeat(1, 85.5vw);
+  }
+  .contentTitle::before {
+    content: "Diverse Use Cases Unveiled";
+    padding: 0.4rem 2.7rem 0.4rem 0.4rem;
+    z-index: 0;
+    position: absolute;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px #e7c4eb;
+    opacity: 0.8;
+  }
+}
+@media (width <= 412px) and (height <= 915px) {
+  .container {
+    position: relative;
+    margin: 5rem 0rem 0rem 0rem;
+    top: 1rem;
+    padding: 2.8rem 10.5rem;
+    height: 153vh;
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+  }
+  .contentTitle::before {
+    content: "Diverse Use Cases Unveiled";
+    padding: 0.4rem 2.75rem 0.4rem 0.4rem;
+    z-index: 0;
+    position: absolute;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px #e7c4eb;
+    opacity: 0.8;
+  }
+  .contentDescription {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    opacity: 0.75;
+    font-size: 0.9rem;
+    color: #e7c4eb;
+    width: 98%;
+    text-align: center;
+    font-size: 0.8rem;
+  }
+}
+@media screen and (width <= 393px) {
+  .container {
+    position: relative;
+    margin: 5rem 0rem 0rem 0rem;
+    top: 1rem;
+    padding: 2.4rem 10.5rem;
+    height: 162.5vh;
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+  }
+  .cardsContainer {
+    gap: 1rem;
+    display: grid;
+    position: relative;
+    top: 1rem;
+    grid-template-columns: repeat(1, 86vw);
+  }
+  .contentTitle {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 700;
+    font-size: 2.1rem;
+    text-align: center;
+    color: #e7c4eb;
+  }
+  .contentTitle::before {
+    padding: 0.4rem 2.5rem 0.4rem 0.4rem;
+  }
+}
+@media (width <= 392px) and (height <= 844px) {
+  .container {
+    position: relative;
+    margin: 5rem 0rem 0rem 0rem;
+    top: 1rem;
+    padding: 2.6rem 10.5rem;
+    height: 169vh;
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+  }
+}
+@media screen and (width <= 375px) {
+  .container {
+    position: relative;
+    margin: 4rem 0rem 0rem 0rem;
+    top: 1rem;
+    padding: 2.8rem 10.5rem;
+    height: 177vh;
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+  }
+  .cardsContainer {
+    gap: 1rem;
+    display: grid;
+    position: relative;
+    top: 0.8rem;
+    grid-template-columns: repeat(1, 85.5vw);
+  }
+  .contentTitle {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 700;
+    font-size: 2.05rem;
+    text-align: center;
+    color: #e7c4eb;
+  }
+  .contentTitle::before {
+    padding: 0.4rem 1.8rem 0.4rem 0.4rem;
+  }
+  .contentDescription {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    opacity: 0.75;
+    font-size: 0.9rem;
+    color: #e7c4eb;
+    width: 98%;
+    text-align: center;
+    font-size: 0.8rem;
+  }
+}
+@media screen and (width <= 362px) {
+  .container {
+    position: relative;
+    margin: 4rem 0rem 0rem 0rem;
+    top: 1rem;
+    padding: 3rem 10.5rem;
+    height: 178vh;
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+  }
+  .contentTitle::before {
+    padding: 0.4rem 1.4rem 0.4rem 0.4rem;
+  }
+  .contentDescription {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    opacity: 0.75;
+    font-size: 0.9rem;
+    color: #e7c4eb;
+    width: 100%;
+    text-align: center;
+    font-size: 0.8rem;
+  }
+}
+@media (width <= 362px) and (height <= 880px) and (height >= 830px) {
+  .container {
+    position: relative;
+    margin: 4rem 0rem 0rem 0rem;
+    top: 1rem;
+    padding: 3rem 10.5rem;
+    height: 160vh;
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+  }
+}
+/* @media (width <= 360px) and (height <= 781px) {
+  .container {
+    position: relative;
+    margin: 4rem 0rem 0rem 0rem;
+    top: 1rem;
+    padding: 3rem 10.5rem;
+    height: 160vh;
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+  }
+} */
+@media (width <= 362px) and (height <= 760px) {
+  .container {
+    position: relative;
+    margin: 4rem 0rem 0rem 0rem;
+    top: 1rem;
+    padding: 3rem 10.5rem;
+    height: 200vh;
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+  }
+}
+@media screen and (width <= 320px) {
+  .container {
+    position: relative;
+    margin: 4rem 0rem 0rem 0rem;
+    top: 1rem;
+    padding: 3rem 3rem;
+    height: 275vh;
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+  }
+  .contentTitle::before {
+    padding: 0.4rem 0.8rem 0.4rem 0.4rem;
+  }
+  .contentTitle {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 700;
+    font-size: 1.85rem;
+    text-align: center;
+    color: #e7c4eb;
+  }
+  .contentDescription {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    opacity: 0.75;
+    font-size: 0.85rem;
+    color: #e7c4eb;
+    width: 100%;
+    text-align: center;
+    font-size: 0.8rem;
+  }
+}

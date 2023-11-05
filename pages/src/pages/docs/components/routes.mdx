@@ -1,0 +1,100 @@
+---
+    title: Routes
+    description: All Http Routes
+    content: 
+        - Products
+        - Users
+        - Books
+        - Carts
+        - Auth
+    slug:
+        - products
+        - users
+        - books
+        - carts
+        - auth
+    next: 
+        - title: Payloads
+        - link: /docs/v1/payloads
+---
+
+# Routes
+
+Devify's HTTP routes provide a seamless and efficient way to handle web requests in your application. Whether you need to fetch data, post updates, or manage various aspects of your development environment, offer a versatile and developer-friendly solution.
+
+All HTTP methods are supported:
+
+---
+
+## Products
+
+| Endpoints                          | Description                 | Method |
+| ---------------------------------- | --------------------------- | ------ |
+| v1/products                        | All Products                | GET    |
+| v1/products/&lt;id&gt;             | Single Product By ID        | GET    |
+| v1/products/key/&lt;id&gt;         | Single Product By Uniquekey | GET    |
+| v1/products/search?q=&lt;query&gt; | Search Queries Products     | GET    |
+| v1/products/categories             | All Categories              | GET    |
+| v1/products/categories/jewelry     | Single Category             | GET    |
+| v1/products                        | Add Product                 | POST   |
+| v1/products/&lt;id&gt;             | Update Product By ID        | PATCH  |
+| v1/products/key/&lt;id&gt;         | Update Product By Uniquekey | PATCH  |
+| v1/products/&lt;id&gt;             | Delete Product By ID        | DELETE |
+| v1/products/key/&lt;id&gt;         | Delete Product By Uniquekey | DELETE |
+
+---
+
+## Users
+
+| Endpoints                       | Description              | Method |
+| ------------------------------- | ------------------------ | ------ |
+| v1/user                         | All Users                | GET    |
+| v1/users/&lt;id&gt;             | Single User By ID        | GET    |
+| v1/users/key/&lt;id&gt;         | Single User By Uniquekey | GET    |
+| v1/users/search?q=&lt;query&gt; | Search Queries Users     | GET    |
+| v1/users/&lt;id&gt;             | Update User By ID        | PATCH  |
+| v1/users/key/&lt;id&gt;         | Update User By Uniquekey | PATCH  |
+| v1/users/&lt;id&gt;             | Delete User By ID        | DELETE |
+| v1/users/key/&lt;id&gt;         | Delete User By Uniquekey | DELETE |
+
+---
+
+## Books
+
+| Endpoints                       | Description              | Method |
+| ------------------------------- | ------------------------ | ------ |
+| v1/books                        | All Books                | GET    |
+| v1/books/&lt;id&gt;             | Single Book By ID        | GET    |
+| v1/books/key/&lt;id&gt;         | Single Book By Uniquekey | GET    |
+| v1/books/search?q=&lt;query&gt; | Search Queries Books     | GET    |
+| v1/books/categories             | All Categories           | GET    |
+| v1/books/categories/fiction     | Single Category          | GET    |
+| v1/books                        | Add Book                 | POST   |
+| v1/books/&lt;id&gt;             | Update Book By ID        | PATCH  |
+| v1/books/key/&lt;id&gt;         | Update Book By Uniquekey | PATCH  |
+| v1/books/&lt;id&gt;             | Delete Book By ID        | DELETE |
+| v1/books/key/&lt;id&gt;         | Delete Book By Uniquekey | DELETE |
+
+---
+
+## Carts
+
+| Endpoints               | Description              | Method |
+| ----------------------- | ------------------------ | ------ |
+| v1/carts                | All Carts                | GET    |
+| v1/carts/&lt;id&gt;     | Single Cart              | GET    |
+| v1/carts                | Add Cart                 | POST   |
+| v1/carts/&lt;id&gt;     | Update Cart By ID        | PATCH  |
+| v1/carts/key/&lt;id&gt; | Update Cart By Uniquekey | PATCH  |
+| v1/carts/&lt;id&gt;     | Delete Cart By ID        | DELETE |
+| v1/carts/key/&lt;id&gt; | Delete Cart By Uniquekey | DELETE |
+
+---
+
+## Auth
+
+| Endpoints        | Description   | Method |
+| ---------------- | ------------- | ------ |
+| v1/auth/register | User Register | POST   |
+| v1/auth/login    | User Login    | POST   |
+| v1/auth/logout   | Logout User   | POST   |

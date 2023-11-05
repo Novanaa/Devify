@@ -1,0 +1,129 @@
+---
+    title: Search Products
+    description: Search Products
+    content:
+        - How to Use It?
+        - Fetching Data
+        - HTTP Client Module
+        - Query Parameters
+    slug:
+        - how-to-use-it
+        - fetching-data
+        - http-client-module
+        - query-parameters
+    next:
+        - title: All Categories
+        - link: /docs/v1/products/categories
+---
+
+# Search Products
+
+This feature empowers developers to efficiently search and retrieve product data from their applications, making it an ideal resource for testing and refining search functionalities in their software. With Devify's, **developers can experiment with various search parameters, refine their search algorithms, and fine-tune the user experience.**
+
+Whether you're building an e-commerce platform, a product catalog, or any application that involves searching for products, **Devify's simplifies the development process.** It allows developers to test and optimize search queries, ensuring that their applications provide users with a seamless and efficient product discovery experience.
+
+---
+
+## How to Use It?
+
+When it comes to accessing a comprehensive set of product data, you have various advanced options at your disposal.** You can leverage robust tools like [Postman](https://postman.com), or you can employ the capabilities of [cURL](https://curl.se) to smoothly retrieve the JSON data provided by Devify's products endpoint.**
+
+For those who prefer [cURL](https://curl.se), it acts as a versatile method for executing HTTP requests, whether you are working from the command line or within your scripts. Below, you will discover a range of common scenarios along with illustrative examples:
+
+```bash
+$ curl -o C:\output.json -X GET "https://api-devify.my.id/v1/products/search?q=samsung"
+```
+
+OR
+
+```bash
+$ curl -X GET "https://api-devify.my.id/v1/products/search?q=samsung"
+```
+
+---
+
+## Fetching Data
+
+Developers often find themselves in need of extensive data to test their applications and simulate real-world scenarios. **Devify comes to the rescue by offering a straightforward and user-friendly mechanism for searching and fetching product data.**
+
+This feature empowers developers to access and retrieve product data with precision and efficiency. **It allows developers to perform targeted searches for products, making it easier to test and optimize their applications.**
+
+### Examples
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+async function products() {
+  try {
+    const response = await fetch(`${baseUrl}/v1/products/search?q=samsung`);
+    const result = await response.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+
+products().then((datas) => console.log(datas));
+```
+
+OR
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+fetch(`${baseUrl}/v1/products/search?q=samsung`)
+  .then((res) => res.json())
+  .then((result) => console.log(result));
+```
+
+---
+
+## HTTP Client Module
+
+One common task in application development is searching for specific data within an API. This is where HTTP client modules like Axios come into play. [Axios](https://axios-http.com) is a popular **JavaScript** library for making HTTP requests, and it's widely used in the developer community. **It's not only easy to use but also highly versatile, making it an excellent choice for interacting with APIs like Devify.**
+
+Suppose you're working with Devify and want to search for specific products within the API. **To achieve this, you can utilize Axios to send HTTP GET requests with the appropriate query parameters.** Let's break down the process:
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+async function products() {
+  try {
+    const res = await axios.get(`${baseUrl}/v1/products/search?q=samsung`);
+
+    return res;
+  } catch (err) {
+    return null;
+  }
+}
+
+products().then((result) => console.log(result));
+```
+
+OR
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+axios
+  .get(`${baseUrl}/v1/products/search?q=samsung`)
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+```
+
+---
+
+## Query Parameters
+
+For developers, having access to a Fake API like Devify with robust query parameter support is a game-changer. It enables thorough testing of applications, ensuring they can handle diverse user queries effectively.
+
+| Params | Data Types | Required |
+| ------ | ---------- | -------- |
+| q      | String     | Yes      |
+
+---

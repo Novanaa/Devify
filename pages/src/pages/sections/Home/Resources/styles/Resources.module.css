@@ -1,0 +1,358 @@
+.container {
+  position: relative;
+  top: 5.5rem;
+  padding: 3rem 0rem 0rem 0rem;
+  height: 145vh;
+  right: 0.05rem;
+}
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+.contentTitle {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 700;
+  font-size: 2.3rem;
+  color: #e7c4eb;
+}
+.contentTitle::before {
+  content: "Unveiling Devify, What's Inside?";
+  padding: 0.4rem;
+  z-index: 0;
+  position: absolute;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px #e7c4eb;
+  opacity: 0.8;
+}
+.contentDescription {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  opacity: 0.75;
+  font-size: 0.9rem;
+  color: #e7c4eb;
+  padding: 0rem 18rem;
+  text-align: center;
+}
+.cardsContainer {
+  top: 1.8rem;
+  position: relative;
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: repeat(3, 23rem);
+}
+.cardsWrapper {
+  border: 1px solid rgba(255, 255, 255, 0.136);
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  gap: 0.2rem;
+  padding: 2.2rem 2.2rem 1.5rem 1.4rem;
+  background: #151515;
+}
+.cardsWrapper:hover {
+  background: #171717;
+  border: 1px solid rgba(255, 255, 255, 0.222);
+}
+.cardImage {
+  justify-self: center;
+  align-self: center;
+  object-fit: contain;
+  margin: 0rem 0rem 0.8rem 0rem;
+}
+.cardTitle {
+  font-size: 1.3rem;
+}
+.cardDescription {
+  opacity: 0.75;
+  color: #e7c4eb;
+  font-size: 0.82rem;
+}
+.comingSoonWrapper {
+  /* grid-column: 2 / span 2; */
+  border: 1px solid rgba(255, 255, 255, 0.136);
+  background: #151515;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.comingSoonWrapper:hover {
+  background: #171717;
+  border: 1px solid rgba(255, 255, 255, 0.222);
+}
+.comingSoonContent {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+/* Media Queries */
+/* Desktop */
+@media screen and (width >= 1600px) {
+  .container {
+    position: relative;
+    top: 5.5rem;
+    padding: 3rem 0rem 0rem 0rem;
+    height: 90vh;
+    right: 0.15rem;
+  }
+  .contentDescription {
+    width: 75%;
+  }
+}
+@media (width >= 1600px) and (height >= 1200px) {
+  .container {
+    position: relative;
+    top: 5.5rem;
+    padding: 3rem 0rem 0rem 0rem;
+    height: 81vh;
+    right: 0.15rem;
+  }
+}
+
+/* Laptop */
+@media screen and (width <= 1280px) {
+  .container {
+    position: relative;
+    top: 5.5rem;
+    padding: 3rem 0rem 0rem 0rem;
+    height: 121vh;
+    right: 0.15rem;
+  }
+}
+
+/* Tablet */
+@media screen and (width <= 884px) {
+  .container {
+    position: relative;
+    top: 5rem;
+    padding: 3rem 0rem 0rem 0rem;
+    height: 120vh;
+    right: 0.15rem;
+  }
+  .contentDescription {
+    padding: 0rem 10rem;
+  }
+  .cardsContainer {
+    top: 1.2rem;
+    position: relative;
+    display: grid;
+    gap: 1.2rem;
+    grid-template-columns: repeat(2, 23rem);
+  }
+  .comingSoonWrapper {
+    /* grid-column: 1 / span 2; */
+    border: 1px solid rgba(255, 255, 255, 0.136);
+    background: #151515;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+}
+@media screen and (width <= 820px) {
+  .cardsContainer {
+    top: 1.2rem;
+    position: relative;
+    display: grid;
+    gap: 1.2rem;
+    grid-template-columns: repeat(2, 22rem);
+  }
+  .cardDescription {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (width <= 800px) {
+  .container {
+    position: relative;
+    top: 3.5rem;
+    padding: 3rem 0rem 0rem 0rem;
+    height: 102vh;
+    right: 0.15rem;
+  }
+}
+@media screen and (width <= 768px) {
+  .container {
+    position: relative;
+    top: 3.5rem;
+    padding: 3rem 0rem 0rem 0rem;
+    height: 135vh;
+    right: 0.15rem;
+  }
+  .cardsContainer {
+    top: 1.2rem;
+    position: relative;
+    display: grid;
+    gap: 1.2rem;
+    grid-template-columns: repeat(2, 21rem);
+  }
+  .contentTitle {
+    font-size: 2.25rem;
+  }
+  .contentDescription {
+    padding: 0rem 8rem;
+  }
+}
+
+/* Mobile */
+@media screen and (width <= 428px) {
+  .container {
+    position: relative;
+    top: 4rem;
+    padding: 3rem 0rem 0rem 0rem;
+    height: 228vh;
+    right: 0rem;
+  }
+  .cardsContainer {
+    top: 1.2rem;
+    position: relative;
+    display: grid;
+    gap: 1.2rem;
+    grid-template-columns: repeat(1, 84.5vw);
+  }
+  .comingSoonWrapper {
+    display: none;
+  }
+  .contentDescription {
+    text-align: center;
+    padding: 0rem 3rem;
+  }
+  .contentTitle {
+    text-align: center;
+    padding: 0rem 2rem;
+    font-size: 2.25rem;
+  }
+  .contentTitle::before {
+    padding: 0.4rem 3rem 0.4rem 0rem;
+  }
+}
+@media screen and (width <= 414px) {
+  .cardsContainer {
+    top: 1.2rem;
+    position: relative;
+    display: grid;
+    gap: 1.2rem;
+    grid-template-columns: repeat(1, 88vw);
+  }
+  .container {
+    position: relative;
+    top: 3.5rem;
+    padding: 3rem 0rem 0rem 0rem;
+    height: 235vh;
+    right: 0rem;
+  }
+  .contentDescription {
+    text-align: center;
+    padding: 0rem 3rem;
+  }
+}
+@media (width <= 412px) and (height <= 915px) {
+  .container {
+    position: relative;
+    top: 3.5rem;
+    padding: 3rem 0rem 0rem 0rem;
+    height: 224vh;
+    right: 0rem;
+  }
+}
+@media screen and (width <= 393px) {
+  .container {
+    position: relative;
+    top: 3.5rem;
+    padding: 3rem 0rem 0rem 0rem;
+    height: 243vh;
+    right: 0rem;
+  }
+}
+@media (width <= 390px) and (height <= 845px) {
+  .container {
+    position: relative;
+    top: 3.5rem;
+    padding: 3rem 0rem 0rem 0rem;
+    height: 250vh;
+    right: 0rem;
+  }
+}
+@media screen and (width <= 375px) {
+  .container {
+    position: relative;
+    top: 3.5rem;
+    padding: 3rem 0rem 0rem 0rem;
+    height: 283vh;
+    right: 0rem;
+  }
+  .contentTitle {
+    text-align: center;
+    padding: 0rem 0rem;
+    font-size: 2.25rem;
+  }
+  .contentTitle::before {
+    padding: 0.4rem 1.3rem 0rem 0rem;
+  }
+  .contentDescription {
+    text-align: center;
+    padding: 0rem 2rem;
+    font-size: 0.82rem;
+  }
+}
+@media screen and (width <= 362px) {
+  .container {
+    position: relative;
+    top: 3.5rem;
+    padding: 3rem 0rem 0rem 0rem;
+    height: 270vh;
+    right: 0rem;
+  }
+}
+@media (width <= 362px) and (height <= 780px) {
+  .container {
+    position: relative;
+    top: 3.5rem;
+    padding: 3rem 0rem 0rem 0rem;
+    height: 265vh;
+    right: 0rem;
+  }
+}
+@media (width <= 360px) and (height <= 880px) and (height >= 820px) {
+  .container {
+    position: relative;
+    top: 3.5rem;
+    padding: 3rem 0rem 0rem 0rem;
+    height: 245vh;
+    right: 0rem;
+  }
+}
+@media (width <= 362px) and (height < 760px) {
+  .container {
+    position: relative;
+    top: 3.5rem;
+    padding: 3rem 0rem 0rem 0rem;
+    height: 300vh;
+    right: 0rem;
+  }
+}
+@media screen and (width <= 320px) {
+  .container {
+    position: relative;
+    top: 3.5rem;
+    padding: 3rem 0rem 0rem 0rem;
+    height: 395vh;
+    right: 0.18rem;
+  }
+  .contentTitle {
+    text-align: center;
+    padding: 0rem 0rem;
+    font-size: 2.1rem;
+  }
+  .contentTitle::before {
+    padding: 0.4rem 1.3rem 0rem 0rem;
+  }
+  .contentDescription {
+    text-align: center;
+    padding: 0rem 1rem;
+    font-size: 0.77rem;
+  }
+}

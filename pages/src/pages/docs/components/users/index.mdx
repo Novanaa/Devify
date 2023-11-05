@@ -1,0 +1,171 @@
+---
+    title: All Users
+    description: All Users
+    content:
+        - How to Use It?
+        - Fetching Data
+        - HTTP Client Module
+    slug:
+        - how-to-use-it
+        - fetching-data
+        - http-client-module
+    next:
+        - title: Single User
+        - link: /docs/v1/users/single-user
+---
+
+# All Users
+
+Devify's user data is purposely diverse, **helping you simulate different user interactions and demographics.** This makes it an invaluable tool for quality assurance, ensuring that your application performs as expected in real-world situations.
+
+When using Devify, **developers can effortlessly retrieve a comprehensive list of users from their applications.** This feature provides invaluable insight into how their application interacts with user data, ensuring that everything functions smoothly.
+
+**With just a simple API call, developers can access a wealth of user information, which is essential for testing and refining their applications.** Devify's helps developers streamline the development process and identify any potential issues before deploying their applications to the real world.
+
+---
+
+## How to Use It?
+
+To access the full array of user data, you have several effective options available. You can utilize tools such as [Postman](https://postman.com) or harness the capabilities of [cURL](https://curl.se) to gracefully retrieve JSON data from Devify's users endpoint.
+
+If you're using [cURL](https://curl.se), you can employ it to initiate HTTP requests directly from the command line or within your scripts. Below are some typical use cases and examples:
+
+```bash
+$ curl -o C:\output.json -X GET "https://api-devify.my.id/v1/users"
+```
+
+OR
+
+```bash
+$ curl -X GET "https://api-devify.my.id/v1/users"
+```
+
+---
+
+## Fetching Data
+
+Fetching data is a fundamental aspect of application development, and Devify simplifies this process with its user-friendly API. Whether you're working on a web or mobile application, **Devify's allows you to effortlessly access user information for testing and development purposes.**
+
+This functionality is invaluable when you need to populate your application with sample user data, simulate real-world scenarios, or ensure that your app can handle a diverse user base. **By making API requests to [https://api-devify.my.id/v1/carts](https://api-devify.my.id/v1/carts) you can retrieve user profiles, including names, emails, and other relevant information, to simulate various user interactions within your application.**
+
+### Examples
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+async function users() {
+  try {
+    const response = await fetch(`${baseUrl}/v1/users?limit=3`);
+    const result = await response.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+
+users().then((datas) => console.log(datas));
+```
+
+OR
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+fetch(`${baseUrl}/v1/users?limit=3`)
+  .then((res) => res.json())
+  .then((result) => console.log(result))
+  .catch((err) => console.log(err));
+```
+
+#### Start your Application
+
+```bash
+$ node main.js
+```
+
+#### Response
+
+```json
+[
+  {
+    "id": 1,
+    "name": "...",
+    "email": "...",
+    "password": "...",
+    "age": 31,
+    "gender": "...",
+    "picture": "...",
+    "address": {
+      "country": "...",
+      "city": "..."
+    }
+  },
+  {
+    "id": 3,
+    "name": "...",
+    "email": "...",
+    "password": "...",
+    "age": 22,
+    "gender": "...",
+    "picture": "...",
+    "address": {
+      "country": "...",
+      "city": "..."
+    }
+  }
+]
+```
+
+---
+
+## HTTP Client Module
+
+**If you're a developer looking to test your application with realistic user data, Devify's Fake API is the perfect playground.** Using an HTTP client module like [Axios](https://axios-http.com), you can easily retrieve all user information from Devify. Here's how:
+
+### Installing
+
+```bash
+$ npm install axios
+```
+
+Visit [https://axios-http.com](https://axios-http.com) to view the full documentation.
+
+### Examples
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+async function users() {
+  try {
+    const res = await axios.get(`${baseUrl}/v1/users`);
+
+    return res;
+  } catch (err) {
+    return null;
+  }
+}
+
+users().then((result) => console.log(result));
+```
+
+OR
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+axios
+  .get(`${baseUrl}v1/users`)
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+```
+
+You can now work with the retrieved user data in your application. **Devify's Fake API provides a range of user information, including names, email addresses, and more, making it a valuable resource for development and testing.**
+
+**By following these steps and using Axios, you can easily integrate Devify's Fake API into your development environment**, allowing you to access and manipulate user data for testing and building your applications.
+
+---

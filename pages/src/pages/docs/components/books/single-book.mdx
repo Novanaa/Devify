@@ -1,0 +1,222 @@
+---
+    title: Single Book
+    description: Single Book
+    content:
+        - How to Use It?
+        - Fetching Data
+        - HTTP Client Module
+        - Query Parameters
+    slug:
+        - how-to-use-it
+        - fetching-data
+        - http-client-module
+        - query-parameters
+    next:
+        - title: All Categories
+        - link: /docs/v1/books/categories
+---
+
+# Single Book
+
+Devify is a Fake API meticulously crafted to offer developers a comprehensive testing and development environment for their applications. **When it comes to fetching a single book's information, Devify has you covered. Whether you're working on an e-book library, a digital book catalog, or any application that requires access to specific book details, Devify's 'Get Single Book' feature simplifies the process.**
+
+---
+
+## How to Use It?
+
+To access the full array of book data, you have several efficient options available. You can utilize tools like [Postman](https://postman.com) or harness the capabilities of [cURL](https://curl.se) to gracefully retrieve the JSON data from Devify's books endpoint.
+
+If you're using [cURL](https://curl.se), you can employ it to send HTTP requests via the command line or within your scripts. Here are some typical scenarios and examples:
+
+```bash
+$ curl -o C:\output.json -X GET "https://api-devify.my.id/v1/books/1"
+```
+
+OR
+
+```bash
+$ curl -X GET "https://api-devify.my.id/v1/books/1"
+```
+
+---
+
+## Fetching Data
+
+For developers, the process of acquiring data about a single book is made exceptionally straightforward through Devify's user-friendly interface and intuitive API endpoints. **By utilizing this functionality, developers can seamlessly retrieve detailed information about individual books, making it an ideal solution for applications that involve libraries, e-book stores, or any digital platform where book data is essential.**
+
+### Single Product By ID
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+async function books() {
+  try {
+    const response = await fetch(`${baseUrl}/v1/books/1`);
+    const result = await response.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+
+books().then((datas) => console.log(datas));
+```
+
+OR
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+fetch(`${baseUrl}/v1/books/1`)
+  .then((res) => res.json())
+  .then((result) => console.log(result));
+```
+
+### Single Product By Uniquekey
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+async function books() {
+  try {
+    const response = await fetch(
+      `${baseUrl}/v1/books/key/650a7b4c6571ac2061f0c375`
+    );
+    const result = await response.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+
+books().then((datas) => console.log(datas));
+```
+
+OR
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+fetch(`${baseUrl}/v1/books/key/650a7b4c6571ac2061f0c375`)
+  .then((res) => res.json())
+  .then((result) => console.log(result));
+```
+
+---
+
+### Response
+
+```json
+[
+  {
+    "book": {
+      "id": 1,
+      "title": "The Science of Interstellar",
+      "synopsis": "A journey through the otherworldly science behind Christopher Nolan’s highly anticipated film, Interstellar, from executive producer and theoretical physicist Kip Thorne. Interstellar, from acclaimed filmmaker Christopher Nolan, takes us on a fantastic voyage far beyond our solar system. Yet in The Science of Interstellar, Kip Thorne, the physicist who assisted Nolan on the scientific aspects of Interstellar, shows us that the movie’s jaw-dropping events and stunning, never-before-attempted visuals are grounded in real science. Thorne shares his experiences working as the science adviser on the film and then moves on to the science itself.",
+      "author": "Kip Thorne, Christopher Nolan",
+      "category": "Cosmology",
+      "publisher": "W. W. Norton & Company",
+      "published": "November 7, 2014",
+      "language": "English",
+      "rating": 4.7,
+      "pages": 365,
+      "poster": "https://api-devify.my.id/img/books/poster/1.jpg"
+    },
+    "status": 200
+  }
+]
+```
+
+---
+
+## HTTP Client Module
+
+Devify offers a wide range of endpoints, **allows developers to retrieve detailed information about a single book from the API. To achieve this, developers can employ popular HTTP client modules such as Axios, which simplifies the process of making HTTP requests in their applications.**
+
+### Single Product By ID
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+async function books() {
+  try {
+    const res = await axios.get(`${baseUrl}/v1/books/1`);
+
+    return res;
+  } catch (err) {
+    return null;
+  }
+}
+
+books().then((result) => console.log(result));
+```
+
+OR
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+axios
+  .get(`${baseUrl}/v1/books/1`)
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+```
+
+### Single Product By Uniquekey
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+async function books() {
+  try {
+    const res = await axios.get(
+      `${baseUrl}/v1/books/key/650a7b4c6571ac2061f0c375`
+    );
+
+    return res;
+  } catch (err) {
+    return null;
+  }
+}
+
+books().then((result) => console.log(result));
+```
+
+OR
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+axios
+  .get(`${baseUrl}/v1/books/key/650a7b4c6571ac2061f0c375`)
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+```
+
+---
+
+## Query Parameters
+
+### Single Book By ID
+
+| Params | Data Types | Required |
+| ------ | ---------- | -------- |
+| ID     | Integer    | Yes      |
+
+### Single Book By Uniquekey
+
+| Params    | Data Types | Required |
+| --------- | ---------- | -------- |
+| Uniquekey | String     | Yes      |
+
+---

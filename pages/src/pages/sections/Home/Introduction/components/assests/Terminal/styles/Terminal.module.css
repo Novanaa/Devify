@@ -1,0 +1,142 @@
+.wrapper {
+  width: 32rem;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 5px 5px rgba(255, 255, 255, 0.4);
+}
+.terminalHeadWrapper {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.65rem 0.7rem;
+  border-radius: 5px;
+  background: #222222;
+}
+.terminalBodyWrapper {
+  height: 16rem;
+  width: 32rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  top: 0.65rem;
+  gap: 0.4rem;
+}
+.terminalContent {
+  padding: 0rem 0.9rem;
+  opacity: 0.8;
+  font-size: 0.87rem;
+  color: #e7c4eb;
+  font-family: "Fira Code", monospace;
+}
+.terminalIconOne {
+  background: red;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+}
+.terminalIconTwo {
+  background: yellow;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+}
+.terminalIconThree {
+  background: rgb(1, 206, 1);
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+}
+
+@media screen and (width >= 1600px) {
+  .wrapper {
+    width: 35rem;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 5px 5px rgba(255, 255, 255, 0.4);
+  }
+  .terminalBodyWrapper {
+    height: 17rem;
+    width: 35rem;
+  }
+}
+
+/* Tablet */
+@media screen and (width <= 884px) {
+  .wrapper {
+    width: 34rem;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 5px 5px rgba(255, 255, 255, 0.4);
+  }
+  .contentWrapper {
+    width: 34rem;
+  }
+  /* .terminalBodyWrapper {
+    position: relative;
+    display: flex;
+    top: 0.65rem;
+    gap: 0.4rem;
+    width: 34rem;
+    height: 15rem;
+    box-sizing: border-box;
+  } */
+}
+
+/* Mobile */
+@media screen and (width <= 428px) {
+  .wrapper {
+    overflow: hidden;
+    width: 32rem;
+    position: absolute;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 5px 5px rgba(255, 255, 255, 0.4);
+  }
+  .contentWrapper {
+    width: 32rem;
+  }
+  /* .terminalBodyWrapper {
+    position: relative;
+    display: flex;
+    top: 0.65rem;
+    gap: 0.4rem;
+    width: 32rem;
+    height: 15rem;
+    box-sizing: border-box;
+  } */
+}
+
+/* Mobile */
+@media screen and (width <= 414px) {
+  .terminalContent {
+    padding: 0rem 0.9rem;
+    opacity: 0.8;
+    font-size: 0.8rem;
+    color: #e7c4eb;
+    font-family: "Roboto Mono", "Menlo", "Monaco", "Lucida Console",
+      "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono",
+      "Courier New", monospace;
+  }
+}
+@media screen and (width <= 375px) {
+  .terminalContent {
+    padding: 0rem 0.9rem;
+    opacity: 0.8;
+    font-size: 0.74rem;
+    color: #e7c4eb;
+    font-family: "Roboto Mono", "Menlo", "Monaco", "Lucida Console",
+      "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono",
+      "Courier New", monospace;
+  }
+}
+@media screen and (width <= 320px) {
+  .terminalContent {
+    padding: 0rem 0.9rem;
+    opacity: 0.8;
+    font-size: 0.7rem;
+    color: #e7c4eb;
+    font-family: "Roboto Mono", "Menlo", "Monaco", "Lucida Console",
+      "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono",
+      "Courier New", monospace;
+  }
+}

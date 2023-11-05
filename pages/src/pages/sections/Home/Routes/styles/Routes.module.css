@@ -1,0 +1,471 @@
+.container {
+  position: relative;
+  margin: 5rem 0 0 0;
+  height: 92vh;
+  right: 0.1rem;
+}
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+.contentTitle {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 700;
+  font-size: 2.3rem;
+  color: #e7c4eb;
+}
+.contentTitle::before {
+  content: "Navigating the Path to Efficient Communication";
+  padding: 0.4rem;
+  z-index: 0;
+  position: absolute;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px #e7c4eb;
+  opacity: 0.8;
+}
+.cardsContainer {
+  position: relative;
+  top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 21.5rem);
+  gap: 1rem;
+}
+.cardWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.136);
+  border-radius: 5px;
+  height: 29rem;
+  background: #191919;
+}
+.cardWrapper:nth-child(1),
+.cardWrapper:nth-child(3) {
+  position: relative;
+  top: 1.8rem;
+}
+.cardWrapper:hover {
+  background: #212121;
+  border: 1px solid rgba(255, 255, 255, 0.222);
+}
+.cardHeadersWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin: 1.5rem 0 0 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.222);
+  padding: 0 0 1rem 0;
+  width: 65%;
+}
+.cardTitle {
+  text-align: center;
+}
+.routes {
+  text-align: center;
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+.cardRoutesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  position: relative;
+  top: 1rem;
+}
+.cardRoutesWrapper {
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+  opacity: 0.8;
+  transition: 0.15s all;
+}
+.cardRoutesWrapper a {
+  font-size: 0.92rem;
+}
+.cardHttpReqWrapper {
+  position: relative;
+  right: 0.6rem;
+  display: flex;
+  padding: 0.1rem 0.7rem 0.1rem 0.7rem;
+  border-radius: 16px;
+}
+.cardHttpReqWrapper span {
+  font-size: 0.72rem;
+}
+.getHttpReq {
+  background: var(--GET);
+}
+.postHttpReq {
+  background: var(--POST);
+}
+.patchHttpReq {
+  background: var(--PATCH);
+}
+.delHttpReq {
+  background: var(--DELETE);
+}
+.cardRoutesWrapper:hover {
+  opacity: 0.95;
+}
+
+/* Media Queries */
+/* Desktop */
+@media screen and (width >= 1600px) {
+  .container {
+    position: relative;
+    margin: 5rem 0 0 0;
+    height: 53.5vh;
+    right: 0.1rem;
+  }
+}
+@media (width >= 1600px) and (height >= 1200px) {
+  .container {
+    position: relative;
+    margin: 4.5rem 0 0 0;
+    height: 49vh;
+    right: 0.1rem;
+  }
+}
+
+/* Laptop */
+@media screen and (width <= 1280px) {
+  .container {
+    position: relative;
+    margin: 4.5rem 0 0 0;
+    height: 73vh;
+    right: 0.1rem;
+  }
+}
+
+/* Tablet */
+@media screen and (width <= 884px) {
+  .container {
+    position: relative;
+    margin: 4.5rem 0 0 0;
+    height: 56vh;
+    right: 0rem;
+    width: 99.9vw;
+    overflow: hidden;
+  }
+  .contentTitle {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 700;
+    font-size: 2.3rem;
+    padding: 0 5rem;
+    text-align: center;
+    color: #e7c4eb;
+  }
+  .contentTitle::before {
+    content: "Navigating the Path to Efficient Communication";
+    padding: 0.5rem 9.3rem 0.4rem 0.4rem;
+    z-index: 0;
+    position: absolute;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px #e7c4eb;
+    opacity: 0.8;
+  }
+}
+@media screen and (width <= 834px) {
+  .container {
+    position: relative;
+    margin: 4rem 0 0 0;
+    height: 56vh;
+    right: 0rem;
+    width: 99.9vw;
+    overflow: hidden;
+  }
+  .contentTitle::before {
+    content: "Navigating the Path to Efficient Communication";
+    padding: 0.5rem 8rem 0.4rem 0.4rem;
+    z-index: 0;
+    position: absolute;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px #e7c4eb;
+    opacity: 0.8;
+  }
+}
+@media screen and (width <= 820px) {
+  .container {
+    position: relative;
+    margin: 3.5rem 0 0 0;
+    height: 56vh;
+    right: 0rem;
+    width: 99.9vw;
+    overflow: hidden;
+  }
+}
+@media screen and (width <= 800px) {
+  .container {
+    position: relative;
+    margin: 3.5rem 0 0 0;
+    height: 50vh;
+    right: 0rem;
+    width: 99.9vw;
+    overflow: hidden;
+  }
+  .contentTitle::before {
+    content: "Navigating the Path to Efficient Communication";
+    padding: 0.5rem 7rem 0.4rem 0.4rem;
+    z-index: 0;
+    position: absolute;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px #e7c4eb;
+    opacity: 0.8;
+  }
+}
+@media screen and (width <= 768px) {
+  .container {
+    position: relative;
+    margin: 3.5rem 0 0 0;
+    height: 67vh;
+    right: 0rem;
+    width: 99.9vw;
+    overflow: hidden;
+  }
+  .contentTitle::before {
+    content: "Navigating the Path to Efficient Communication";
+    padding: 0.5rem 6rem 0.4rem 0.4rem;
+    z-index: 0;
+    position: absolute;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px #e7c4eb;
+    opacity: 0.8;
+  }
+}
+
+/* Mobile */
+@media screen and (width <= 428px) {
+  .container {
+    position: relative;
+    margin: 3.2rem 0 0 0;
+    height: 75vh;
+    right: 0rem;
+    width: 99.9vw;
+    overflow: hidden;
+  }
+  .contentTitle {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 700;
+    padding: 0 0rem;
+    text-align: center;
+    color: #e7c4eb;
+    width: 80%;
+  }
+  .contentTitle::before {
+    content: "Navigating the Path to Efficient Communication";
+    padding: 0.4rem 0.4rem 0.4rem 0.4rem;
+    margin: 0 0 0 -2.4rem;
+    width: 80%;
+    z-index: 0;
+    position: absolute;
+    text-align: center;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px #e7c4eb;
+    opacity: 0.8;
+  }
+  .cards {
+    width: 99vw;
+    display: flex;
+  }
+  .cardsContainer {
+    grid-template-columns: repeat(3, 23rem);
+    height: fit-content;
+    overflow: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding: 0 2rem;
+    gap: 1rem;
+  }
+  .cardsContainer::-webkit-scrollbar {
+    display: none;
+  }
+  .cardWrapper {
+    scroll-snap-align: center;
+  }
+  .cardRoutesContainer {
+    gap: 1rem;
+  }
+  .cardWrapper:nth-child(1),
+  .cardWrapper:nth-child(3) {
+    position: relative;
+    top: 0rem;
+    margin: 0rem 0 0 0;
+  }
+}
+@media screen and (width <= 414px) {
+  .container {
+    position: relative;
+    margin: 3.2rem 0 0 0;
+    height: 77vh;
+    right: 0rem;
+    width: 99.9vw;
+    overflow: hidden;
+  }
+  .cardsContainer {
+    grid-template-columns: repeat(3, 22rem);
+    height: fit-content;
+    overflow: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding: 0 1.5rem;
+    gap: 1rem;
+  }
+}
+@media screen and (width <= 393px) {
+  .container {
+    position: relative;
+    margin: 3.2rem 0 0 0;
+    height: 79vh;
+    right: 0rem;
+    width: 99.9vw;
+    overflow: hidden;
+  }
+  .cardsContainer {
+    grid-template-columns: repeat(3, 21rem);
+    height: fit-content;
+    overflow: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding: 0 1.2rem;
+    gap: 1rem;
+  }
+  .contentTitle::before {
+    content: "Navigating the Path to Efficient Communication";
+    padding: 0.4rem 0.4rem 0.4rem 0.4rem;
+    margin: 0 0 0 -1.7rem;
+    width: 80%;
+    z-index: 0;
+    position: absolute;
+    text-align: center;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px #e7c4eb;
+    opacity: 0.8;
+  }
+}
+@media (width <= 393px) and (height <= 844px) {
+  .container {
+    position: relative;
+    margin: 3.2rem 0 0 0;
+    height: 82vh;
+    right: 0rem;
+    width: 99.9vw;
+    overflow: hidden;
+  }
+}
+@media screen and (width <= 375px) {
+  .container {
+    position: relative;
+    margin: 3.2rem 0 0 0;
+    height: 85vh;
+    right: 0rem;
+    width: 99.9vw;
+    overflow: hidden;
+  }
+  .cardsContainer {
+    grid-template-columns: repeat(3, 19.8rem);
+    height: fit-content;
+    overflow: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding: 0 1.8rem;
+    gap: 1rem;
+  }
+  .contentTitle {
+    font-size: 2.2rem;
+  }
+  .contentTitle::before {
+    content: "Navigating the Path to Efficient Communication";
+    padding: 0.4rem 0.4rem 0.4rem 0.4rem;
+    margin: 0 0 0 -1.7rem;
+    width: 80%;
+    z-index: 0;
+    position: absolute;
+    text-align: center;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px #e7c4eb;
+    opacity: 0.8;
+  }
+}
+@media screen and (width <= 362px) {
+  .container {
+    position: relative;
+    margin: 3.2rem 0 0 0;
+    height: 85vh;
+    right: 0rem;
+    width: 99.9vw;
+    overflow: hidden;
+  }
+  .cardsContainer {
+    grid-template-columns: repeat(3, 19.2rem);
+    height: fit-content;
+    overflow: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding: 0 1rem;
+    gap: 1rem;
+  }
+}
+@media (width <= 362px) and (height > 840px) {
+  .container {
+    position: relative;
+    margin: 3.2rem 0 0 0;
+    height: 75vh;
+    right: 0rem;
+    width: 99.9vw;
+    overflow: hidden;
+  }
+}
+@media (width <= 362px) and (height <= 760px) {
+  .container {
+    position: relative;
+    margin: 3.2rem 0 0 0;
+    height: 94vh;
+    right: 0rem;
+    width: 99.9vw;
+    overflow: hidden;
+  }
+}
+@media screen and (width <= 320px) {
+  .container {
+    position: relative;
+    margin: 3.2rem 0 0 0;
+    height: 120vh;
+    right: 0rem;
+    width: 99.9vw;
+    overflow: hidden;
+  }
+  .contentTitle {
+    font-size: 2rem;
+    width: 90%;
+  }
+  .contentTitle::before {
+    content: "Navigating the Path to Efficient Communication";
+    padding: 0.4rem 0.4rem 0.4rem 0.4rem;
+    margin: 0 0 0 -1rem;
+    width: 80%;
+    z-index: 0;
+    position: absolute;
+    text-align: center;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px #e7c4eb;
+    opacity: 0.8;
+  }
+  .cardsContainer {
+    grid-template-columns: repeat(3, 19rem);
+    height: fit-content;
+    overflow: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding: 0 1rem;
+    gap: 1rem;
+  }
+}

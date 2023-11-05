@@ -1,0 +1,280 @@
+---
+    title: Update User
+    description: Update User
+    content:
+        - How to Use It?
+        - Fetching Data
+        - HTTP Client Module
+        - Query Parameters
+        - Payloads
+    slug:
+        - how-to-use-it
+        - fetching-data
+        - http-client-module
+        - query-parameters
+        - payloads
+    next:
+        - title: Delete User
+        - link: /docs/v1/users/delete-user
+---
+
+# Update User
+
+**The update user feature in Devify empowers developers to make real-time changes to user accounts, providing a dynamic and interactive environment for testing application functionality.** This feature is particularly beneficial for developers aiming to assess how their applications handle user data updates and maintain data accuracy.
+
+**To keep user profiles up-to-date, Devify offers a straightforward and developer-friendly method for making modifications.** Whether you need to adjust personal details, update preferences, or change any other user-specific information, Devify ensures a hassle-free experience.
+
+---
+
+## How to Use It?
+
+To fully access the entire array of user data, you have various refined options available. You can utilize tools such as [Postman](https://postman.com) or harness the capabilities of [cURL](https://curl.se) to gracefully retrieve JSON data from Devify's user endpoint.
+
+If you opt for [cURL](https://curl.se), you can employ it to initiate HTTP requests either directly from the command line or within your scripts. Here are some typical scenarios and illustrative examples:"
+
+```bash
+$ curl -X PATCH -F "name=This is a name updated :)" https://api-devify.my.id/v1/users/1
+```
+
+OR
+
+```bash
+$ curl -X PATCH -F "name=This is a name updated :)" https://api-devify.my.id/v1/users/key/64a975166d8d44a6a0b70cf0
+```
+
+---
+
+## Fetching Data
+
+To keep user data current and accurate, **developers can utilize Devify's user data management capabilities. Whether it's modifying a user's profile information, changing their credentials, or updating preferences, Devify simplifies the process.**
+
+**With a straightforward API interface, developers can send PATCH requests to specific endpoints, such as "v1/users/update-user-by-id" or "v1/users/update-user-by-uniquekey."** These requests enable developers to make precise updates to user profiles and maintain data integrity.
+
+### Update User By ID
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+let content = new FormData();
+content.append("image", file);
+content.append("name", "Nova (updated)");
+
+async function updateUser() {
+  try {
+    const res = await fetch(`${baseUrl}/v1/users/1`, {
+      method: "PATCH",
+      body: content,
+    });
+    const result = await res.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+
+updateUser().then((result) => console.log(result));
+```
+
+### Update User By Uniquekey
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+let content = new FormData();
+content.append("image", file);
+content.append("name", "Nova (updated)");
+
+async function updateUser() {
+  try {
+    const res = await fetch(
+      `${baseUrl}/v1/users/key/64a975166d8d44a6a0b70cf0`,
+      {
+        method: "PATCH",
+        body: content,
+      }
+    );
+    const result = await res.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+
+updateUser().then((result) => console.log(result));
+```
+
+OR
+
+### Update User By ID
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+let content = new FormData();
+content.append("image", file);
+content.append("name", "Nova (updated)");
+
+fetch(`${baseUrl}/v1/users/1`, {
+  method: "PATCH",
+  body: content,
+})
+  .then((res) => res.json())
+  .then((result) => console.log(result))
+  .catch((err) => console.log(err));
+```
+
+### Update User By Uniquekey
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+let content = new FormData();
+content.append("image", file);
+content.append("name", "Nova (updated)");
+
+fetch(`${baseUrl}/v1/users/key/64a975166d8d44a6a0b70cf0`, {
+  method: "PATCH",
+  body: content,
+})
+  .then((res) => res.json())
+  .then((result) => console.log(result))
+  .catch((err) => console.log(err));
+```
+
+---
+
+## HTTP Client Module
+
+**One common task in application development is updating user data. Whether it's modifying user profiles, changing account settings, or managing user information, a robust method is required to communicate with the API.** This is where [Axios](https://axios-http.com), a popular HTTP client module, comes into play.
+
+[Axios](https://axios-http.com) simplifies the process of making HTTP requests from your application to a server, and it seamlessly integrates with Devify's API. Updating user information with [Axios](https://axios-http.com) is a straightforward process. Here's how you can do it:
+
+### Update User By ID
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+let content = new FormData();
+content.append("image", file);
+content.append("name", "Nova (updated)");
+
+async function updateUser() {
+  try {
+    const res = await axios.patch(`${baseUrl}/v1/users/1`, { content });
+
+    return res;
+  } catch (err) {
+    return null;
+  }
+}
+
+updateUser().then((result) => console.log(result));
+```
+
+### Update User By Uniquekey
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+let content = new FormData();
+content.append("image", file);
+content.append("name", "Nova (updated)");
+
+async function updateUser() {
+  try {
+    const res = await axios.patch(
+      `${baseUrl}/v1/users/key/64a975166d8d44a6a0b70cf0`,
+      { content }
+    );
+
+    return res;
+  } catch (err) {
+    return null;
+  }
+}
+
+updateUser().then((result) => console.log(result));
+```
+
+OR
+
+### Update User By ID
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+let content = new FormData();
+content.append("image", file);
+content.append("name", "Nova (updated)");
+
+axios
+  .patch(`${baseUrl}/v1/users/1`, { content })
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+```
+
+### Update User By Uniquekey
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+let content = new FormData();
+content.append("image", file);
+content.append("name", "Nova (updated)");
+
+axios
+  .patch(`${baseUrl}/v1/users/key/64a975166d8d44a6a0b70cf0`, { content })
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+```
+
+---
+
+## Query Parameters
+
+### Update User By ID
+
+| Params | Data Types | Required |
+| ------ | ---------- | -------- |
+| ID     | Integer    | Yes      |
+
+### Update User By Uniquekey
+
+| Params    | Data Types | Required |
+| --------- | ---------- | -------- |
+| Uniquekey | String     | Yes      |
+
+---
+
+## Payloads
+
+| Payload       | Data Types | Required |
+| ------------- | ---------- | -------- |
+| Name          | String     | No       |
+| Email         | String     | No       |
+| Password      | String     | No       |
+| Age           | Integer    | No       |
+| Gender        | String     | No       |
+| Picture       | String     | No       |
+| Image?        | String     | No       |
+| Address       | Object     | No       |
+| Refresh Token | String     | No       |
+
+```json
+{
+  "name": "Nova",
+  "email": "nova@gmail.com"
+}
+```
+
+---

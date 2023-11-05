@@ -1,0 +1,140 @@
+---
+    title: Payloads
+    description: API Payloads
+    content: 
+        - Products Payload
+        - Users Payload
+        - Books Payload
+        - Carts Payload
+        - Auth Payload
+    slug:
+        - products-payload
+        - users-payload
+        - books-payload
+        - carts-payload
+        - auth-payload
+    next: 
+        - title: Files Upload
+        - link: /docs/v1/files-upload
+---
+
+# Payloads
+
+The Payloads API offered by Devify is designed to streamline the development process, making it easier for developers to work on their projects. This API allows developers to simulate and manipulate data payloads, enabling them to test their applications comprehensively.
+
+Devify offers a wide range of payloads that mimic real data, ensuring that your application behaves as expected when interacting with different content. Whether you're working on a web application, mobile app, or any other software, Devify's diverse payloads provide the realism you need for thorough testing.
+
+---
+
+## Products Payload
+
+The Product Payload within Devify is a versatile and invaluable resource for developers, offering a simulated data stream for products.
+
+This includes essential information such as product names, descriptions, prices, and unique identifiers, all cleverly designed to mimic real-world data.
+
+| Payload     | Data Types | Required | Min | Max | Default |
+| ----------- | ---------- | -------- | --- | --- | ------- |
+| Title       | String     | Yes      | -   | -   | -       |
+| Description | String     | Yes      | -   | -   | -       |
+| Price       | Integer    | Yes      | -   | -   | 5       |
+| Category    | String     | Yes      | -   | 100 | -       |
+| Location    | Sting      | No       | -   | 100 | -       |
+| Rating      | Integer    | No       | -   | -   | 0       |
+| Stock       | Integer    | No       | -   | -   | 1       |
+| Image       | String     | No       | -   | -   | -       |
+
+---
+
+## Users Payload
+
+Devify allows developers to access user data, supporting queries for retrieving all users or a specific user by ID or unique key. This is crucial for assessing how user data is handled within an application.
+
+Devify's Users Payload serves as an invaluable resource for developers looking to create, test, and fine-tune user-related features in their applications. It offers a safe and controlled environment for extensive testing, which is a crucial step in ensuring the reliability and security of any software product.
+
+| Payload       | Data Types | Required | Min | Max | Default |
+| ------------- | ---------- | -------- | --- | --- | ------- |
+| Name          | String     | Yes      | -   | 15  | -       |
+| Email         | String     | Yes      | -   | -   | -       |
+| Password      | String     | Yes      | 7   | -   | -       |
+| Picture       | String     | Yes      | -   | 200 | -       |
+| Age           | Integer    | No       | 12  | -   | -       |
+| Gender        | String     | No       | -   | 100 | -       |
+| Image?        | String     | No       | -   | -   | -       |
+| Address       | Object     | No       | -   | 100 | -       |
+| Refresh Token | String     | No       | -   | -   | -       |
+
+---
+
+## Books Payload
+
+Whether you're building a book catalog, a digital library, or an e-commerce platform centered around literature, Devify is your reliable companion in the development journey. With its intuitive and user-friendly Books Payload, developers can effortlessly experiment and validate various aspects of their applications.
+
+| Payload   | Data Types | Required | Min | Max | Default |
+| --------- | ---------- | -------- | --- | --- | ------- |
+| Title     | String     | Yes      | -   | 200 | -       |
+| Synopsis  | String     | No       | -   | -   | -       |
+| Author    | String     | Yes      | -   | 100 | -       |
+| Category  | String     | Yes      | -   | 50  | -       |
+| Gender    | String     | No       | -   | 100 | -       |
+| Publisher | String     | No       | -   | -   | -       |
+| Published | String     | No       | -   | -   | -       |
+| Language  | String     | No       | -   | -   | -       |
+| Rating    | Integer    | No       | -   | -   | 0       |
+| Pages     | Integer    | No       | -   | -   | -       |
+| Poster    | String     | No       | -   | -   | -       |
+
+---
+
+## Carts Payload
+
+The Carts Payload in Devify acts as a virtual shopping cart that developers can utilize to simulate real-world scenarios and interactions within their applications. This feature allows developers to comprehensively test and optimize their e-commerce or shopping applications by mimicking various cart-related operations.
+
+Devify's Carts Payload simplifies the development process for developers by offering a simulated shopping cart environment for testing and refining applications.
+
+It's an invaluable resource for those seeking to create seamless and efficient e-commerce solutions while saving time and effort in the development phase
+
+| Payload        | Data Types | Required | Min | Max | Default |
+| -------------- | ---------- | -------- | --- | --- | ------- |
+| UserId         | Integer    | Yes      | -   | -   | -       |
+| Products       | Arrays     | Yes      | -   | -   | -       |
+| ProductsId     | Integer    | Yes      | -   | -   | -       |
+| Quantity       | Integer    | Yes      | -   | -   | -       |
+| Price          | Integer    | Yes      | -   | -   | -       |
+| Total          | Integer    | No       | -   | -   | -       |
+| Delivery Cost  | Integer    | No       | -   | -   | -       |
+| Free Delivery  | Boolean    | No       | -   | -   | -       |
+| Total Products | Integer    | No       | -   | -   | -       |
+| Tax            | Integer    | No       | -   | -   | -       |
+
+---
+
+## Auth Payload
+
+The importance of a robust authentication and authorization system cannot be overstated in the world of software development.
+
+One crucial aspect of Devify that aids developers in refining their applications is the Auth Payload feature. Developers can seamlessly integrate authentication processes into their projects, simulating real-world scenarios.
+
+### Login
+
+| Payload  | Data Types | Required | Min | Max | Default |
+| -------- | ---------- | -------- | --- | --- | ------- |
+| Name     | String     | Yes      | -   | 15  | -       |
+| Email    | String     | Yes      | -   | -   | -       |
+| Password | String     | Yes      | 7   | -   | -       |
+
+### Register
+
+| Payload  | Data Types | Required | Min | Max | Default |
+| -------- | ---------- | -------- | --- | --- | ------- |
+| Name     | String     | Yes      | -   | 15  | -       |
+| Email    | String     | Yes      | -   | -   | -       |
+| Password | String     | Yes      | 7   | -   | -       |
+| Picture  | String     | Yes      | -   | 200 | -       |
+
+---
+
+Devify serves as the ideal playground. Its simplicity and ease of use allow developers to simulate responses, generate data, and control different API behaviors.
+
+This means you can simulate real-world scenarios, examine how your application responds, and ensure that it performs seamlessly under various conditions.
+
+By leveraging Devify's capabilities, developers can avoid costly mishaps and gain a deeper understanding of their applications' strengths and weaknesses. It enables you to perform comprehensive testing, from handling different payloads to ensuring the security and reliability of your code.

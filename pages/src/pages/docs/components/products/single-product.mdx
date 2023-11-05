@@ -1,0 +1,233 @@
+---
+
+    title: Single Product
+    description: Single Product
+    content:
+        - How to Use It?
+        - Fetching Data
+        - HTTP Client Module
+        - Query Parameters
+    slug:
+        - how-to-use-it
+        - fetching-data
+        - http-client-module
+        - query-parameters
+    next:
+        - title: Search Products
+        - link: /docs/v1/products/search-products
+---
+
+# Single Product
+
+**We understand the importance of thorough testing and development in the software and application development process.** Our Fake API serves as an indispensable tool for developers, offering a wide range of functionalities to facilitate the testing of their applications.
+
+**Developers can rely on Devify to create a safe and realistic environment for testing and refining their applications.** Developers can streamline the development process and build applications that are robust, reliable, and user-friendly.
+
+With this API, developers can retrieve key details about a single product by providing relevant identifiers, such as a unique **product ID** or a specific **product key**. The returned data typically includes **product name, description, price, availability, and other essential attributes**, making it easier to integrate product information seamlessly into your application.
+
+---
+
+## How to Use It?
+
+When it comes to gaining access to the full array of product data, a range of sophisticated options is at your fingertips. You have the choice to utilize powerful tools such as [Postman](https://postman.com), or you can harness the capabilities of [cURL](https://curl.se) to gracefully retrieve the JSON data available at Devify's products endpoint.
+
+For those who prefer [cURL](https://curl.se), it serves as a versatile means to execute HTTP requests, whether it's from the command line or within your scripts. Below, you will find a selection of typical scenarios and illustrative examples:
+
+```bash
+$ curl -o C:\output.json -X GET "https://api-devify.my.id/v1/products/1"
+```
+
+OR
+
+```bash
+$ curl -X GET "https://api-devify.my.id/v1/products/1"
+```
+
+---
+
+## Fetching Data
+
+**To fetch data from Devify, developers can use standard HTTP requests**. This allows them to retrieve data in the format they need, such as JSON or XML. The responses from Devify are structured to resemble those of genuine APIs, providing a realistic testing environment.
+
+### Single Product By ID
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+async function products() {
+  try {
+    const response = await fetch(`${baseUrl}/v1/products/1`);
+    const result = await response.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+
+products().then((datas) => console.log(datas));
+```
+
+OR
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+fetch(`${baseUrl}/v1/products/1`)
+  .then((res) => res.json())
+  .then((result) => console.log(result));
+```
+
+### Single Product By Uniquekey
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+async function products() {
+  try {
+    const response = await fetch(
+      `${baseUrl}/v1/products/key/650698cfb8318065fca250be`
+    );
+    const result = await response.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+
+products().then((datas) => console.log(datas));
+```
+
+OR
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+fetch(`${baseUrl}/v1/products/key/650698cfb8318065fca250be`)
+  .then((res) => res.json())
+  .then((result) => console.log(result));
+```
+
+---
+
+### Response
+
+```json
+[
+  {
+    "product": {
+      "id": 1,
+      "title": "AILIHEN MS300 Wired Headphones with Microphone for Chromebook Laptop Computer, 3.5mm Foldable Kids Headphones for School Teens Girls (Rose Gold)",
+      "description": "Everything about AILIHEN MS300 has been designed for hassle-free use. With a simple wired cable, there’s no chance of lost connections or dead batteries. They are perfect for listening to music, watching movies, online education, and everything in between.",
+      "price": 21.99,
+      "category": "Electronics",
+      "location": "China, Beijing",
+      "rating": 4.5,
+      "stock": 1026,
+      "image": "https://api-devify.my.id/img/products/electronics/1.jpg"
+    },
+    "status": 200
+  }
+]
+```
+
+With Devify, you can test how your application handles different data scenarios, network conditions, and error responses. **This valuable resource helps you identify and address potential issues early in the development process, saving you time and ensuring a smoother user experience when your application goes live.**
+
+---
+
+## HTTP Client Module
+
+Devify is a unique and versatile Fake API designed to cater to the specific needs of developers seeking a robust testing and development environment for their applications.
+
+To enhance the development experience, Devify integrates seamlessly with popular HTTP client modules, including [Axios](https://axios-http.com). Let's take a closer look at how these modules empower developers to interact with the Devify API effectively.
+
+### Single Product By ID
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+async function products() {
+  try {
+    const res = await axios.get(`${baseUrl}/v1/products/1`);
+
+    return res;
+  } catch (err) {
+    return null;
+  }
+}
+
+products().then((result) => console.log(result));
+```
+
+OR
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+axios
+  .get(`${baseUrl}/v1/products/1`)
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+```
+
+### Single Product By Uniquekey
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+async function products() {
+  try {
+    const res = await axios.get(
+      `${baseUrl}/v1/products/key/650698cfb8318065fca250be`
+    );
+
+    return res;
+  } catch (err) {
+    return null;
+  }
+}
+
+products().then((result) => console.log(result));
+```
+
+OR
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+axios
+  .get(`${baseUrl}/v1/products/key/650698cfb8318065fca250be`)
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+```
+
+Devify, coupled with HTTP client modules like [Axios](https://axios-http.com), creates a seamless and efficient testing and development environment for developers. It empowers developers to work with mock data, test various scenarios, and refine their applications in a controlled setting, ultimately enhancing the development process and product quality.
+
+---
+
+## Query Parameters
+
+We facilitates the retrieval, modification, and removal of products in a simplified manner. You can access a wide range of product data, making it versatile for different testing requirements.
+
+### Single Product By ID
+
+| Params | Data Types | Required |
+| ------ | ---------- | -------- |
+| ID     | Integer    | Yes      |
+
+### Single Product By Uniquekey
+
+| Params    | Data Types | Required |
+| --------- | ---------- | -------- |
+| Uniquekey | String     | Yes      |
+
+---

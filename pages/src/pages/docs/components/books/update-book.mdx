@@ -1,0 +1,283 @@
+---
+    title: Update Book
+    description: Update Book
+    content:
+        - How to Use It?
+        - Fetching Data
+        - HTTP Client Module
+        - Query Parameters
+        - Payloads
+    slug:
+        - how-to-use-it
+        - fetching-data
+        - http-client-module
+        - query-parameters
+        - payloads
+    next:
+        - title: Delete Book
+        - link: /docs/v1/books/delete-book
+---
+
+# Update Book
+
+Updating book data is a fundamental aspect of application development, and Devify simplifies this process with its intuitive features. **Whether you're refining your book catalog, enhancing the description, or modifying any other book-related details, Devify has you covered.**
+
+To update a book using Devify, developers can make use of the PATCH method. **This method allows for the partial modification of book data, ensuring that your changes are seamlessly integrated into your application.**
+
+---
+
+## How to Use It?
+
+To update a book, you have several effective options available. You can utilize tools like [Postman](https://postman.com) or harness the capabilities of [cURL](https://curl.se) to gracefully retrieve JSON data from Devify's books endpoint.
+
+If you're using [cURL](https://curl.se), you can employ it to initiate HTTP requests directly from the command line or within your scripts. Below are some typical use cases and examples:
+
+```bash
+$ curl -X PATCH -F "title=This is a title updated :)" https://api-devify.my.id/v1/books/1
+```
+
+OR
+
+```bash
+$ curl -X PATCH -F "title=This is a title updated :)" https://api-devify.my.id/v1/books/key/650a7b4c6571ac2061f0c375
+```
+
+---
+
+## Fetching Data
+
+Fetching data is the initial step in updating a book's details. With Devify's intuitive and well-documented API endpoints, developers can effortlessly retrieve book information. **These endpoints are designed to mimic real-world requests, making the development experience as authentic as possible. Whether it's fetching book titles, authors, descriptions, or any other relevant data, Devify provides a rich set of resources to make your job easier.**
+
+### Update Book By ID
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+let content = new FormData();
+content.append("image", file);
+content.append("title", "This is my title. (updated)");
+
+async function updateBook() {
+  try {
+    const res = await fetch(`${baseUrl}/v1/books/1`, {
+      method: "PATCH",
+      body: content,
+    });
+    const result = await res.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+
+updateBook().then((result) => console.log(result));
+```
+
+### Update Book By Uniquekey
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+let content = new FormData();
+content.append("image", file);
+content.append("title", "This is my title. (updated)");
+
+async function updateBook() {
+  try {
+    const res = await fetch(
+      `${baseUrl}/v1/books/key/650a7b4c6571ac2061f0c375`,
+      {
+        method: "PATCH",
+        body: content,
+      }
+    );
+    const result = await res.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+
+updateBook().then((result) => console.log(result));
+```
+
+OR
+
+### Update Book By ID
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+let content = new FormData();
+content.append("image", file);
+content.append("title", "This is my title. (updated)");
+
+fetch(`${baseUrl}/v1/books/1`, {
+  method: "PATCH",
+  body: content,
+})
+  .then((res) => res.json())
+  .then((result) => console.log(result))
+  .catch((err) => console.log(err));
+```
+
+### Update Book By Uniquekey
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+let content = new FormData();
+content.append("image", file);
+content.append("title", "This is my title. (updated)");
+
+fetch(`${baseUrl}/v1/books/key/650a7b4c6571ac2061f0c375`, {
+  method: "PATCH",
+  body: content,
+})
+  .then((res) => res.json())
+  .then((result) => console.log(result))
+  .catch((err) => console.log(err));
+```
+
+---
+
+## HTTP Client Module
+
+Devify is a Fake API designed to mimic real-world scenarios without the real-world consequences. **It allows developers to perform CRUD (Create, Read, Update, Delete) operations on various data objects, making it a perfect tool for testing and development.**
+
+In this scenario, we'll focus on updating a book using the HTTP client module, Axios, in conjunction with Devify. **Let's say you have an application that manages a library of books, and you want to implement a feature that allows users to update book details. Here's how you can do it:**
+
+### Update Product By ID
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+let content = new FormData();
+content.append("image", file);
+content.append("title", "This is my title. (updated)");
+
+async function updateBook() {
+  try {
+    const res = await axios.patch(`${baseUrl}/v1/books/1`, { content });
+
+    return res;
+  } catch (err) {
+    return null;
+  }
+}
+
+updateBook().then((result) => console.log(result));
+```
+
+### Update Product By Uniquekey
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+let content = new FormData();
+content.append("image", file);
+content.append("title", "This is my title. (updated)");
+
+async function updateBook() {
+  try {
+    const res = await axios.patch(
+      `${baseUrl}/v1/books/key/650a7b4c6571ac2061f0c375`,
+      { content }
+    );
+
+    return res;
+  } catch (err) {
+    return null;
+  }
+}
+
+updateBook().then((result) => console.log(result));
+```
+
+OR
+
+### Update Product By ID
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+let content = new FormData();
+content.append("image", file);
+content.append("title", "This is my title. (updated)");
+
+axios
+  .patch(`${baseUrl}/v1/books/1`, { content })
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+```
+
+### Update Product By Uniquekey
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+let content = new FormData();
+content.append("image", file);
+content.append("title", "This is my title. (updated)");
+
+axios
+  .patch(`${baseUrl}/v1/books/key/650a7b4c6571ac2061f0c375`, { content })
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+```
+
+---
+
+## Query Parameters
+
+### Update Book By ID
+
+| Params | Data Types | Required |
+| ------ | ---------- | -------- |
+| ID     | Integer    | Yes      |
+
+### Update Book By Uniquekey
+
+| Params    | Data Types | Required |
+| --------- | ---------- | -------- |
+| Uniquekey | String     | Yes      |
+
+---
+
+## Payloads
+
+| Payload   | Data Types | Required |
+| --------- | ---------- | -------- |
+| Title     | String     | No       |
+| Synopsis  | String     | No       |
+| Author    | String     | No       |
+| Category  | String     | No       |
+| Gender    | String     | No       |
+| Publisher | String     | No       |
+| Published | String     | No       |
+| Language  | String     | No       |
+| Rating    | Integer    | No       |
+| Pages     | Integer    | No       |
+| Poster    | String     | No       |
+
+```json
+{
+  "title": "This is a title (Updated)",
+  "synopsis": "This is a synopsis (Updated)",
+  "author": "Nova",
+  "category": "history",
+  "poster": "https://..."
+}
+```
+
+---

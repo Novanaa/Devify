@@ -1,0 +1,280 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+.navContainer {
+  padding: 0.8rem 7rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.195);
+  background: rgba(17, 17, 17, 0.16);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.navWrapper {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+.navContentHeadersWrapper {
+  align-items: flex-end;
+  display: flex;
+  overflow: hidden;
+  gap: 1.5rem;
+}
+.navBrandWrapper {
+  align-items: center;
+  gap: 0.1rem;
+  display: flex;
+  width: auto;
+  opacity: 0.9;
+  transition: all 0.2s;
+}
+.navBrandWrapper:hover {
+  opacity: 1;
+}
+.devifyLogo {
+  opacity: 1;
+  position: relative;
+  z-index: 999;
+}
+.navList {
+  display: flex;
+  gap: 0.2rem;
+}
+.navList li {
+  transform: scale(0.88);
+  -o-transform: scale(0.88);
+  -webkit-transform: scale(0.88);
+  -o-transform: scale(0.88);
+  opacity: 0.6;
+  transition: all 0.2s;
+  font-weight: 300;
+}
+.navList li.active {
+  opacity: 1;
+  font-weight: 600;
+}
+.navList li:hover {
+  opacity: 1;
+}
+.navContentWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.navInput {
+  font-size: 0.8rem;
+  padding: 0.53rem 1.3rem 0.53rem 2rem;
+  cursor: pointer;
+  background: #1f1f1f;
+}
+.navInputWrapper {
+  display: flex;
+  align-items: center;
+}
+.navSearchIcons {
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  left: 1.65rem;
+  opacity: 0.9;
+}
+.menuImage {
+  display: none;
+}
+.langWrapper {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: all 0.15s;
+}
+.langWrapper:hover {
+  opacity: 1;
+}
+.activeLang {
+  opacity: 0.9;
+}
+.openMenu {
+  transition: transform 0.2s;
+  transform: rotate(180deg);
+}
+.navCoffeImageWrapper {
+  transition: all 0.15s;
+  display: flex;
+  opacity: 0.7;
+}
+.navCoffeImageWrapper:hover {
+  opacity: 1;
+}
+.navGitImageWrapper {
+  opacity: 0.7;
+  display: flex;
+  transition: all 0.15s;
+}
+.navGitImageWrapper:hover {
+  opacity: 1;
+}
+
+/* Media Queries */
+/* Desktop */
+@media screen and (width >= 1920px) {
+  .navContainer {
+    margin: 0.2rem 1rem;
+    position: relative;
+    right: 0.5rem;
+  }
+  .navList li {
+    transform: scale(0.92);
+    -o-transform: scale(0.9);
+    -webkit-transform: scale(0.92);
+    -o-transform: scale(0.92);
+    position: relative;
+    bottom: 0.1rem;
+  }
+  .navSearchIcons {
+    width: 19px;
+    height: 19px;
+  }
+  .devifyLogo {
+    width: 30px;
+    height: 30px;
+  }
+  .langImage {
+    width: 23px;
+    height: 23px;
+  }
+  .dropdown {
+    width: 17px;
+    height: 17px;
+  }
+  .navCoffeImage {
+    width: 24px;
+    height: 24px;
+  }
+  .gitImage {
+    width: 29px;
+    height: 29px;
+  }
+}
+@media screen and (width >= 1600px) {
+  .navContainer {
+    padding: 0.9rem 10rem;
+  }
+}
+
+/* Laptop */
+@media screen and (width <= 1280px) {
+  /* Laptop Screen Size */
+}
+
+/* Tablet */
+@media screen and (width <= 884px) {
+  .navContainer {
+    padding: 0.9rem 3.8rem;
+  }
+  .navList li {
+    position: relative;
+    bottom: 0.15rem;
+  }
+}
+@media screen and (width <= 834px) {
+  .navContentHeadersWrapper {
+    gap: 1.4rem;
+  }
+  .navBrandWrapper {
+    gap: 0rem;
+  }
+  .navContainer {
+    padding: 0.9rem 3.3rem;
+  }
+  .navList li {
+    position: relative;
+    bottom: 0.08rem;
+  }
+  .navSearchIcons {
+    width: 17px;
+    height: 17px;
+  }
+  .langImage {
+    width: 22px;
+    height: 22px;
+  }
+  .dropdown {
+    width: 16px;
+    height: 16px;
+  }
+  .navCoffeImage {
+    width: 23px;
+    height: 23px;
+  }
+  .gitImage {
+    width: 28px;
+    height: 28px;
+  }
+}
+@media screen and (width <= 820px) {
+  .navContainer {
+    padding: 0.9rem 2.7rem;
+  }
+}
+@media screen and (width <= 768px) {
+  .navContainer {
+    padding: 0.9rem 1.5rem;
+  }
+  .navContentWrapper {
+    gap: 0.7rem;
+  }
+}
+
+/* Mobile */
+@media screen and (width <= 428px) {
+  .navContainer {
+    padding: 0.75rem 2.7rem;
+  }
+  .navWrapper {
+    position: relative;
+    right: 0.45rem;
+  }
+  .menuImage {
+    display: block;
+    position: relative;
+    width: 18px;
+    height: 18px;
+  }
+  .navContentWrapper {
+    gap: 0.4rem;
+  }
+  .devifyLogo {
+    width: 29px;
+    height: 29px;
+  }
+  .navSearchIcons {
+    position: relative;
+    left: 0.6rem;
+    width: 20px;
+    /* border: 1px solid white; */
+    height: 20px;
+  }
+  .navInput {
+    display: none;
+  }
+  .langWrapper {
+    display: none;
+  }
+  .navGitImageWrapper {
+    display: none;
+  }
+  .navCoffeImageWrapper {
+    display: none;
+  }
+  .navList {
+    display: none;
+  }
+  .showMobileNav {
+    display: block;
+  }
+}

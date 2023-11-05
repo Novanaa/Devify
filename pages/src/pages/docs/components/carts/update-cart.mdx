@@ -1,0 +1,353 @@
+---
+    title: Update Cart
+    description: Update Cart
+    content:
+        - How to Use It?
+        - Fetching Data
+        - HTTP Client Module
+        - Payloads
+        - Query Parameters
+    slug:
+        - how-to-use-it
+        - fetching-data
+        - http-client-module
+        - payloads
+        - query-parameters
+    next:
+        - title: Delete Cart
+        - link: /docs/v1/carts/delete-cart
+---
+
+# Update Cart
+
+**Updating your cart with Devify is a seamless process that empowers developers with a versatile testing and development environment for their applications.**
+
+**To update a cart in Devify, developers have the flexibility to implement PATCH requests, enabling the modification of cart items, quantities, and other relevant attributes.** This allows for real-world testing scenarios, where adjustments and changes can be made to the cart's contents as users interact with the application.
+
+---
+
+## How to Use It?
+
+To access the full array of cart data, you have several efficient options available. You can utilize tools such as [Postman](https://postman.com) or harness the capabilities of [cURL](https://curl.se) to gracefully retrieve the JSON data from Devify's carts endpoint.
+
+If you're using [cURL](https://curl.se), you can employ it to execute HTTP requests via the command line or within your scripts. Here are some typical scenarios and illustrative examples:
+
+```bash
+$ curl -X PATCH -d '{
+  "userId": 1,
+  "products": [
+    {
+      "productsId": 10,
+      "quantity": 1,
+      "price": 1839.99
+    }
+  ]
+}' https://api-devify.my.id/v1/carts/1
+```
+
+OR
+
+```bash
+$ curl -X PATCH -d '{
+  "userId": 1,
+  "products": [
+    {
+      "productsId": 10,
+      "quantity": 1,
+      "price": 1839.99
+    }
+  ]
+}' https://api-devify.my.id/v1/carts/key/65192ab500df9423f8d42cf3
+```
+
+---
+
+## Fetching Data
+
+One crucial aspect of application development is managing user shopping carts, and Devify excels in this area. **Allows you to simulate the process of modifying shopping carts with ease. This includes adding or removing items, updating quantities, and making sure the cart accurately reflects a user's choices.**
+
+Fetching data from the Devify API is a breeze. **Developers can retrieve cart information and seamlessly integrate it into their applications.** This data retrieval process provides a valuable testing ground for applications that rely on dynamic cart management, ensuring that everything functions smoothly and efficiently.
+
+### Update Product By ID
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+async function updateCart() {
+  try {
+    const res = await fetch(`${baseUrl}/v1/carts/1`, {
+      method: "PATCH",
+      body: JSON.stringify({
+        userId: 5,
+        products: [
+          {
+            productsId: 1,
+            quantity: 1,
+            price: 21.99,
+          },
+        ],
+      }),
+    });
+    const result = await res.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+
+updateCart().then((result) => console.log(result));
+```
+
+### Update Product By Uniquekey
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+async function updateCart() {
+  try {
+    const res = await fetch(
+      `${baseUrl}/v1/carts/key/65192ab500df9423f8d42cf3`,
+      {
+        method: "PATCH",
+        body: JSON.stringify({
+          userId: 5,
+          products: [
+            {
+              productsId: 1,
+              quantity: 1,
+              price: 21.99,
+            },
+          ],
+        }),
+      }
+    );
+    const result = await res.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+
+updateCart().then((result) => console.log(result));
+```
+
+OR
+
+### Update Product By ID
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+fetch(`${baseUrl}/v1/carts/1`, {
+  method: "PATCH",
+  body: JSON.stringify({
+    userId: 5,
+    products: [
+      {
+        productsId: 1,
+        quantity: 1,
+        price: 21.99,
+      },
+    ],
+  }),
+})
+  .then((res) => res.json())
+  .then((result) => console.log(result))
+  .catch((err) => console.log(err));
+```
+
+### Update Product By Uniquekey
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+fetch(`${baseUrl}/v1/carts/key/65192ab500df9423f8d42cf3`, {
+  method: "PATCH",
+  body: JSON.stringify({
+    userId: 5,
+    products: [
+      {
+        productsId: 1,
+        quantity: 1,
+        price: 21.99,
+      },
+    ],
+  }),
+})
+  .then((res) => res.json())
+  .then((result) => console.log(result))
+  .catch((err) => console.log(err));
+```
+
+---
+
+## HTTP Client Module
+
+To update a cart, **developers can use HTTP requests like PUT or PATCH. These requests allow you to send the updated cart data to the Devify API.** The API, in turn, processes your request and ensures that your cart reflects the changes you specified. For instance, **you can increase the quantity of a specific item, or even remove an item from the cart, all with a simple HTTP request.**
+
+One common task in e-commerce and many other applications is updating a shopping cart. With Devify, **you can simulate this process using [Axios](https://axios-http.com), a popular HTTP client module in JavaScript.** Here's a step-by-step guide on how to update a cart with [Axios](https://axios-http.com) and **Devify**.
+
+### Update Product By ID
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+const updatedContent = {
+  userId: 1,
+  products: [
+    {
+      productsId: 10,
+      quantity: 1,
+      price: 1839.99,
+    },
+  ],
+};
+
+async function updateCart() {
+  try {
+    const res = await axios.patch(`${baseUrl}/v1/carts/1`, { updatedContent });
+
+    return res;
+  } catch (err) {
+    return null;
+  }
+}
+
+updateCart().then((result) => console.log(result));
+```
+
+### Update Product By Uniquekey
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+const updatedContent = {
+  userId: 1,
+  products: [
+    {
+      productsId: 10,
+      quantity: 1,
+      price: 1839.99,
+    },
+  ],
+};
+
+async function updateCart() {
+  try {
+    const res = await axios.patch(
+      `${baseUrl}/v1/carts/key/65192ab500df9423f8d42cf3`,
+      { updatedContent }
+    );
+
+    return res;
+  } catch (err) {
+    return null;
+  }
+}
+
+updateCart().then((result) => console.log(result));
+```
+
+OR
+
+### Update Product By ID
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+const updatedContent = {
+  userId: 1,
+  products: [
+    {
+      productsId: 10,
+      quantity: 1,
+      price: 1839.99,
+    },
+  ],
+};
+
+axios
+  .patch(`${baseUrl}/v1/carts/1`, { updatedContent })
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+```
+
+### Update Product By Uniquekey
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+const updatedContent = {
+  userId: 1,
+  products: [
+    {
+      productsId: 10,
+      quantity: 1,
+      price: 1839.99,
+    },
+  ],
+};
+
+axios
+  .patch(`${baseUrl}/v1/carts/key/65192ab500df9423f8d42cf3`, { updatedContent })
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+```
+
+---
+
+## Payloads
+
+| Payload        | Data Types | Required |
+| -------------- | ---------- | -------- |
+| UserId         | Integer    | No       |
+| Products       | Arrays     | No       |
+| ProductsId     | Integer    | No       |
+| Quantity       | Integer    | No       |
+| Price          | Integer    | No       |
+| Total          | Integer    | No       |
+| Delivery Cost  | Integer    | No       |
+| Free Delivery  | Boolean    | No       |
+| Total Products | Integer    | No       |
+| Tax            | Integer    | No       |
+
+```json
+{
+  "userId": 1,
+  "products": [
+    {
+      "productsId": 10,
+      "quantity": 1,
+      "price": 1839.99
+    }
+  ]
+}
+```
+
+---
+
+## Query Parameters
+
+### Update Cart By ID
+
+| Params | Data Types | Required |
+| ------ | ---------- | -------- |
+| ID     | Integer    | Yes      |
+
+### Update Cart By Uniquekey
+
+| Params    | Data Types | Required |
+| --------- | ---------- | -------- |
+| Uniquekey | String     | Yes      |
+
+---

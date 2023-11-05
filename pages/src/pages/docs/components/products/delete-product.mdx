@@ -1,0 +1,212 @@
+---
+    title: Delete Product
+    description: Delete Product
+    content:
+        - How to Use It?
+        - Fetching Data
+        - HTTP Client Module
+        - Query Parameters
+    slug:
+        - how-to-use-it
+        - fetching-data
+        - http-client-module
+        - query-parameters
+    next:
+        - title: All Carts
+        - link: /docs/v1/carts
+---
+
+# Delete Product
+
+The procedure is straightforward and developer-friendly. By specifying the product's unique identifier or utilizing other relevant parameters, **developers can seamlessly remove products from their dataset. This ensures that the data remains clean, relevant, and in line with the evolving needs of the application.**
+
+To delete a product within the Devify ecosystem, developers have a powerful set of tools at their disposal. **Whether it's removing obsolete items, conducting tests, or refining the application's functionality, the delete product feature simplifies the process.**
+
+---
+
+## How to Use It?
+
+When it comes to accessing the complete range of product data, you have a variety of advanced options at your disposal. You can opt to use powerful tools like [Postman](https://postman.com), or you can leverage the capabilities of [cURL](https://curl.se) to smoothly retrieve the JSON data provided by Devify's products endpoint.
+
+For those who prefer [cURL](https://curl.se), it serves as a versatile method for making HTTP requests, whether it's through the command line or within your scripts. Below, we've provided a set of common scenarios and illustrative examples:
+
+```bash
+$ curl -X DELETE "https://api-devify.my.id/v1/products/1"
+```
+
+OR
+
+```bash
+$ curl -X DELETE "https://api-devify.my.id/v1/products/key/650698cfb8318065fca250ef"
+```
+
+---
+
+## Fetching Data
+
+One crucial aspect of software development is data management. **Devify excels in this regard by providing a wide range of endpoints and methods, including the Delete Product feature.** This particular function allows developers to remove specific products from the dataset with ease.
+
+When it comes to managing products in your application, the ability to remove a product is crucial. With Devify, **you can test this functionality without the need for a real database or the risk of damaging live data.**
+
+### Delete Product By ID
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+async function deleteProduct() {
+  try {
+    const res = await fetch(`${baseUrl}/v1/products/1`, { method: "DELETE" });
+    const result = await res.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+
+deleteProduct().then((datas) => console.log(datas));
+```
+
+### Delete Product By Uniquekey
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+async function deleteProduct() {
+  try {
+    const res = await fetch(
+      `${baseUrl}/v1/products/key/650698cfb8318065fca250ef`,
+      { method: "DELETE" }
+    );
+    const result = await res.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+
+deleteProduct().then((datas) => console.log(datas));
+```
+
+OR
+
+### Delete Product By ID
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+fetch(`${baseUrl}/v1/products/1`, { method: "DELETE" })
+  .then((res) => res.json())
+  .then((result) => console.log(result))
+  .catch((err) => console.log(err));
+```
+
+### Delete Product By Uniquekey
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+fetch(`${baseUrl}/v1/products/key/650698cfb8318065fca250ef`, {
+  method: "DELETE",
+})
+  .then((res) => res.json())
+  .then((result) => console.log(result))
+  .catch((err) => console.log(err));
+```
+
+---
+
+## HTTP Client Module
+
+**Deleting a product using the HTTP Client Module with Devify is a straightforward process, as long as your application is properly authenticated and you construct the DELETE request correctly.** Devify's comprehensive testing and development environment allows you to refine your application's functionality with confidence.
+
+When your application interacts with Devify's simulated API, it's essential to handle various **CRUD (Create, Read, Update, Delete)** operations effectively. **To delete a product, follow these steps:**
+
+### Delete Product By ID
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+async function deleteProduct() {
+  try {
+    const res = await axios.delete(`${baseUrl}/v1/products/1`);
+
+    return res;
+  } catch (err) {
+    return null;
+  }
+}
+
+deleteProduct().then((result) => console.log(result));
+```
+
+### Delete Product By Uniquekey
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+async function deleteProduct() {
+  try {
+    const res = await axios.delete(
+      `${baseUrl}/v1/products/key/650698cfb8318065fca250ef`
+    );
+
+    return res;
+  } catch (err) {
+    return null;
+  }
+}
+
+deleteProduct().then((result) => console.log(result));
+```
+
+OR
+
+### Delete Product By ID
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+axios
+  .delete(`${baseUrl}/v1/products/1`)
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+```
+
+### Delete Product By Uniquekey
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+axios
+  .delete(`${baseUrl}/v1/products/key/650698cfb8318065fca250ef`)
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+```
+
+---
+
+## Query Parameters
+
+### Delete Product By ID
+
+| Params | Data Types | Required |
+| ------ | ---------- | -------- |
+| ID     | Integer    | Yes      |
+
+### Delete Product By Uniquekey
+
+| Params    | Data Types | Required |
+| --------- | ---------- | -------- |
+| Uniquekey | String     | Yes      |
+
+---

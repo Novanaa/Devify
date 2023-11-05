@@ -1,0 +1,37 @@
+---
+    title: Middlewares
+    description: Middlewares
+    content: 
+        - Rate Limitter
+    slug:
+        - rate-limitter
+    next: 
+        - title: Auth - Register
+        - link: /docs/v1/auth/register
+---
+
+# Middlewares
+
+Middleware, in the context of Devify, serves as a crucial bridge between the client and the server, providing a range of functionalities that can significantly enhance the development and testing experience.
+
+These intermediate software components are capable of processing, modifying, and enriching incoming and outgoing data, making Devify a valuable tool for developers.
+
+---
+
+## Rate Limitter
+
+Developers can leverage this Rate Limiter Middleware to simulate real-world usage scenarios, measure the performance of their applications under various conditions, and ensure that their creations can withstand the demands of a production environment.
+
+Devify's Fake API, combined with the Rate Limiter Middleware, empowers developers to optimize their applications with confidence.
+
+This Rate Limiter Middleware sets a maximum limit of 80 requests per minute for each user or application interacting with Devify's Fake API. This feature ensures that developers can rigorously test and fine-tune their applications without overwhelming the system. By limiting the number of requests, Devify encourages responsible and efficient use of its platform.
+
+When a user or application exceeds the 80-request limit within a minute, the Rate Limiter Middleware enforces a 1-minute delay before allowing additional requests. This delay not only prevents abuse but also provides a fair and equitable experience for all users.
+
+It's a crucial component of Devify's commitment to maintaining a stable and reliable development environment.
+
+---
+
+These middlewares serve a variety of purposes within the Devify ecosystem. They can be employed to authenticate requests, validate data, log essential information, and even modify the response before it reaches the client.
+
+Middlewares act as intermediaries between the client and the server, enhancing the development process by performing various functions that are crucial for testing and refining applications.

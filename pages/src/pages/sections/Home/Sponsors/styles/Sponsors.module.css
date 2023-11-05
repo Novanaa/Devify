@@ -1,0 +1,28 @@
+.container {
+  height: 42vh;
+  position: relative;
+  top: 3rem;
+}
+.contentWrapper {
+  position: relative;
+  right: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.3rem;
+}
+.sponsorsContainer {
+  gap: 2rem;
+  width: 45rem;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+.sponsorsWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.75;
+}

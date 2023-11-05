@@ -1,0 +1,196 @@
+---
+    title: All Carts
+    description: All Carts
+    content:
+        - How to Use It?
+        - Fetching Data
+        - HTTP Client Module
+    slug:
+        - how-to-use-it
+        - fetching-data
+        - http-client-module
+    next:
+        - title: Single Cart
+        - link: /docs/v1/carts/single-cart
+---
+
+# All Carts
+
+Whether you're building an e-commerce platform, a mobile shopping app, or any other application that involves cart management, Devify is a valuable tool. **It allows developers to access a wealth of information about the carts, helping them ensure the smooth operation of their applications and streamline the shopping experience for their users.**
+
+---
+
+## How to Use It?
+
+When it comes to accessing comprehensive product information, you have various advanced options at your disposal. You can choose to employ robust tools like [Postman](https://postman.com) for a user-friendly interface or leverage the capabilities of [cURL](https://curl.se) to retrieve JSON data gracefully from Devify's carts endpoint programmatically.
+
+For those who opt for [cURL](https://curl.se), it provides a flexible way to make HTTP requests, whether it's through the command line or integrated into your scripts. Below, you'll discover a range of common scenarios along with practical examples:
+
+```bash
+$ curl -o C:\output.json -X GET "https://api-devify.my.id/v1/carts"
+```
+
+OR
+
+```bash
+$ curl -X GET "https://api-devify.my.id/v1/carts"
+```
+
+---
+
+## Fetching Data
+
+One of the significant advantages of using Devify is its ability to simulate various scenarios, including testing for potential bottlenecks, optimizing data retrieval processes, and ensuring the security of data transmission. **This feature is especially valuable during the development phase, helping developers refine their applications before they go live.**
+
+### Examples
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+async function carts() {
+  try {
+    const response = await fetch(`${baseUrl}/v1/carts?limit=2`);
+    const result = await response.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+
+carts().then((datas) => console.log(datas));
+```
+
+OR
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+fetch(`${baseUrl}/v1/carts?limit=3`)
+  .then((res) => res.json())
+  .then((result) => console.log(result));
+```
+
+#### Start your Application
+
+```bash
+$ node main.js
+```
+
+#### Response
+
+```json
+[
+  {
+    "id": 1,
+    "userId": 36,
+    "products": [
+      {
+        "productsId": 25,
+        "quantity": 10,
+        "price": 16.28
+      },
+      {
+        "productsId": 32,
+        "quantity": 8,
+        "price": 33.86
+      },
+      {
+        "productsId": 19,
+        "quantity": 7,
+        "price": 8.78
+      }
+    ],
+    "total": 539.24,
+    "delivery_cost": null,
+    "free_delivery": true,
+    "total_products": 3,
+    "tax": 29.71
+  },
+  {
+    "id": 2,
+    "userId": 8,
+    "products": [
+      {
+        "productsId": 37,
+        "quantity": 1,
+        "price": 23.6
+      },
+      {
+        "productsId": 26,
+        "quantity": 5,
+        "price": 14.35
+      },
+      {
+        "productsId": 39,
+        "quantity": 1,
+        "price": 37.53
+      },
+      {
+        "productsId": 24,
+        "quantity": 5,
+        "price": 37.01
+      },
+      {
+        "productsId": 42,
+        "quantity": 6,
+        "price": 23.0
+      }
+    ],
+    "total": 488.9,
+    "delivery_cost": null,
+    "free_delivery": true,
+    "total_products": 5,
+    "tax": 27.36
+  }
+]
+```
+
+---
+
+## HTTP Client Module
+
+In the world of web development, testing and development environments are crucial for ensuring the smooth operation of applications. One valuable tool that developers frequently utilize is [Axios](https://axios-http.com), an HTTP client module that simplifies making HTTP requests in both the browser and [Node.js.](https://nodejs.org)
+
+Before we can retrieve data from Devify, we need to ensure we have Axios installed in our project. If you haven't already done so, **you can include Axios by adding it to your project's dependencies. For example, in a Node.js project, you can use npm:**
+
+```bash
+$ npm install axios
+```
+
+Now that we have Axios in place, we can start making API requests. **To retrieve all shopping carts from Devify, we need to send an HTTP GET request to the appropriate endpoint. In this case, the endpoint is likely to be something like https://api-devify.my.id/v1/carts.**
+
+Here's how you can do it with Axios:
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+async function carts() {
+  try {
+    const res = await axios.get(`${baseUrl}/v1/carts`);
+
+    return res;
+  } catch (err) {
+    return null;
+  }
+}
+
+carts().then((result) => console.log(result));
+```
+
+OR
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+axios
+  .get(`${baseUrl}v1/carts`)
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+```
+
+---

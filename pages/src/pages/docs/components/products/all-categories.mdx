@@ -1,0 +1,133 @@
+---
+    title: All Categories
+    description: All Products Categories
+    content:
+        - How to Use It?
+        - Fetching Data
+        - HTTP Client Module
+        - List Categories
+    slug:
+        - how-to-use-it
+        - fetching-data
+        - http-client-module
+        - list-categories
+    next:
+        - title: Single Product Categories
+        - link: /docs/v1/products/categories/single-categories
+---
+
+# All Products Categories
+
+This API endpoint allows developers to access a comprehensive list of product categories, enabling them to organize and structure their applications more effectively. With just a simple HTTP GET request, **developers can retrieve all available product categories, facilitating the seamless integration of various items into their applications.**
+
+**Developers can utilize this feature to retrieve a comprehensive list of product categories, making it easier than ever to manage and organize products within their applications.**
+
+---
+
+## How to Use It?
+
+To access the full range of product information, you have various efficient options available. **You can utilize tools such as [Postman](https://postman.com) or harness the capabilities of [cURL](https://curl.se) to gracefully retrieve the JSON data from Devify's product endpoint.**
+
+When using [cURL](https://curl.se), you can employ it to initiate HTTP requests through the command line or within your scripts. Here are some typical scenarios and illustrations:
+
+```bash
+$ curl -o C:\output.json -X GET "https://api-devify.my.id/v1/products/categories"
+```
+
+OR
+
+```bash
+$ curl -X GET "https://api-devify.my.id/v1/products/categories"
+```
+
+---
+
+## Fetching Data
+
+Fetching data from Devify is a breeze. By making a simple API request, **developers can access a wealth of product categories, facilitating the creation of applications that are not only functional but also reflect real-world scenarios.**
+
+Whether you're working on an e-commerce platform, a content management system, or any application requiring product categorization, **Devify's is an invaluable resource.**
+
+### Examples
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+async function products() {
+  try {
+    const response = await fetch(`${baseUrl}/v1/products/categories`);
+    const result = await response.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+
+products().then((datas) => console.log(datas));
+```
+
+OR
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+fetch(`${baseUrl}/v1/products/categories`)
+  .then((res) => res.json())
+  .then((result) => console.log(result));
+```
+
+---
+
+## HTTP Client Module
+
+In the world of web development, testing and development environments are invaluable. **Devify, a Fake API, offers a solution for developers seeking to test their applications without relying on real data.** It's a fantastic resource for honing your skills and ensuring your software functions as intended.
+
+One common task in app development is retrieving product categories, which can be a crucial part of many e-commerce platforms. **In this guide, we'll show you how to use [Axios](https://axios-http.com), an HTTP client module, to fetch all product categories from Devify's API.**
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+async function products() {
+  try {
+    const res = await axios.get(`${baseUrl}/v1/products/categories`);
+
+    return res;
+  } catch (err) {
+    return null;
+  }
+}
+
+products().then((result) => console.log(result));
+```
+
+OR
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+axios
+  .get(`${baseUrl}/v1/products/categories`)
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+```
+
+---
+
+## List Categories
+
+List of products categories includes:
+
+| Category    | Description                                                                                                                                                                                   |
+| ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Jewelry     | Jewelry products come in various styles, from classic and elegant to contemporary and trendy, catering to diverse preferences and occasions.                                                  |
+| Men's       | The Men's Products Categories aim to provide a convenient and comprehensive shopping experience for men, offering them a variety of choices to suit their individual tastes and requirements. |
+| Women's     | It includes clothing, accessories, beauty products, and more, all crafted to cater to the unique tastes and requirements of women.                                                            |
+| Electronics | This category typically encompasses products such as smartphones, laptops, tablets, home appliances, audio equipment, gaming consoles, and other electronic gadgets.                          |
+| Furniture   | This category typically includes items such as tables, chairs, sofas, cabinets, beds, and various accessories that contribute to the aesthetics and functionality of interior spaces.         |
+
+---

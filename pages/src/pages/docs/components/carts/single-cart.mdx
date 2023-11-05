@@ -1,0 +1,175 @@
+---
+    title: Single Cart
+    description: Single Cart
+    content:
+        - How to Use It?
+        - Fetching Data
+        - HTTP Client Module
+        - Query Parameters
+        - Authorization
+    slug:
+        - how-to-use-it
+        - fetching-data
+        - http-client-module
+        - query-parameters
+        - authorization
+    next:
+        - title: Add Cart
+        - link: /docs/v1/carts/add-cart
+---
+
+# Single Cart
+
+**The simplicity and convenience of Devify make it an invaluable resource for developers looking to create and refine applications with robust shopping cart systems.** Devify's commitment to providing a realistic and efficient testing environment empowers developers to build high-quality applications that meet the demands of modern e-commerce and beyond.
+
+As a developer, having access to a single cart within your application is crucial for fine-tuning and testing specific functionalities. **Enables developers to retrieve detailed information about a single shopping cart.**
+
+**This includes the cart's contents, associated user details, and any other relevant data.** By accessing a single cart, developers can thoroughly test and debug their applications, ensuring that the shopping cart feature functions seamlessly.
+
+---
+
+## How to Use It?
+
+To access the full array of carts data, you have several effective options available. You can utilize tools like [Postman](https://postman.com) or harness the capabilities of [cURL](https://curl.se) to efficiently retrieve the JSON data from Devify's carts endpoint.
+
+If you're using [cURL](https://curl.se), you can employ it to send HTTP requests from the command line or within your scripts. Here are some typical scenarios and examples:
+
+Before you can access any cart data, it is essential to undergo the login process. For comprehensive documentation, please refer to the [Auth Login](/docs/v1/auth/login) section.
+
+```bash
+$ curl -o C:\output.json -X GET -H "Authorization: Bearer your_access_token" "https://api-devify.my.id/v1/carts/1"
+```
+
+OR
+
+```bash
+$ curl -X GET -H "Authorization: Bearer your_access_token" "https://api-devify.my.id/v1/carts/1"
+```
+
+---
+
+## Fetching Data
+
+**Devify's intuitive and easy-to-use API ensures that developers can seamlessly integrate this functionality into their applications.** By obtaining single cart data, **developers can create engaging and responsive user experiences, update cart contents, and calculate prices accurately.**
+
+To fetch data for a single cart from Devify, developers can make an HTTP GET request to the appropriate endpoint. **This request enables them to access detailed information about a specific cart, such as its contents, total price, and associated user.** This operation is crucial for applications that require real-time updates on the status of a particular shopping cart.
+
+### Examples
+
+```js
+const baseUrl = "https://api-devify.my.id";
+const token = "your_access_token";
+
+async function cart() {
+  try {
+    const response = await fetch(`${baseUrl}/v1/carts/1`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    const result = await response.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+
+cart().then((datas) => console.log(datas));
+```
+
+OR
+
+```js
+const baseUrl = "https://api-devify.my.id";
+const token = "your_access_token";
+
+fetch(`${baseUrl}/v1/carts/1`, {
+  method: "GET",
+  headers: {
+    Authorization: `Bearer ${token}`,
+  },
+})
+  .then((res) => res.json())
+  .then((result) => console.log(result));
+```
+
+---
+
+## HTTP Client Module
+
+One common task in this scenario is retrieving details about a specific cart. **To achieve this, developers often turn to HTTP client modules like [Axios](https://axios-http.com).** [Axios](https://axios-http.com) is a popular JavaScript library that simplifies making HTTP requests, including GET requests to fetch data from an API.
+
+Getting information about a single cart from Devify is straightforward when using [Axios](https://axios-http.com). Here's a step-by-step guide on how to do it:
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+const token = "your_access_token";
+
+const headers = {
+  Authorization: `Bearer ${token}`,
+};
+
+async function carts() {
+  try {
+    const res = await axios.get(`${baseUrl}/v1/carts/1`, { headers });
+
+    return res;
+  } catch (err) {
+    return null;
+  }
+}
+
+carts().then((result) => console.log(result));
+```
+
+OR
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+const token = "your_access_token";
+
+const headers = {
+  Authorization: `Bearer ${token}`,
+};
+
+axios
+  .get(`${baseUrl}/v1/carts/1`, { headers })
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+```
+
+---
+
+## Query Parameters
+
+| Params | Data Types | Required |
+| ------ | ---------- | -------- |
+| ID     | Integer    | Yes      |
+
+---
+
+## Authorization
+
+**The Authorization Bearer Token is a digital credential that separates the spectators from the participants in the Devify playground.** It signifies that developers have been authenticated and authorized to make inquiries about individual carts.
+
+This API endpoint requires developers to present a valid Authorization Bearer Token as a key to unlock a treasure trove of cart-related information. **This token serves as a digital seal of approval, ensuring that only authorized personnel can access and manipulate cart data.**
+
+To access this API endpoint, you need to include a Authorization Bearer Token in the request headers. This token is akin to a backstage pass, granting access to the inner workings of Devify's cart management system. To get the **Bearer Token** you must have to [login](/docs/v1/auth/login) with a valid credentials or [register](/docs/v1/auth/register).
+
+If you're not include a Authorization Bearer Token in the request headers, you will get an error that say:
+
+```json
+{
+  "TypeError": "Unauthorized",
+  "messege": "You are not authorized to access this resource. Please provide valid credentials or authentication.",
+  "status": 401
+}
+```
+
+---

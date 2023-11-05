@@ -1,0 +1,165 @@
+---
+    title: All Books
+    description: All Books
+    content:
+        - How to Use It?
+        - Fetching Data
+        - HTTP Client Module
+    slug:
+        - how-to-use-it
+        - fetching-data
+        - http-client-module
+    next:
+        - title: Single Book
+        - link: /docs/v1/books/single-book
+---
+
+# All Books
+
+In the realm of software development, access to a comprehensive library of fictitious books can be invaluable. Devify, with its user-friendly API, **allows developers to effortlessly retrieve a complete list of fictional books for testing and development purposes.**
+
+By making use of this feature, **developers can easily fetch a wide range of book data, from titles and authors to genres and descriptions.** The data obtained can be used to simulate a real-world book database, facilitating the testing of search, sorting, and filtering functionalities within your application.
+
+---
+
+## How to Use It?
+
+To access the full array of book data, you have several effective options available. You can utilize tools like [Postman](https://postman.com) or harness the capability of [cURL](https://curl.se) to gracefully retrieve the JSON data from Devify's books endpoint.
+
+If you choose to use [cURL](https://curl.se), you can employ it for making HTTP requests through the command line or within your scripts. Here are some typical scenarios and illustrative examples:
+
+```bash
+$ curl -o C:\output.json -X GET "https://api-devify.my.id/v1/books"
+```
+
+OR
+
+```bash
+$ curl -X GET "https://api-devify.my.id/v1/books"
+```
+
+---
+
+## Fetching Data
+
+In the world of software development, having a reliable and versatile testing and development environment is crucial for creating and fine-tuning applications. **Devify steps in as the perfect solution. Devify is a specialized Fake API meticulously crafted to cater to the needs of developers.** It offers a seamless experience for testing and developing applications, making the process smoother and more efficient.
+
+### Examples
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+async function books() {
+  try {
+    const response = await fetch(`${baseUrl}/v1/books?limit=3`);
+    const result = await response.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+
+books().then((datas) => console.log(datas));
+```
+
+OR
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+fetch(`${baseUrl}/v1/books?limit=3`)
+  .then((res) => res.json())
+  .then((result) => console.log(result))
+  .catch((err) => console.log(err));
+```
+
+#### Start your Application
+
+```bash
+$ node main.js
+```
+
+#### Response
+
+```json
+[
+  {
+    "id": 1,
+    "title": "...",
+    "synopsis": "...",
+    "author": "...",
+    "category": "...",
+    "publisher": "...",
+    "published": "...",
+    "language": "...",
+    "rating": 4.7,
+    "pages": 365,
+    "poster": "..."
+  },
+  {
+    "id": 3,
+    "title": "...",
+    "synopsis": "...",
+    "author": "...",
+    "category": "...",
+    "publisher": "...",
+    "published": "...",
+    "language": "...",
+    "rating": 4.5,
+    "pages": 256,
+    "poster": "..."
+  }
+]
+```
+
+---
+
+## HTTP Client Module
+
+When developing and testing applications, having access to a reliable and flexible API for data is crucial. **Devify steps in as a convenient solution, offering a Fake API specifically designed for developers to create, test, and develop their applications.**
+
+One common task for developers is retrieving a list of books from an API, and [Axios](https://axios-http.com), a popular **JavaScript** library for making HTTP requests, simplifies this process. Let's walk through how to use [Axios](https://axios-http.com) to fetch all books from Devify API.
+
+### Installing
+
+```bash
+$ npm install axios
+```
+
+Visit [https://axios-http.com](https://axios-http.com) to view the full documentation.
+
+### Examples
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+async function books() {
+  try {
+    const res = await axios.get(`${baseUrl}/v1/books`);
+
+    return res;
+  } catch (err) {
+    return null;
+  }
+}
+
+books().then((result) => console.log(result));
+```
+
+OR
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+axios
+  .get(`${baseUrl}v1/books`)
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+```
+
+---

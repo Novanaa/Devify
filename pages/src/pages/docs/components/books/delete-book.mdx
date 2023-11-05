@@ -1,0 +1,212 @@
+---
+    title: Delete Book
+    description: Delete Book
+    content:
+        - How to Use It?
+        - Fetching Data
+        - HTTP Client Module
+        - Query Parameters
+    slug:
+        - how-to-use-it
+        - fetching-data
+        - http-client-module
+        - query-parameters
+    next:
+        - title: All Users
+        - link: /docs/v1/users
+---
+
+# Delete Book
+
+**In the world of software development, testing and refining applications is an essential part of the process.** Devify, a Fake API designed with developers in mind, offers a convenient platform for testing and development. Today, we'll explore a fundamental operation: deleting a book.
+
+As developers, we often work with databases and APIs to manage and manipulate data. In real-world applications, deleting records is a common task. Devify makes this task simple and user-friendly, **allowing developers to hone their skills without the risks associated with working on live systems.**
+
+---
+
+## How to Use It?
+
+To delete a book, you have several effective options available. You can utilize tools like [Postman](https://postman.com) or harness the capabilities of [cURL](https://curl.se) to gracefully retrieve the JSON data from Devify's books endpoint.
+
+If you're using [cURL](https://curl.se), you can employ it to issue HTTP requests from the command line or within your scripts. Here are some typical scenarios and examples:
+
+```bash
+$ curl -X DELETE "https://api-devify.my.id/v1/books/1"
+```
+
+OR
+
+```bash
+$ curl -X DELETE "https://api-devify.my.id/v1/books/key/650a7b4c6571ac2061f0c375"
+```
+
+---
+
+## Fetching Data
+
+**Devify is a dynamic and versatile Fake API crafted to offer developers a reliable testing and development environment for their applications.** It serves as an invaluable tool, particularly when it comes to managing data, testing different functionalities, and refining the overall performance of your software solutions.
+
+**One of the essential operations developers frequently need to perform is deleting specific data elements, like a book from a catalog.** In this context, Devify shines as an ideal companion.
+
+### Delete Book By ID
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+async function deleteBook() {
+  try {
+    const res = await fetch(`${baseUrl}/v1/books/1`, { method: "DELETE" });
+    const result = await res.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+
+deleteBook().then((datas) => console.log(datas));
+```
+
+### Delete Book By Uniquekey
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+async function deleteBook() {
+  try {
+    const res = await fetch(
+      `${baseUrl}/v1/books/key/650a7b4c6571ac2061f0c375`,
+      { method: "DELETE" }
+    );
+    const result = await res.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+
+deleteBook().then((datas) => console.log(datas));
+```
+
+OR
+
+### Delete Book By ID
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+fetch(`${baseUrl}/v1/books/1`, { method: "DELETE" })
+  .then((res) => res.json())
+  .then((result) => console.log(result))
+  .catch((err) => console.log(err));
+```
+
+### Delete Book By Uniquekey
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+fetch(`${baseUrl}/v1/books/key/650a7b4c6571ac2061f0c375`, {
+  method: "DELETE",
+})
+  .then((res) => res.json())
+  .then((result) => console.log(result))
+  .catch((err) => console.log(err));
+```
+
+---
+
+## HTTP Client Module
+
+To interact with Devify's Fake API, we can employ a popular HTTP client module like [Axios](https://axios-http.com). **[Axios](https://axios-http.com) simplifies the process of making HTTP requests from your application to external APIs or services.**
+
+Let's assume you have an application where users can manage their book collections, and you want to remove a book from the collection. To achieve this using [Axios](https://axios-http.com) and Devify, follow these steps:
+
+### Delete Book By ID
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+async function deleteBook() {
+  try {
+    const res = await axios.delete(`${baseUrl}/v1/books/1`);
+
+    return res;
+  } catch (err) {
+    return null;
+  }
+}
+
+deleteBook().then((result) => console.log(result));
+```
+
+### Delete Book By Uniquekey
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+async function deleteBook() {
+  try {
+    const res = await axios.delete(
+      `${baseUrl}/v1/books/key/650a7b4c6571ac2061f0c375`
+    );
+
+    return res;
+  } catch (err) {
+    return null;
+  }
+}
+
+deleteBook().then((result) => console.log(result));
+```
+
+OR
+
+### Delete Book By ID
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+axios
+  .delete(`${baseUrl}/v1/books/1`)
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+```
+
+### Delete Book By Uniquekey
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+axios
+  .delete(`${baseUrl}/v1/books/key/650a7b4c6571ac2061f0c375`)
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+```
+
+---
+
+## Query Parameters
+
+### Delete Book By ID
+
+| Params | Data Types | Required |
+| ------ | ---------- | -------- |
+| ID     | Integer    | Yes      |
+
+### Delete Book By Uniquekey
+
+| Params    | Data Types | Required |
+| --------- | ---------- | -------- |
+| Uniquekey | String     | Yes      |
+
+---

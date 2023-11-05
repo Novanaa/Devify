@@ -1,0 +1,208 @@
+---
+    title: Delete Cart
+    description: Delete Cart
+    content:
+        - How to Use It?
+        - Fetching Data
+        - HTTP Client Module
+        - Query Parameters
+    slug:
+        - how-to-use-it
+        - fetching-data
+        - http-client-module
+        - query-parameters
+    next:
+        - title: All Books
+        - link: /docs/v1/books
+---
+
+# Delete Cart
+
+Devify's user-friendly API system **enables developers to implement and examine the removal of items from a cart with ease.** This comprehensive testing environment allows you to verify that your application functions as expected when users wish to clear their shopping carts.
+
+So, when it comes to testing and perfecting the cart deletion process in your application, **Devify stands as the ideal tool to help developers create an efficient and reliable experience for their users.** It's a critical part of the development process, and Devify simplifies it, offering a safe and controlled environment to ensure your application performs flawlessly.
+
+---
+
+## How to Use It?
+
+To access the full array of cart data, you have several effective options available. You can utilize tools such as [Postman](https://postman.com) or leverage the versatility of [cURL](https://curl.se) to efficiently retrieve the JSON data from Devify's carts endpoint.
+
+If you're using [cURL](https://curl.se), you can employ it to execute HTTP requests via the command line or within your scripts. Here are some typical use cases and examples:
+
+```bash
+$ curl -X DELETE "https://api-devify.my.id/v1/carts/1"
+```
+
+OR
+
+```bash
+$ curl -X DELETE "https://api-devify.my.id/v1/carts/key/65192ab500df9423f8d42cf3"
+```
+
+---
+
+## Fetching Data
+
+One crucial operation offered by Devify. **allows developers to seamlessly remove items from a shopping cart, mimicking a real-world scenario.** Whether it's refining the checkout process or enhancing the user experience, **enables developers to assess how their applications handle cart modifications.**
+
+Fetching data is another essential aspect of Devify. **Developers can retrieve data from the API to test how their applications respond to different scenarios.** Whether it's fetching product details, user information, or other critical data, Devify provides a safe and controlled environment for developers to fine-tune their data retrieval mechanisms.
+
+### Delete Product By ID
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+async function deleteCart() {
+  try {
+    const res = await fetch(`${baseUrl}/v1/carts/1`, { method: "DELETE" });
+    const result = await res.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+
+deleteCart().then((datas) => console.log(datas));
+```
+
+### Delete Product By Uniquekey
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+async function deleteCart() {
+  try {
+    const res = await fetch(
+      `${baseUrl}/v1/carts/key/65192ab500df9423f8d42cf3`,
+      { method: "DELETE" }
+    );
+    const result = await res.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+
+deleteCart().then((datas) => console.log(datas));
+```
+
+OR
+
+### Delete Product By ID
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+fetch(`${baseUrl}/v1/carts/1`, { method: "DELETE" })
+  .then((res) => res.json())
+  .then((result) => console.log(result))
+  .catch((err) => console.log(err));
+```
+
+### Delete Product By Uniquekey
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+fetch(`${baseUrl}/v1/carts/key/65192ab500df9423f8d42cf3`, {
+  method: "DELETE",
+})
+  .then((res) => res.json())
+  .then((result) => console.log(result))
+  .catch((err) => console.log(err));
+```
+
+---
+
+## HTTP Client Module
+
+When working on your application's development and testing, it's essential to have the ability to manage and delete shopping carts. **In this guide, we'll demonstrate how to perform a cart deletion operation using the [Axios](https://axios-http.com) HTTP client module in conjunction with Devify**, a versatile Fake API created to provide developers with a reliable testing and development environment.
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+async function deleteCart() {
+  try {
+    const res = await axios.delete(`${baseUrl}/v1/carts/1`);
+
+    return res;
+  } catch (err) {
+    return null;
+  }
+}
+
+deleteCart().then((result) => console.log(result));
+```
+
+### Delete Product By Uniquekey
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+async function deleteCart() {
+  try {
+    const res = await axios.delete(
+      `${baseUrl}/v1/carts/key/65192ab500df9423f8d42cf3`
+    );
+
+    return res;
+  } catch (err) {
+    return null;
+  }
+}
+
+deleteCart().then((result) => console.log(result));
+```
+
+OR
+
+### Delete Product By ID
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+axios
+  .delete(`${baseUrl}/v1/carts/1`)
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+```
+
+### Delete Product By Uniquekey
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+axios
+  .delete(`${baseUrl}/v1/carts/key/65192ab500df9423f8d42cf3`)
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+```
+
+---
+
+## Query Parameters
+
+### Delete Cart By ID
+
+| Params | Data Types | Required |
+| ------ | ---------- | -------- |
+| ID     | Integer    | Yes      |
+
+### Delete Cart By Uniquekey
+
+| Params    | Data Types | Required |
+| --------- | ---------- | -------- |
+| Uniquekey | String     | Yes      |
+
+---

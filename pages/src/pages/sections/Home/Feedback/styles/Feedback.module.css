@@ -1,0 +1,316 @@
+.container {
+  border-top: 1px solid rgba(255, 255, 255, 0.136);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+  background: #161616;
+  position: relative;
+  margin: 5rem 0 0 0;
+  padding: 4.8rem 7.5rem;
+  height: 95vh;
+}
+.wrapper {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.contentWrapper {
+  flex-direction: column;
+  display: flex;
+  gap: 0.7rem;
+}
+.contentHead {
+  opacity: 0.7;
+}
+.contentTitle {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 700;
+  font-size: 2.3rem;
+  color: #e7c4eb;
+}
+.contentTitle::before {
+  content: "Dive into Conversations.";
+  padding: 0.4rem;
+  z-index: 0;
+  position: absolute;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px #e7c4eb;
+  opacity: 0.8;
+}
+.contentDescription {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  opacity: 0.75;
+  font-size: 0.9rem;
+  color: #e7c4eb;
+  width: 50%;
+}
+.cardsContainer {
+  position: relative;
+  margin: 1.5rem 0 0 0;
+  display: grid;
+  grid-template-columns: repeat(3, 21.5rem);
+  gap: 1rem;
+}
+.cardWrapper {
+  border-radius: 5px;
+  padding: 1.1rem 1rem 1.2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.136);
+  background: #151515;
+  cursor: default;
+}
+.cardWrapper:hover {
+  background: #171717;
+  border: 1px solid rgba(255, 255, 255, 0.222);
+}
+.cardTitle {
+  font-size: 1.3rem;
+}
+.cardDescription {
+  opacity: 0.75;
+  color: #e7c4eb;
+  font-size: 0.8rem;
+}
+.btnWrapper {
+  margin: 1.5rem 0 0 0;
+}
+
+/* Media Queries */
+/* Desktop */
+@media screen and (width >= 1920px) {
+  .contentDescription {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    opacity: 0.75;
+    font-size: 0.9rem;
+    color: #e7c4eb;
+    width: 40%;
+  }
+}
+@media screen and (width >= 1600px) {
+  .container {
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+    position: relative;
+    margin: 5rem 0 0 0;
+    padding: 4.8rem 12rem;
+    height: 57vh;
+  }
+}
+@media (width >= 1600px) and (height >= 1200px) {
+  .container {
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+    position: relative;
+    margin: 5rem 0 0 0;
+    padding: 4.8rem 12rem;
+    height: 51vh;
+  }
+}
+
+/* Laptop */
+@media screen and (width <= 1280px) {
+  .container {
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+    position: relative;
+    margin: 5rem 0 0 0;
+    padding: 4.8rem 7.5rem;
+    height: 77vh;
+  }
+}
+
+/* Tablet */
+@media screen and (width <= 884px) {
+  .container {
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+    position: relative;
+    margin: 5rem 0 0 0;
+    padding: 4.8rem 7.5rem;
+    height: 74vh;
+  }
+  .cardsContainer {
+    position: relative;
+    margin: 1.5rem 0 0 0;
+    display: grid;
+    grid-template-columns: repeat(2, 21.5rem);
+    gap: 1rem;
+  }
+  .contentDescription {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    opacity: 0.75;
+    font-size: 0.9rem;
+    color: #e7c4eb;
+    width: 75%;
+  }
+}
+@media screen and (width <= 834px) {
+  .container {
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+    position: relative;
+    margin: 5rem 0 0 0;
+    padding: 4.2rem 7.5rem;
+    height: 71vh;
+  }
+}
+@media screen and (width <= 800px) {
+  .container {
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+    position: relative;
+    margin: 5rem 0 0 0;
+    padding: 4rem 7.5rem;
+    height: 63.5vh;
+  }
+}
+@media screen and (width <= 768px) {
+  .container {
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+    position: relative;
+    margin: 5rem 0 0 0;
+    padding: 4rem 7.5rem;
+    height: 83vh;
+  }
+}
+
+/* Mobile */
+@media screen and (width <= 428px) {
+  .container {
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+    position: relative;
+    margin: 5rem 0 0 0;
+    padding: 4rem 7.5rem;
+    height: 124vh;
+  }
+  .cardsContainer {
+    position: relative;
+    margin: 1.2rem 0 0 0;
+    display: grid;
+    grid-template-columns: repeat(1, 85vw);
+    gap: 1rem;
+  }
+  .contentDescription {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    opacity: 0.75;
+    font-size: 0.9rem;
+    color: #e7c4eb;
+    width: 100%;
+  }
+}
+@media screen and (width <= 393px) {
+  .container {
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+    position: relative;
+    margin: 5rem 0 0 0;
+    padding: 4rem 7.5rem;
+    height: 134vh;
+  }
+  .contentDescription {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    opacity: 0.75;
+    font-size: 0.9rem;
+    color: #e7c4eb;
+    width: 102%;
+  }
+}
+@media screen and (width <= 375px) {
+  .container {
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+    position: relative;
+    margin: 5rem 0 0 0;
+    padding: 4rem 7.5rem;
+    height: 145vh;
+  }
+  .contentDescription {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    opacity: 0.75;
+    font-size: 0.9rem;
+    color: #e7c4eb;
+    width: 106%;
+  }
+}
+@media screen and (width <= 362px) {
+  .contentDescription {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    opacity: 0.75;
+    font-size: 0.9rem;
+    color: #e7c4eb;
+    width: 108%;
+  }
+  .cardsContainer {
+    position: relative;
+    margin: 1.2rem 0 0 0;
+    display: grid;
+    grid-template-columns: repeat(1, 86vw);
+    gap: 1rem;
+  }
+}
+@media (width <= 360px) and (height <= 880px) and (height >= 820px) {
+  .container {
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+    position: relative;
+    margin: 5rem 0 0 0;
+    padding: 4rem 7.5rem;
+    height: 133vh;
+  }
+}
+@media (width <= 392px) and (height <= 780px) {
+  .container {
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+    position: relative;
+    margin: 5rem 0 0 0;
+    padding: 4rem 7.5rem;
+    height: 150vh;
+  }
+}
+@media (width <= 362px) and (height <=760px) {
+  .container {
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+    position: relative;
+    margin: 5rem 0 0 0;
+    padding: 4rem 7.5rem;
+    height: 164vh;
+  }
+}
+@media screen and (width <= 320px) {
+  .container {
+    border-top: 1px solid rgba(255, 255, 255, 0.136);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.136);
+    background: #161616;
+    position: relative;
+    margin: 5rem 0 0 0;
+    padding: 4rem 7.5rem;
+    height: 210vh;
+  }
+  .contentTitle {
+    font-size: 2.15rem;
+  }
+  .contentDescription {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    opacity: 0.75;
+    font-size: 0.9rem;
+    color: #e7c4eb;
+    width: 100%;
+  }
+}

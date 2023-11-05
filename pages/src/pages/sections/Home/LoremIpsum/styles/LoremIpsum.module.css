@@ -1,0 +1,383 @@
+.container {
+  position: relative;
+  margin: 6rem 0rem 0rem 0rem;
+  height: 71vh;
+  right: 0.1rem;
+}
+.contentWrapper {
+  position: relative;
+  gap: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.contentTitle {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 700;
+  font-size: 2.4rem;
+  color: #e7c4eb;
+}
+.contentTitle::before {
+  content: "Is Lorem Ipsum Data Still Worth It?";
+  padding: 0.4rem;
+  z-index: 0;
+  position: absolute;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px #e7c4eb;
+  opacity: 0.8;
+}
+.contentDescription {
+  opacity: 0.8;
+  width: 50%;
+  text-align: center;
+}
+.profileContainer {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.profileImage {
+  border-radius: 50%;
+}
+.profileTitle {
+  opacity: 0.7;
+}
+.cardsContainer {
+  margin: 0.5rem 0rem 0rem 0rem;
+  display: grid;
+  grid-template-columns: repeat(3, 22rem);
+  gap: 1rem;
+}
+.cardWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.4rem 0.4rem 1.6rem 0.8rem;
+  border-radius: 5px;
+  background: #191919;
+  border: 1px solid rgba(255, 255, 255, 0.136);
+  transition: all 0.15s;
+  cursor: default;
+}
+.cardWrapper:hover {
+  background: #212121;
+  border: 1px solid rgba(255, 255, 255, 0.222);
+}
+.cardDescription {
+  color: #e7c4eb;
+  opacity: 0.75;
+  font-size: 0.82rem;
+}
+
+/* Media Queries */
+/* Desktop */
+@media screen and (width >= 1920px) {
+  .contentDescription {
+    opacity: 0.8;
+    width: 40%;
+    text-align: center;
+  }
+}
+@media screen and (width >= 1600px) {
+  .container {
+    position: relative;
+    margin: 6.5rem 0rem 0rem 0rem;
+    height: 38vh;
+    right: 0.1rem;
+  }
+}
+@media (width >= 1600px) and (height >= 1200px) {
+  .container {
+    position: relative;
+    margin: 6.5rem 0rem 0rem 0rem;
+    height: 34.5vh;
+    right: 0.1rem;
+  }
+}
+
+/* Laptop */
+@media screen and (width <= 1280px) {
+  .container {
+    position: relative;
+    margin: 6.5rem 0rem 0rem 0rem;
+    height: 61vh;
+    right: 0.1rem;
+  }
+  .cardsContainer {
+    margin: 0.5rem 0rem 0rem 0.7rem;
+    display: grid;
+    grid-template-columns: repeat(3, 22rem);
+    gap: 1rem;
+  }
+}
+
+/* Tablet */
+@media screen and (width <= 884px) {
+  .container {
+    position: relative;
+    margin: 6.5rem 0rem 0rem 0rem;
+    height: 60.5vh;
+    right: 0rem;
+    width: 99.5vw;
+  }
+  .cardsContainer {
+    margin: 0.5rem 0rem 0rem 0.7rem;
+    display: grid;
+    grid-template-columns: repeat(2, 22rem);
+    gap: 1rem;
+  }
+  .contentDescription {
+    opacity: 0.8;
+    width: 70%;
+    text-align: center;
+  }
+}
+@media screen and (width <= 834px) {
+  .container {
+    position: relative;
+    margin: 6rem 0rem 0rem 0rem;
+    height: 57vh;
+    right: 0.1rem;
+  }
+  .cardWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 1.4rem 0.8rem 1.6rem 1rem;
+    border-radius: 5px;
+    background: #191919;
+    border: 1px solid rgba(255, 255, 255, 0.136);
+    transition: all 0.15s;
+    cursor: default;
+  }
+}
+@media screen and (width <= 800px) {
+  .container {
+    position: relative;
+    margin: 6rem 0rem 0rem 0rem;
+    height: 48.5vh;
+    right: 0.1rem;
+  }
+  .cardsContainer {
+    margin: 0.5rem 0rem 0rem 0.1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 22rem);
+    gap: 1rem;
+  }
+  .contentDescription {
+    opacity: 0.8;
+    width: 72%;
+    text-align: center;
+  }
+}
+@media screen and (width <= 768px) {
+  .container {
+    position: relative;
+    margin: 6rem 0rem 0rem 0rem;
+    height: 73.5vh;
+    right: 0.1rem;
+  }
+  .cardsContainer {
+    margin: 0.5rem 0rem 0rem 0.2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 21rem);
+    gap: 1rem;
+  }
+  .cardDescription {
+    color: #e7c4eb;
+    opacity: 0.75;
+    text-wrap: balance;
+  }
+  .contentDescription {
+    opacity: 0.8;
+    width: 75%;
+    text-align: center;
+  }
+}
+
+/* Mobile */
+@media screen and (width <= 428px) {
+  .container {
+    position: relative;
+    margin: 5rem 0rem 0rem 0rem;
+    height: 105vh;
+    right: 0.1rem;
+  }
+  .profileTitle {
+    opacity: 0.7;
+    font-size: 0.9rem;
+  }
+  .contentTitle {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 700;
+    font-size: 2.25rem;
+    width: 90%;
+    text-align: center;
+    color: #e7c4eb;
+  }
+  .contentTitle::before {
+    padding: 0.4rem 1.8rem 0.4rem 0.4rem;
+  }
+  .contentDescription {
+    opacity: 0.8;
+    font-size: 0.82rem;
+    width: 80%;
+    text-align: center;
+  }
+  .profileContainer {
+    gap: 0.7rem;
+  }
+  .cardsContainer {
+    margin: 0.5rem 0rem 0rem 0.2rem;
+    display: grid;
+    grid-template-columns: repeat(1, 84vw);
+    gap: 1rem;
+  }
+}
+@media screen and (width <= 414px) {
+  .container {
+    position: relative;
+    margin: 5rem 0rem 0rem 0rem;
+    height: 110vh;
+    right: 0.1rem;
+  }
+  .contentTitle::before {
+    padding: 0.4rem 1.4rem 0.4rem 0.4rem;
+  }
+  .contentDescription {
+    opacity: 0.8;
+    font-size: 0.82rem;
+    width: 80%;
+    text-align: center;
+  }
+  .cardsContainer {
+    margin: 0.5rem 0rem 0rem 0.25rem;
+    display: grid;
+    grid-template-columns: repeat(1, 87vw);
+    gap: 1rem;
+  }
+}
+@media screen and (width <= 393px) {
+  .contentTitle {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 700;
+    font-size: 2.15rem;
+    width: 90%;
+    text-align: center;
+    color: #e7c4eb;
+  }
+  .contentTitle::before {
+    padding: 0.4rem 1.2rem 0.4rem 0.4rem;
+  }
+  .contentDescription {
+    opacity: 0.8;
+    font-size: 0.82rem;
+    width: 85%;
+    text-align: center;
+  }
+  .container {
+    position: relative;
+    margin: 4.8rem 0rem 0rem 0rem;
+    height: 119.5vh;
+    right: 0rem;
+  }
+}
+@media screen and (width <= 375px) {
+  .contentTitle {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 700;
+    font-size: 2.05rem;
+    width: 90%;
+    text-align: center;
+    color: #e7c4eb;
+  }
+  .contentTitle::before {
+    padding: 0.4rem 1.3rem 0.4rem 0.4rem;
+  }
+  .container {
+    position: relative;
+    margin: 4.8rem 0rem 0rem 0rem;
+    height: 130.5vh;
+    left: 0.1rem;
+  }
+  .cardsContainer {
+    margin: 0.5rem 0rem 0rem 0.3rem;
+    display: grid;
+    grid-template-columns: repeat(1, 87vw);
+    gap: 1rem;
+  }
+  .contentDescription {
+    opacity: 0.8;
+    font-size: 0.8rem;
+    width: 86%;
+    text-align: center;
+  }
+}
+@media screen and (width <= 362px) {
+  .container {
+    position: relative;
+    margin: 4.4rem 0rem 0rem 0rem;
+    height: 128vh;
+    left: 0.05rem;
+  }
+  .cardsContainer {
+    margin: 0.5rem 0rem 0rem 0.1rem;
+    display: grid;
+    grid-template-columns: repeat(1, 87vw);
+    gap: 1rem;
+  }
+  .contentTitle {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 700;
+    font-size: 1.97rem;
+    width: 90%;
+    text-align: center;
+    color: #e7c4eb;
+  }
+  .contentTitle::before {
+    padding: 0.4rem 1.2rem 0.4rem 0.4rem;
+  }
+  .contentDescription {
+    opacity: 0.8;
+    font-size: 0.8rem;
+    width: 80%;
+    text-align: center;
+  }
+}
+@media (width <= 362px) and (height > 840px) {
+  .container {
+    position: relative;
+    margin: 4.4rem 0rem 0rem 0rem;
+    height: 116vh;
+    left: 0.05rem;
+  }
+}
+@media (width <= 362px) and (height <= 760px) {
+  .container {
+    position: relative;
+    margin: 4.4rem 0rem 0rem 0rem;
+    height: 144vh;
+    left: 0.05rem;
+  }
+}
+@media screen and (width <= 320px) {
+  .container {
+    position: relative;
+    margin: 4rem 0rem 0rem 0rem;
+    height: 199vh;
+    left: 0rem;
+    right: 0.1rem;
+  }
+  .contentTitle {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    width: 90%;
+    text-align: center;
+    color: #e7c4eb;
+  }
+  .contentTitle::before {
+    padding: 0.4rem 0.8rem 0.4rem 0.4rem;
+  }
+}

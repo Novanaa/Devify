@@ -1,0 +1,115 @@
+---
+    title: Single Categories
+    description: Single Categories
+    content:
+        - How to Use It?
+        - Fetching Data
+        - HTTP Client Module
+    slug:
+        - how-to-use-it
+        - fetching-data
+        - http-client-module
+    next:
+        - title: Add Product
+        - link: /docs/v1/products/add-product
+---
+
+# Single Categories
+
+This feature proves invaluable for those building applications with complex product hierarchies or requiring specific category-related information.
+
+By simply specifying the category's unique identifier, **developers can obtain a wealth of information, from category names and descriptions to any other relevant data associated with the category.**
+
+---
+
+## How to Use It?
+
+To access the full array of product information, you have a variety of effective methods available. You can utilize tools like [Postman](https://postman.com) or harness the capabilities of [cURL](https://curl.se) to efficiently retrieve the JSON data from Devify's product endpoint.
+
+When using [cURL](https://curl.se), you can leverage it for making HTTP requests via the command line or within your scripts. Here are some typical scenarios and illustrative instances:
+
+```bash
+$ curl -o C:\output.json -X GET "https://api-devify.my.id/v1/products/categories/jewelry"
+```
+
+OR
+
+```bash
+$ curl -X GET "https://api-devify.my.id/v1/products/categories/jewelry"
+```
+
+---
+
+## Fetching Data
+
+Having a capability to access single categories is essential for various reasons. **Developers can use this feature to fine-tune their applications, test specific components, or retrieve particular sets of data to ensure the correct functionality of their software.**
+
+One of the key features provided by Devify, a Fake API specifically designed to offer developers a robust testing and development environment for their applications, is the ability to retrieve single categories.
+
+### Examples
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+async function products() {
+  try {
+    const response = await fetch(`${baseUrl}/v1/products/categories/jewelry`);
+    const result = await response.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+
+products().then((datas) => console.log(datas));
+```
+
+OR
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+fetch(`${baseUrl}/v1/products/categories/jewelry`)
+  .then((res) => res.json())
+  .then((result) => console.log(result));
+```
+
+---
+
+## HTTP Client Module
+
+**Devify is a valuable resource for developers seeking to test and develop their applications in a controlled environment**. It offers a range of endpoints to interact with a variety of data. In this guide, we'll focus on how to use [Axios](https://axios-http.com), a popular **JavaScript** HTTP client, to retrieve a single category from Devify's API.
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+async function products() {
+  try {
+    const res = await axios.get(`${baseUrl}/v1/products/categories/mens`);
+
+    return res;
+  } catch (err) {
+    return null;
+  }
+}
+
+products().then((result) => console.log(result));
+```
+
+OR
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+axios
+  .get(`${baseUrl}/v1/products/categories/mens`)
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+```
+
+---

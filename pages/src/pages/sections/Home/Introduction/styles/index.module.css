@@ -1,0 +1,11 @@
+.container {
+  position: relative;
+  /* height: 100vh; */
+  top: 2rem;
+}
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

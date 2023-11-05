@@ -1,0 +1,173 @@
+---
+    title: All Products
+    description: All Products
+    content: 
+        - How to Use It?
+        - Fetching Data
+        - HTTP Client Module
+    slug:
+        - how-to-use-it
+        - fetching-data
+        - http-client-module
+    next: 
+        - title: Single Product
+        - link: /docs/v1/products/single-product
+---
+
+# All Products
+
+Whether you are a seasoned developer fine-tuning your latest e-commerce platform or a newcomer eager to explore the intricacies of API integration, **Devify's [All Products]("https://api-devify.my.id/v1/products) endpoint is your gateway to a world of simulated products.**
+
+Allows you to **retrieve a wide array of product data**, complete with details like **product names, descriptions, prices**, and more.
+
+This API endpoint allows developers to retrieve an extensive list of all available products within the Devify ecosystem. It serves as a **valuable tool for testing and development**, enabling developers to fetch a comprehensive catalog of products to work with.
+
+---
+
+## How to Use It?
+
+To access the complete array of product data, you have several elegant options at your disposal. You can employ tools like [Postman](https://www.postman.com) or wield the power of [cURL](https://curl.se) to elegantly fetch the JSON data from Devify's products endpoint.
+
+If you're using [cURL](https://curl.se), you can use it to make HTTP requests from the command line or in your scripts. Here are some common use cases and examples:
+
+```bash
+$ curl -o C:\output.json -X GET "https://api-devify.my.id/v1/products"
+```
+
+OR
+
+```bash
+$ curl -X GET "https://api-devify.my.id/v1/products"
+```
+
+---
+
+## Fetching Data
+
+Alternatively, you may choose to embrace the versatility of **JavaScript** or another programming language, allowing you to gracefully retrieve the coveted product information from Devify's rich data repository.
+
+The beauty of these methods lies in their adaptability, offering you a symphony of choices to harmonize with your development needs.
+
+### Examples
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+async function products() {
+  try {
+    const response = await fetch(`${baseUrl}/v1/products?limit=3`);
+    const result = await response.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+
+products().then((datas) => console.log(datas));
+```
+
+OR
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+fetch(`${baseUrl}/v1/products?limit=3`)
+  .then((res) => res.json())
+  .then((result) => console.log(result))
+  .catch((err) => console.log(err));
+```
+
+#### Start your Application
+
+```bash
+$ node main.js
+```
+
+#### Response
+
+```json
+[
+  {
+    "id": 1,
+    "title": "...",
+    "description": "...",
+    "price": "...",
+    "category": "...",
+    "location": "...",
+    "rating": "...",
+    "stock": "...",
+    "image": "..."
+  },
+  {
+    "id": 3,
+    "title": "...",
+    "description": "...",
+    "price": "...",
+    "category": "...",
+    "location": "...",
+    "rating": "...",
+    "stock": "...",
+    "image": "..."
+  }
+]
+```
+
+---
+
+## HTTP Client Module
+
+In the ever-evolving landscape of web development, the ability to seamlessly interact with APIs is paramount. This is where HTTP client modules like [Axios](https://axios-http.com) come into play, offering developers powerful tools to make HTTP requests and manage data within their applications.
+
+Let's dive into how they can be harnessed to interact with APIs effectively, using a fictitious API known as Devify as our test and development environment.
+
+### Installing
+
+```bash
+$ npm install axios
+```
+
+Visit [https://axios-http.com](https://axios-http.com) to view the full documentation.
+
+### Examples
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+async function products() {
+  try {
+    const res = await axios.get(`${baseUrl}/v1/products`);
+
+    return res;
+  } catch (err) {
+    return null;
+  }
+}
+
+products().then((result) => console.log(result));
+```
+
+OR
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+axios
+  .get(`${baseUrl}v1/products`)
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+```
+
+HTTP Client Modules like [Axios](https://axios-http.com) make it easier for developers to interact with APIs such as Devify. These tools simplify the process of making HTTP requests, handling responses, and managing data within your applications.
+
+Whether you're a seasoned developer or just getting started, integrating these modules into your project can greatly enhance your workflow and productivity.
+
+---
+
+Devify's [All Products]("https://api-devify.my.id/v1/products) feature is an indispensable resource for developers looking to create and perfect their applications. With its user-friendly approach and extensive capabilities, Devify empowers developers to build and test their applications with confidence.
+
+---

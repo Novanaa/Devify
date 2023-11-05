@@ -1,0 +1,310 @@
+---
+    title: Update Product
+    description: Update Product
+    content:
+        - How to Use It?
+        - Fetching Data
+        - HTTP Client Module
+        - Query Parameters
+        - Payloads
+    slug:
+        - how-to-use-it
+        - fetching-data
+        - http-client-module
+        - query-parameters
+        - payloads
+    next:
+        - title: Delete Product
+        - link: /docs/v1/products/delete-product
+---
+
+# Update Product
+
+**Devify simplifies the development and testing process, making it a valuable asset for developers looking to create robust and reliable applications.** Try it today and experience the convenience of managing and updating your product data effortlessly.
+
+To update a product using Devify, developers can make use of the versatile and developer-friendly API endpoints. **Whether you need to modify product descriptions, prices, images, or any other relevant details, Devify's API makes the process seamless and hassle-free.**
+
+**Updating a product in Devify is not only efficient but also provides a level of confidence in the accuracy of your data.** With Devify's testing and development capabilities, you can ensure that your application functions seamlessly with the most up-to-date product information.
+
+---
+
+## How to Use It?
+
+When it comes to accessing a comprehensive range of product information, you have several advanced options at your disposal. You can choose to employ powerful tools like [Postman](https://postman.com) or leverage the capabilities of [cURL](https://curl.se) to efficiently fetch the JSON data provided by Devify's products endpoint.
+
+For those who favor [cURL](https://curl.se), it serves as a versatile method for making HTTP requests, whether you're working from the command line or within your scripts. Below, you'll discover a variety of common use cases along with illustrative examples:
+
+```bash
+$ curl -X PATCH -F "title=This is a title updated :)" https://api-devify.my.id/v1/products/1
+```
+
+OR
+
+```bash
+$ curl -X PATCH -F "title=This is a title updated :)" https://api-devify.my.id/v1/products/key/650698cfb8318065fca250ef
+```
+
+---
+
+## Fetching Data
+
+Fetching data is equally significant, and Devify stands as a reliable companion in this journey. **Developers can retrieve data effortlessly, whether it's a single product by its unique key or a list of products meeting specific criteria.** With Devify, you have the freedom to experiment and fine-tune your data-fetching mechanisms until they meet your application's requirements.
+
+The beauty of Devify lies in its flexibility and simplicity. **It's designed to support developers at all skill levels, from beginners looking to learn the ropes of data manipulation to seasoned experts seeking a hassle-free testing environment.**
+
+### Update Product By ID
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+let content = new FormData();
+content.append("image", file);
+content.append("title", "This is my title. (updated)");
+content.append("description", "This is my description. (updated)");
+content.append("price", 15);
+content.append("category", "mens");
+
+async function updateProduct() {
+  try {
+    const res = await fetch(`${baseUrl}/v1/products/1`, {
+      method: "PATCH",
+      body: content,
+    });
+    const result = await res.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+
+updateProduct().then((result) => console.log(result));
+```
+
+### Update Product By Uniquekey
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+let content = new FormData();
+content.append("image", file);
+content.append("title", "This is my title. (updated)");
+content.append("description", "This is my description. (updated)");
+content.append("price", 15);
+content.append("category", "mens");
+
+async function updateProduct() {
+  try {
+    const res = await fetch(
+      `${baseUrl}/v1/products/key/650698cfb8318065fca250ef`,
+      {
+        method: "PATCH",
+        body: content,
+      }
+    );
+    const result = await res.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+
+updateProduct().then((result) => console.log(result));
+```
+
+OR
+
+### Update Product By ID
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+let content = new FormData();
+content.append("image", file);
+content.append("title", "This is my title. (updated)");
+content.append("description", "This is my description. (updated)");
+content.append("price", 15);
+content.append("category", "mens");
+
+fetch(`${baseUrl}/v1/products/1`, {
+  method: "PATCH",
+  body: content,
+})
+  .then((res) => res.json())
+  .then((result) => console.log(result))
+  .catch((err) => console.log(err));
+```
+
+### Update Product By Uniquekey
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+let content = new FormData();
+content.append("image", file);
+content.append("title", "This is my title. (updated)");
+content.append("description", "This is my description. (updated)");
+content.append("price", 15);
+content.append("category", "mens");
+
+fetch(`${baseUrl}/v1/products/key/650698cfb8318065fca250ef`, {
+  method: "PATCH",
+  body: content,
+})
+  .then((res) => res.json())
+  .then((result) => console.log(result))
+  .catch((err) => console.log(err));
+```
+
+---
+
+## HTTP Client Module
+
+**One common task in application development is updating product information, and we can achieve this efficiently using an HTTP client module like [Axios](https://axios-http.com).**
+
+**[Axios](https://axios-http.com) is a widely-used JavaScript library for making HTTP requests.** It's straightforward and versatile, making it an excellent choice for working with APIs like Devify.
+
+To update a product on Devify, we'll follow a few key steps:
+
+### Update Product By ID
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+let content = new FormData();
+content.append("image", file);
+content.append("title", "This is my title. (updated)");
+content.append("description", "This is my description. (updated)");
+content.append("price", 15);
+content.append("category", "mens");
+
+async function updateProduct() {
+  try {
+    const res = await axios.patch(`${baseUrl}/v1/products/1`, { content });
+
+    return res;
+  } catch (err) {
+    return null;
+  }
+}
+
+updateProduct().then((result) => console.log(result));
+```
+
+### Update Product By Uniquekey
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+let content = new FormData();
+content.append("image", file);
+content.append("title", "This is my title. (updated)");
+content.append("description", "This is my description. (updated)");
+content.append("price", 15);
+content.append("category", "mens");
+
+async function updateProduct() {
+  try {
+    const res = await axios.patch(
+      `${baseUrl}/v1/products/key/650698cfb8318065fca250ef`,
+      { content }
+    );
+
+    return res;
+  } catch (err) {
+    return null;
+  }
+}
+
+updateProduct().then((result) => console.log(result));
+```
+
+OR
+
+### Update Product By ID
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+let content = new FormData();
+content.append("image", file);
+content.append("title", "This is my title. (updated)");
+content.append("description", "This is my description. (updated)");
+content.append("price", 15);
+content.append("category", "mens");
+
+axios
+  .patch(`${baseUrl}/v1/products/1`, { content })
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+```
+
+### Update Product By Uniquekey
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+let content = new FormData();
+content.append("image", file);
+content.append("title", "This is my title. (updated)");
+content.append("description", "This is my description. (updated)");
+content.append("price", 15);
+content.append("category", "mens");
+
+axios
+  .patch(`${baseUrl}/v1/products/key/650698cfb8318065fca250ef`, { content })
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+```
+
+---
+
+## Query Parameters
+
+### Update Product By ID
+
+| Params | Data Types | Required |
+| ------ | ---------- | -------- |
+| ID     | Integer    | Yes      |
+
+### Update Product By Uniquekey
+
+| Params    | Data Types | Required |
+| --------- | ---------- | -------- |
+| Uniquekey | String     | Yes      |
+
+---
+
+## Payloads
+
+| Payload     | Data Types | Required |
+| ----------- | ---------- | -------- |
+| Title       | String     | No       |
+| Description | String     | No       |
+| Price       | Integer    | No       |
+| Category    | String     | No       |
+| Location    | Sting      | No       |
+| Rating      | Integer    | No       |
+| Stock       | Integer    | No       |
+| Image       | String     | No       |
+
+```json
+{
+  "title": "This is a Title - Updated",
+  "descripton": "This is a Description - Updated",
+  "price": 10,
+  "category": "jewelry",
+  "image": "...."
+}
+```
+
+---

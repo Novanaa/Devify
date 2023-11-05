@@ -1,0 +1,380 @@
+.heroSection {
+  width: 97.5vw;
+  height: 100vh;
+  padding: 4rem 0rem 0rem 0rem;
+}
+.heroSectionContainer {
+  height: 90.5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.heroSectionWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.heroHeadersWrapper {
+  transform: scale(0.79);
+  gap: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.heroHeaderIndicator {
+  border-radius: 13.5px;
+  background-color: #ead4ed;
+  color: black;
+  font-weight: 600;
+  border: 1px solid rgba(79, 79, 79, 0.305);
+  padding: 0.15rem 0.6rem 0.15rem 0.6rem;
+}
+.heroContentWrapper {
+  gap: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.heroContentTitle {
+  font-size: 3.8rem;
+  font-weight: 800;
+  color: #e7c4eb;
+}
+.heroContentTitle::before {
+  content: "The Intuitive Fake API for Your Apps";
+  position: absolute;
+  padding: 0.6rem;
+  z-index: 1;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px #e7c4eb;
+  opacity: 0.8;
+}
+.heroContentDescription {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.95rem;
+  text-align: center;
+  padding: 0rem 20rem;
+  color: #9d8d9e;
+}
+.heroContentDescriptionSpan {
+  color: #e0c8e3;
+}
+.heroUrlEndpointWrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.276);
+  padding: 0.55rem 0rem 0.55rem 1.5rem;
+  gap: 0.2rem;
+  cursor: pointer;
+  background-color: #1d1d1dcb;
+  border-radius: 5px;
+  width: 18.8rem;
+}
+.heroUrlEndpoint {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  letter-spacing: 0.5px;
+}
+.heroCtaWrapper {
+  display: flex;
+  gap: 1.2rem;
+  margin: 0.2rem 0rem 0rem 0rem;
+}
+.heroFeedbackWrapper {
+  position: relative;
+  top: 2rem;
+  letter-spacing: 0.5px;
+}
+.feedbackCta {
+  font-size: 0.9rem;
+  color: #9b829d;
+}
+.feedbackCta a {
+  text-decoration: underline;
+  opacity: 1;
+  color: #ebc9ef;
+  text-underline-offset: 3.2px;
+}
+.heroAbstractBackgroundOne {
+  z-index: -1;
+  opacity: 0.9;
+  margin: -3.6rem 0rem 0rem 0rem;
+  position: absolute;
+  right: 9.6rem;
+}
+.heroAbstractBackgroundTwo {
+  z-index: -1;
+  opacity: 0.9;
+  rotate: 12deg;
+  margin: 0rem 0rem -10rem 0rem;
+  left: 9.5rem;
+  position: absolute;
+}
+
+/* Media Queries */
+@media screen and (width >= 1920px) {
+  .heroContentDescription {
+    padding: 0rem 32rem;
+  }
+  .heroAbstractBackgroundOne {
+    margin: -3.2rem 9rem 0rem 0rem;
+  }
+  .heroAbstractBackgroundTwo {
+    margin: 0rem 0rem -10rem 9rem;
+  }
+}
+@media screen and (width >= 1600px) {
+  .heroSectionContainer {
+    height: 54vh;
+  }
+  .heroAbstractBackgroundOne {
+    right: 14rem;
+  }
+  .heroAbstractBackgroundTwo {
+    left: 14rem;
+  }
+  .heroSection {
+    height: 61vh;
+  }
+}
+
+/* Laptops */
+@media screen and (width <= 1280px) {
+  .heroSectionContainer {
+    height: 86.5vh;
+  }
+}
+
+/* Tablet */
+@media screen and (width <= 884px) {
+  .heroSection {
+    height: 70vh;
+    width: 98.5vw;
+  }
+  .heroSectionContainer {
+    height: 60vh;
+  }
+  .heroContentDescription {
+    padding: 0rem 10rem;
+  }
+  .heroContentTitle {
+    font-size: 3.7rem;
+    margin: 0rem 2rem;
+    text-align: center;
+  }
+  .heroContentTitle::before {
+    text-align: center;
+    padding: 0.74rem 3.4rem 0.6rem -0rem;
+  }
+  .heroAbstractBackgroundOne {
+    right: 7.1rem;
+    width: 65px;
+    height: 65px;
+    margin: -2.7rem 0rem 0rem 0rem;
+  }
+  .heroAbstractBackgroundTwo {
+    width: 40px;
+    height: 40px;
+    left: 6.5rem;
+  }
+  .heroFeedbackWrapper {
+    top: 1.5rem;
+  }
+}
+@media screen and (width <= 834px) {
+  .heroSection {
+    height: 69vh;
+    width: 98.5vw;
+  }
+  .heroSectionContainer {
+    height: 57vh;
+  }
+}
+@media screen and (width <= 820px) {
+  .heroContentTitle::before {
+    text-align: center;
+    padding: 0.74rem 2.7rem 0.6rem -0rem;
+  }
+}
+@media screen and (width <= 800px) {
+  .heroSection {
+    height: 67vh;
+  }
+  .heroContentTitle::before {
+    text-align: center;
+    padding: 0.74rem 2.7rem 0.6rem -0rem;
+  }
+  .heroContentTitle {
+    font-size: 3.6rem;
+    margin: 0rem 2rem;
+    text-align: center;
+  }
+}
+@media screen and (width <= 768px) {
+  .heroSection {
+    height: 79vh;
+  }
+  .heroSectionContainer {
+    height: 67vh;
+  }
+  .heroContentTitle::before {
+    text-align: center;
+    padding: 0.74rem 2.7rem 0.6rem -0rem;
+  }
+  .heroContentTitle {
+    font-size: 3.6rem;
+    margin: 0rem 2rem;
+    text-align: center;
+  }
+}
+
+/* Mobile */
+@media screen and (width <= 428px) {
+  .heroSection {
+    height: 98vh;
+  }
+  .heroSectionContainer {
+    height: 79vh;
+  }
+  .heroSectionWrapper {
+    gap: 0.5rem;
+  }
+  .heroHeadersWrapper {
+    transform: scale(0.7);
+  }
+  .heroContentTitle::before {
+    text-align: center;
+    padding: 0.74rem 2.7rem 0.6rem -0rem;
+  }
+  .heroContentTitle {
+    font-size: 3.4rem;
+    margin: 0rem 1rem;
+    text-align: center;
+  }
+  .heroContentDescription {
+    padding: 0rem 2rem;
+    font-size: 0.87rem;
+  }
+  .heroAbstractBackgroundOne {
+    display: none;
+  }
+  .heroAbstractBackgroundTwo {
+    display: none;
+  }
+  .heroFeedbackWrapper {
+    top: 0.8rem;
+  }
+  .feedbackCta {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (width <= 393px) {
+  .heroSectionContainer {
+    height: 81vh;
+  }
+  .heroHeadersWrapper {
+    transform: scale(0.7);
+  }
+  .heroHeadersTitle {
+    white-space: nowrap;
+  }
+  .heroContentTitle {
+    font-size: 3.2rem;
+  }
+  .heroContentTitle::before {
+    text-align: center;
+    padding: 0.74rem 1.8rem 0.6rem -0rem;
+  }
+  .heroContentDescription {
+    padding: 0rem 2.2rem;
+    font-size: 0.8rem;
+  }
+}
+@media screen and (width <= 375px) {
+  .heroContentTitle {
+    font-size: 3.15rem;
+  }
+  .heroContentTitle::before {
+    text-align: center;
+    padding: 0.74rem 1.2rem 0.6rem -0rem;
+  }
+  .feedbackCta {
+    font-size: 0.75rem;
+  }
+  .heroContentDescription {
+    padding: 0rem 3rem;
+    font-size: 0.8rem;
+  }
+}
+@media screen and (width <= 362px) {
+  .heroSection {
+    width: 98vw;
+  }
+  .heroSectionContainer {
+    height: 75.3vh;
+  }
+  .heroSectionWrapper {
+    width: 99.5vw;
+  }
+  .heroContentTitle {
+    font-size: 3.2rem;
+  }
+  .heroContentDescription {
+    width: 99.5vw;
+    padding: 0rem 3rem;
+    font-size: 0.7rem;
+  }
+  .heroUrlEndpointWrapper {
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.276);
+    padding: 0.55rem 0rem 0.55rem 1.1rem;
+    gap: 0.2rem;
+    cursor: pointer;
+    background-color: #1d1d1dcb;
+    border-radius: 5px;
+    width: 17rem;
+  }
+  .heroUrlEndpoint {
+    font-size: 0.7rem;
+    opacity: 0.8;
+    letter-spacing: 1px;
+  }
+  .feedbackCta {
+    font-size: 0.7rem;
+  }
+}
+@media screen and (width <=320px) {
+  .heroSection {
+    height: 125vh;
+  }
+  .heroSectionContainer {
+    height: 107vh;
+  }
+  .heroHeadersWrapper {
+    transform: scale(0.65);
+  }
+  .heroContentTitle {
+    font-size: 2.8rem;
+  }
+  .heroContentDescription {
+    padding: 0rem 4rem;
+    font-size: 0.7rem;
+  }
+  .heroUrlEndpointWrapper {
+    width: 17.1rem;
+    padding: 0.55rem 0rem 0.55rem 1.4rem;
+  }
+  .heroFeedbackWrapper {
+    position: relative;
+    top: 0.6rem;
+    letter-spacing: 0.5px;
+  }
+  .heroUrlEndpoint {
+    font-size: 0.7rem;
+  }
+  .feedbackCta {
+    font-size: 0.63rem;
+  }
+}

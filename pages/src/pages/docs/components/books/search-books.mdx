@@ -1,0 +1,123 @@
+---
+    title: Search Books
+    description: Search Books
+    content:
+        - How to Use It?
+        - Fetching Data
+        - HTTP Client Module
+        - Query Parameters
+    slug:
+        - how-to-use-it
+        - fetching-data
+        - http-client-module
+        - query-parameters
+    next:
+        - title: Add Book
+        - link: /docs/v1/books/add-book
+---
+
+# Search Books
+
+Searching for books is a common task in application development, whether you're building a book catalog, a library management system, or an online bookstore. **Devify's feature allows developers to simulate and test book search functionalities with ease. It provides developers with a simulated dataset of books, complete with various attributes like titles, authors, genres, and descriptions.**
+
+---
+
+## How to Use It?
+
+To access the full array of search query books data, there are various sophisticated options available. You can utilize tools such as [Postman](https://postman.com) or harness the capabilities of [cURL](https://curl.se) to gracefully retrieve JSON data from Devify's books endpoint.
+
+If you choose to use [cURL](https://curl.se), you can employ it for making HTTP requests either from the command line or within your scripts. Below are some typical scenarios and examples:
+
+```bash
+$ curl -o C:\output.json -X GET "https://api-devify.my.id/v1/books/search?q=interstellar"
+```
+
+OR
+
+```bash
+$ curl -X GET "https://api-devify.my.id/v1/books/search?q=interstellar"
+```
+
+---
+
+## Fetching Data
+
+**Searching for information in a vast sea of data is a fundamental aspect of modern applications.** In the realm of software development, having a reliable and accessible source of data is crucial for creating, testing, and fine-tuning applications. This is where Devify steps in.
+
+### Examples
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+async function books() {
+  try {
+    const response = await fetch(`${baseUrl}/v1/books/search?q=interstellar`);
+    const result = await response.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+
+books().then((datas) => console.log(datas));
+```
+
+OR
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+fetch(`${baseUrl}/v1/books/search?q=interstellar`)
+  .then((res) => res.json())
+  .then((result) => console.log(result));
+```
+
+---
+
+## HTTP Client Module
+
+When it comes to making HTTP requests to interact with APIs, developers commonly turn to HTTP client libraries like [Axios](https://axios-http.com). [Axios](https://axios-http.com) is a JavaScript-based library that simplifies the process of making HTTP requests in both the browser and Node.js. **It provides an elegant and straightforward way to send HTTP requests and handle responses.**
+
+### Examples
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+async function books() {
+  try {
+    const res = await axios.get(`${baseUrl}/v1/books/search?q=interstellar`);
+
+    return res;
+  } catch (err) {
+    return null;
+  }
+}
+
+books().then((result) => console.log(result));
+```
+
+OR
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+axios
+  .get(`${baseUrl}/v1/books/search?q=interstellar`)
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+```
+
+---
+
+## Query Parameters
+
+| Params | Data Types | Required |
+| ------ | ---------- | -------- |
+| q      | String     | Yes      |
+
+---

@@ -1,0 +1,217 @@
+---
+    title: Register
+    description: Register User
+    content: 
+        - How to Use It?
+        - Fetching Data
+        - HTTP Client Module
+        - Payloads
+    slug:
+        - how-to-use-it
+        - fetching-data
+        - http-client-module
+        - payloads
+    next: 
+        - title: Login
+        - link: /docs/v1/auth/login
+---
+
+# Register
+
+Devify is a versatile and user-friendly platform that offers developers a powerful tool for testing and developing their applications. **Registering a user on Devify is a straightforward process that opens the door to a wide array of features and resources to enhance your development experience.**
+
+User registration is a pivotal aspect of any application, and Devify makes the process straightforward. **Developers can harness the power of this API to effortlessly handle user sign-ups in a controlled and secure environment. Whether you're creating a web application, mobile app, or any software that requires user accounts, Devify's Register User API simplifies the registration process.**
+
+---
+
+## How to Use It?
+
+To unlock the full range of Devify features, **you need to register and access the complete Devify API.** There are various sophisticated options available for you. You can utilize tools like [Postman](https://postman.com) or harness the capabilities of [cURL](https://curl.se) to gracefully retrieve JSON data from Devify's user endpoint.
+
+If you are using [cURL](https://curl.se), you can employ it to initiate HTTP requests through the command line or within your scripts. Here are some typical scenarios and examples:
+
+```bash
+$ curl -o C:\output.json -X POST -F "image=@/path/to/your/file.jpg" -F "name=This is a name" -F "email=youremail@gmail.com" -F "password=This is a password" https://api-devify.my.id/v1/auth/register
+```
+
+OR
+
+```bash
+$ curl -X POST -F "image=@/path/to/your/file.jpg" -F "name=This is a name" -F "email=youremail@gmail.com" -F "password=This is a password" https://api-devify.my.id/v1/auth/register
+```
+
+---
+
+## Fetching Data
+
+**Devify simplifies the process of user registration through its API.** With just a few straightforward steps, developers can register users and fetch data effortlessly. This functionality is invaluable for testing user authentication and access control within your application.
+
+### Register with Url Image
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+let content = new FormData();
+content.append("picture", "https://....");
+content.append("name", "This is a name");
+content.append("email", "youremail@gmail.com");
+content.append("password", "Your secret password");
+
+async function register() {
+  try {
+    const response = await fetch(`${baseUrl}/v1/auth/register`, {
+      method: "POST",
+      body: content,
+    });
+    const result = await response.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+
+register().then((datas) => console.log(datas));
+```
+
+OR
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+let content = new FormData();
+content.append("picture", "https://....");
+content.append("name", "This is a name");
+content.append("email", "youremail@gmail.com");
+content.append("password", "Your secret password");
+
+fetch(`${baseUrl}/v1/auth/register`, {
+  method: "POST",
+  body: content,
+})
+  .then((res) => res.json())
+  .then((result) => console.log(result));
+```
+
+### Register with Files upload
+
+```js
+const baseUrl = "https://api-devify.my.id";
+const file = fileInput.files[0];
+
+let content = new FormData();
+content.append("image", file);
+content.append("name", "This is a name");
+content.append("email", "youremail@gmail.com");
+content.append("password", "Your secret password");
+
+async function register() {
+  try {
+    const response = await fetch(`${baseUrl}/v1/auth/register`, {
+      method: "POST",
+      body: content,
+    });
+    const result = await response.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+
+register().then((datas) => console.log(datas));
+```
+
+OR
+
+```js
+const baseUrl = "https://api-devify.my.id";
+const file = fileInput.files[0];
+
+let content = new FormData();
+content.append("image", file);
+content.append("name", "This is a name");
+content.append("email", "youremail@gmail.com");
+content.append("password", "Your secret password");
+
+fetch(`${baseUrl}/v1/auth/register`, {
+  method: "POST",
+  body: content,
+})
+  .then((res) => res.json())
+  .then((result) => console.log(result));
+```
+
+---
+
+## HTTP Client Module
+
+Devify is a simulated API designed to offer developers a secure and convenient environment for testing and developing their applications. If you're building an application that requires user registration, **you can easily integrate Devify's services into your project. In this guide, we will demonstrate how to register a user with the Devify API using [Axios](https://axios-http.com), a popular HTTP client module for JavaScript.**
+
+### Examples
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+const file = fileInput.files[0];
+
+let content = new FormData();
+content.append("image", file);
+content.append("name", "This is a name");
+content.append("email", "youremail@gmail.com");
+content.append("password", "Your secret password");
+
+async function register() {
+  try {
+    const res = await axios.post(`${baseUrl}/v1/auth/register`, { content });
+
+    return res;
+  } catch (err) {
+    return null;
+  }
+}
+
+register().then((result) => console.log(result));
+```
+
+OR
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+const file = fileInput.files[0];
+
+let content = new FormData();
+content.append("image", file);
+content.append("name", "This is a name");
+content.append("email", "youremail@gmail.com");
+content.append("password", "Your secret password");
+
+axios
+  .post(`${baseUrl}/v1/auth/register`, { content })
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+```
+
+---
+
+## Payloads
+
+| Payload  | Data Types | Required | Min | Max | Default |
+| -------- | ---------- | -------- | --- | --- | ------- |
+| Name     | String     | Yes      | -   | 15  | -       |
+| Email    | String     | Yes      | -   | -   | -       |
+| Password | String     | Yes      | 7   | -   | -       |
+| Picture  | String     | Yes      | -   | 200 | -       |
+
+```json
+{
+  "name": "Nova",
+  "email": "nova@gmail.com",
+  "password": "Your secret passowrd"
+}
+```
+
+---

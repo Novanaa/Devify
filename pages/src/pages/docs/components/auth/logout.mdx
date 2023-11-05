@@ -1,0 +1,113 @@
+---
+    title: Logout
+    description: Logout User
+    content: 
+        - How to Use It?
+        - Fetching Data
+        - HTTP Client Module
+    slug:
+        - how-to-use-it
+        - fetching-data
+        - http-client-module
+    next: 
+        - title: All Products
+        - link: /docs/v1/products
+---
+
+# Logout
+
+In Devify, the process of logging out a user is seamless and straightforward. **Developers can initiate the logout action by making a POST request to the "v1/auth/logout" endpoint. This request instructs the API to terminate the user's session, effectively logging them out.** It's an essential step to ensure the security of a user's account and data.
+
+---
+
+## How to Use It?
+
+To log out a user, you have several elegant options at your disposal. You can use tools like [Postman](https://postman.com) or leverage the power of [cURL](https://curl.se) to gracefully request JSON data from Devify's user endpoint.
+
+If you're using [cURL](https://curl.se), you can use it to initiate HTTP requests from the command line or within your scripts. Here are some common use cases and examples:
+
+```bash
+$ curl --cookie-jar C:\cookies.json --cookie C:\cookies.txt -X POST https://api-devify.my.id/v1/auth/logout
+```
+
+---
+
+## Fetching Data
+
+When it comes to Devify, logging out a user is a seamless process. **Developers can utilize the Devify API to perform a user logout operation with ease.** This operation ensures that the user's session is securely terminated, enhancing the security and privacy of their data.
+
+**Developers can make use of Devify's fake user data to simulate real-world scenarios.** By making API requests to log out users, they can verify that the application effectively ends a user's session, revoking access and enhancing security.
+
+## Examples
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+async function logout() {
+  try {
+    const response = await fetch(`${baseUrl}/v1/auth/logout`, {
+      method: "POST",
+    });
+    const result = await response.json();
+
+    return result;
+  } catch (err) {
+    return null;
+  }
+}
+
+logout().then((datas) => console.log(datas));
+```
+
+OR
+
+```js
+const baseUrl = "https://api-devify.my.id";
+
+fetch(`${baseUrl}/v1/auth/logout`, {
+  method: "POST",
+})
+  .then((res) => res.json())
+  .then((result) => console.log(result));
+```
+
+---
+
+## HTTP Client Module
+
+Devify, a Fake API designed to offer developers a testing and development environment, provides an ideal platform to experiment with various API interactions. **One common operation in web applications is logging out a user, which typically involves sending an HTTP request to invalidate the user's session or refresh token.** In this guide, we will explore how to perform a user logout using the [Axios](https://axios-http.com) HTTP client in conjunction with Devify.
+
+### Examples
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+async function logout() {
+  try {
+    const res = await axios.post(`${baseUrl}/v1/auth/logout`);
+
+    return res;
+  } catch (err) {
+    return null;
+  }
+}
+
+logout().then((result) => console.log(result));
+```
+
+OR
+
+```js
+import axios from "axios";
+
+const baseUrl = "https://api-devify.my.id";
+
+axios
+  .post(`${baseUrl}/v1/auth/logout`)
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+```
+
+---
