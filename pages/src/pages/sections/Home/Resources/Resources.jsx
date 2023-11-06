@@ -1,7 +1,8 @@
 import React from "react";
 import index from "./styles/Resources.module.css";
 import Link from "next/link";
-import { resources } from "@/resources/resources";
+import resources from "@/resources/resources.json";
+import Image from "next/image";
 
 function Resources() {
   const ComingSoon = () => {
@@ -18,7 +19,7 @@ function Resources() {
       return (
         <>
           <Link className={index.cardsWrapper} href={resource.url} key={i}>
-            <img
+            <Image
               src={resource.poster}
               alt="test"
               className={index.cardImage}

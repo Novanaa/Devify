@@ -1,6 +1,7 @@
 import React from "react";
 import index from "./styles/UseCases.module.css";
-import { useCases } from "@/resources/useCases";
+import useCases from "@/resources/useCases.json";
+import Image from "next/image";
 
 function UseCases() {
   const UseCaseComponent = () => {
@@ -8,7 +9,7 @@ function UseCases() {
       return (
         <>
           <div className={index.cardWrapper} key={i}>
-            <img
+            <Image
               src={data.poster}
               alt="poster"
               className={index.cardImage}
