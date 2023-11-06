@@ -9,6 +9,7 @@ import { useDebounce } from "use-debounce";
 import store from "@/store";
 import { action } from "@/store/reducers/navbarReducer";
 import { useSelector } from "react-redux";
+import Image from "next/image";
 
 function NavSearch({}) {
   const [query, setQuery] = useState("");
@@ -67,7 +68,7 @@ function NavSearch({}) {
         <>
           <div className={index.emptyDatasResultContainer}>
             <div className={index.emptyDatasResultWrapper}>
-              <img
+              <Image
                 src="/images/icons/notFound.svg"
                 alt="NotFound"
                 width="80"
@@ -84,7 +85,7 @@ function NavSearch({}) {
                 className={index.backBtnWrapper}
                 title="Back to Documentation"
               >
-                <img
+                <Image
                   src="/images/icons/left-arrow.svg"
                   alt="left-arrow"
                   width="18"
@@ -108,7 +109,7 @@ function NavSearch({}) {
               store.dispatch(action.UPDATE_STATE({ isOpen: false }))
             }
           >
-            <img
+            <Image
               src="/images/icons/document.svg"
               alt="Docs"
               width="24"
@@ -131,7 +132,7 @@ function NavSearch({}) {
       <nav className={index.navSearchContainer} ref={navRef}>
         <nav className={index.navWrapper}>
           <div className={index.navSearchHeaderWrapper}>
-            <img
+            <Image
               src="/images/icons/search.svg"
               alt="search"
               width="22"

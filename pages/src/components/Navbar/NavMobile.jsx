@@ -19,7 +19,7 @@ function NavMobile({ isNav, setIsOpen, setIsNav }) {
           <div className={index.navMobieWrapper}>
             <div className={index.navMobileBrandWrapper}>
               <Link href="/">
-                <img
+                <Image
                   src="/images/icons/devify.png"
                   alt="Devify"
                   className={index.devifyLogo}
@@ -38,7 +38,7 @@ function NavMobile({ isNav, setIsOpen, setIsNav }) {
                   onClick={setIsOpen}
                   title="Search whatever you want"
                 />
-                <img
+                <Image
                   src="/images/icons/x.svg"
                   alt="Close"
                   className={index.closeIcon}
@@ -94,7 +94,7 @@ function NavMobile({ isNav, setIsOpen, setIsNav }) {
                 }`}
               >
                 <Link href="/?lang=en" className={index.langContentWrapper}>
-                  <img
+                  <Image
                     src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.0/svg/1f1ec-1f1e7.svg"
                     alt="English"
                     width="20"
@@ -102,7 +102,7 @@ function NavMobile({ isNav, setIsOpen, setIsNav }) {
                     title="English"
                   />
                   <p className={index.english}>English</p>
-                  <img
+                  <Image
                     src="/images/icons/arrow-right.svg"
                     alt="arrow"
                     width="12"
@@ -111,7 +111,7 @@ function NavMobile({ isNav, setIsOpen, setIsNav }) {
                   />
                 </Link>
                 <Link href="/?lang=id" className={index.langContentWrapper}>
-                  <img
+                  <Image
                     src="/images/icons/indonesia.png"
                     alt="Indonesian"
                     width="20"
@@ -119,7 +119,7 @@ function NavMobile({ isNav, setIsOpen, setIsNav }) {
                     title="English"
                   />
                   <p className={index.indonesia}>Indonesian</p>
-                  <img
+                  <Image
                     src="/images/icons/arrow-right.svg"
                     alt="arrow"
                     width="12"

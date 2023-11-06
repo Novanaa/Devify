@@ -1,5 +1,6 @@
 import React from "react";
 import index from "./styles/LoremIpsum.module.css";
+import Image from "next/image";
 
 function LoremIpsum() {
   return (
@@ -19,7 +20,7 @@ function LoremIpsum() {
             </p>
             <div className={index.profileContainer}>
               <div className={index.profileImageWrapper}>
-                <img
+                <Image
                   src="/images/profile/Nova.png"
                   alt="Nova"
                   className={index.profileImage}
@@ -34,7 +35,7 @@ function LoremIpsum() {
             </div>
             <div className={index.cardsContainer}>
               <div className={index.cardWrapper}>
-                <img
+                <Image
                   src="/images/icons/realism.png"
                   alt="Icons"
                   className={index.cardImage}
@@ -51,7 +52,7 @@ function LoremIpsum() {
                 </p>
               </div>
               <div className={index.cardWrapper}>
-                <img
+                <Image
                   src="/images/icons/chart.png"
                   alt="Icons"
                   className={index.cardImage}
@@ -66,7 +67,7 @@ function LoremIpsum() {
                 </p>
               </div>
               <div className={index.cardWrapper}>
-                <img
+                <Image
                   src="/images/icons/open-book.png"
                   alt="Icons"
                   className={index.cardImage}

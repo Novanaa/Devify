@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import index from "./styles/Code.module.css";
+import Image from "next/image";
 
 function Code({ rotate }) {
   return (
@@ -15,7 +16,7 @@ function Code({ rotate }) {
               <span className={index.codeIcon}></span>
               <span className={index.codeIcon}></span>
               <div className={index.codeIconLogoWrapper}>
-                <img
+                <Image
                   src="/images/icons/js.png"
                   alt="lang"
                   width="20"

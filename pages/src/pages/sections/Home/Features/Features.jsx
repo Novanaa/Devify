@@ -1,5 +1,6 @@
 import React from "react";
 import index from "./styles/Features.module.css";
+import Image from "next/image";
 
 function Features() {
   return (
@@ -10,7 +11,7 @@ function Features() {
             <h1 className={index.contentTitle}>Features</h1>
             <div className={index.cardsContainer}>
               <div className={index.cardWrapper}>
-                <img
+                <Image
                   src="/images/background/media-images.png"
                   alt="Image"
                   className={index.cardImage}
@@ -24,7 +25,7 @@ function Features() {
                 </p>
               </div>
               <div className={index.cardWrapper}>
-                <img
+                <Image
                   src="/images/background/folder.png"
                   alt="Image"
                   className={index.cardImage}
@@ -39,7 +40,7 @@ function Features() {
                 </p>
               </div>
               <div className={index.cardWrapper}>
-                <img
+                <Image
                   src="/images/background/variety.png"
                   alt="Image"
                   className={index.cardImage}

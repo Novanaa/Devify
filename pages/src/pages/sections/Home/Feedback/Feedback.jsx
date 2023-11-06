@@ -2,6 +2,7 @@ import React from "react";
 import index from "./styles/Feedback.module.css";
 import { SecondaryBtn } from "@/styles/global";
 import Link from "next/link";
+import Image from "next/image";
 
 function Feedback() {
   return (
@@ -9,7 +10,7 @@ function Feedback() {
       <div className={index.container}>
         <div className={index.wrapper}>
           <div className={index.contentWrapper}>
-            <p className={index.contentHead}>Feedback</p>
+            <p className={index.contentHead}>Have a Quetions?</p>
             <h1 className={index.contentTitle}>Dive into Conversations.</h1>
             <p className={index.contentDescription}>
               Your opinions and insights are invaluable to us. They help us
@@ -19,7 +20,7 @@ function Feedback() {
             </p>
             <div className={index.cardsContainer}>
               <div className={index.cardWrapper}>
-                <img
+                <Image
                   src="/images/icons/comment.png"
                   alt="Icons"
                   width={55}
@@ -33,7 +34,7 @@ function Feedback() {
                 </p>
               </div>
               <div className={index.cardWrapper}>
-                <img
+                <Image
                   src="/images/icons/innovation.png"
                   alt="Icons"
                   width={55}
@@ -47,7 +48,7 @@ function Feedback() {
                 </p>
               </div>
               <div className={index.cardWrapper}>
-                <img
+                <Image
                   src="/images/icons/improvement.png"
                   alt="Icons"
                   width={55}
@@ -61,8 +62,11 @@ function Feedback() {
                 </p>
               </div>
             </div>
-            <Link href="/feedback" className={index.btnWrapper}>
-              <SecondaryBtn>Give Feedback</SecondaryBtn>
+            <Link
+              href="https://www.instagram.com/nvaa.jsx"
+              className={index.btnWrapper}
+            >
+              <SecondaryBtn>Let&apos;s Connect!</SecondaryBtn>
             </Link>
           </div>
         </div>

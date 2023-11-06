@@ -44,7 +44,7 @@ function Navbar() {
                   href="/"
                   title="Devify"
                 >
-                  <img
+                  <Image
                     src="/images/icons/devify.png"
                     alt="Devify"
                     className={navbar.devifyLogo}
@@ -82,7 +82,7 @@ function Navbar() {
                 </ul>
               </div>
               <div className={navbar.navContentWrapper}>
-                <img
+                <Image
                   src="/images/icons/menu.svg"
                   alt="menu"
                   title="Menu"

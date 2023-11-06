@@ -1,6 +1,7 @@
 import React from "react";
 import index from "./styles/Sponsors.module.css";
 import Link from "next/link";
+import Image from "next/image";
 
 function Sponsors() {
   return (
@@ -10,7 +11,7 @@ function Sponsors() {
           <div className={index.contentWrapper}>
             <div className={index.sponsorsContainer}>
               <Link href="/" className={index.sponsorsWrapper}>
-                <img
+                <Image
                   src="/images/sponsors/twitch.png"
                   alt="Twitch"
                   className={index.sponsors}
@@ -18,7 +19,7 @@ function Sponsors() {
                 />
               </Link>
               <Link href="/" className={index.sponsorsWrapper}>
-                <img
+                <Image
                   src="/images/sponsors/twitch.png"
                   alt="Twitch"
                   className={index.sponsors}
@@ -26,7 +27,7 @@ function Sponsors() {
                 />
               </Link>
               <Link href="/" className={index.sponsorsWrapper}>
-                <img
+                <Image
                   src="/images/sponsors/twitch.png"
                   alt="Twitch"
                   className={index.sponsors}

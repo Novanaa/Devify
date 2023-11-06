@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import index from "./styles/Reason.module.css";
 import "react-loading-skeleton/dist/skeleton.css";
+import Image from "next/image";
 
 function Reason() {
   return (
@@ -15,7 +16,7 @@ function Reason() {
             </p>
             <div className={index.cardsContentContainer}>
               <div className={index.cardsContentWrapper}>
-                <img
+                <Image
                   src="/images/icons/fire.png"
                   alt="Icons"
                   width="33"
@@ -30,7 +31,7 @@ function Reason() {
                 </p>
               </div>
               <div className={index.cardsContentWrapper}>
-                <img
+                <Image
                   src="/images/icons/clock.png"
                   alt="Icons"
                   width="33"
@@ -44,7 +45,7 @@ function Reason() {
                 </p>
               </div>
               <div className={index.cardsContentWrapper}>
-                <img
+                <Image
                   src="/images/icons/layers.png"
                   alt="Icons"
                   width="33"
@@ -58,7 +59,7 @@ function Reason() {
                 </p>
               </div>
               <div className={index.cardsContentWrapper}>
-                <img
+                <Image
                   src="/images/icons/speed.png"
                   alt="Icons"
                   width="33"
@@ -72,7 +73,7 @@ function Reason() {
                 </p>
               </div>
               <div className={index.cardsContentWrapper}>
-                <img
+                <Image
                   src="/images/icons/money.png"
                   alt="Icons"
                   width="33"
@@ -86,7 +87,7 @@ function Reason() {
                 </p>
               </div>
               <div className={index.cardsContentWrapper}>
-                <img
+                <Image
                   src="/images/icons/image.png"
                   alt="Icons"
                   width="33"

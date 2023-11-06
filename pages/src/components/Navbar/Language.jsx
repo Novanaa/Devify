@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from "react";
 import index from "./styles/Language.module.css";
 import Link from "next/link";
+import Image from "next/image";
 
 function Language({ isShow, setIsShow }) {
   const dropdownRef = useRef();
@@ -24,7 +25,7 @@ function Language({ isShow, setIsShow }) {
       <div className={index.dropdownContainer}>
         <div className={index.dropdownWrapper}>
           <Link href="/?lang=en" className={index.dropdownContentWrapper}>
-            <img
+            <Image
               src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.0/svg/1f1ec-1f1e7.svg"
               alt="English"
               width="20"
@@ -32,7 +33,7 @@ function Language({ isShow, setIsShow }) {
               title="English"
             />
             <p className={index.english}>English</p>
-            <img
+            <Image
               src="/images/icons/arrow-right.svg"
               alt="arrow"
               width="12"
@@ -41,7 +42,7 @@ function Language({ isShow, setIsShow }) {
             />
           </Link>
           <Link href="/?lang=id" className={index.dropdownContentWrapper}>
-            <img
+            <Image
               src="/images/icons/indonesia.png"
               alt="Indonesian"
               width="20"
@@ -49,7 +50,7 @@ function Language({ isShow, setIsShow }) {
               title="English"
             />
             <p className={index.indonesia}>Indonesian</p>
-            <img
+            <Image
               src="/images/icons/arrow-right.svg"
               alt="arrow"
               width="12"
