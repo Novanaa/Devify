@@ -1,7 +1,7 @@
 {
   "name": "Devify",
   "version": "1.0.0",
-  "description": "",
+  "description": "The Intuitive Fake API for Your Apps",
   "main": "app.js",
   "type": "module",
   "scripts": {
@@ -13,9 +13,16 @@
     "staging": "env-cmd -f .env.staging nodemon ./src/server.js",
     "lint": "npx eslint ."
   },
-  "keywords": [],
+  "keywords": [
+    "The Intuitive Fake API",
+    "Fake API",
+    "Mock API",
+    "Devify",
+    "File Upload Server",
+    "Node Server"
+  ],
   "author": "Kadek Nova",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "bcrypt": "^5.1.1",
     "cookie-parser": "^1.4.6",
