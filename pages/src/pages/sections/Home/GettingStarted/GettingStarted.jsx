@@ -22,10 +22,10 @@ function GettingStarted() {
               final copy.
             </p>
             <div className={index.ctaWrapper}>
-              <Link href="/">
+              <Link href="/docs/v1">
                 <PrimaryBtn>Get Started</PrimaryBtn>
               </Link>
-              <Link href="/">
+              <Link href="/docs/v1/quick-start">
                 <SecondaryBtn>Quick Start</SecondaryBtn>
               </Link>
             </div>
