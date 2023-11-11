@@ -10,7 +10,7 @@ function Index() {
   const [isField, setIsField] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
   const [isSumbit, setIsSumbit] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
 
   const headers = {
     title: "Devify - Feedback",
@@ -102,7 +102,7 @@ function Index() {
                 </div>
               ) : null}
               <div>
-                <button type="submit" disabled={isLoading}>
+                <button type="submit" disabled={false}>
                   Submit Feedback
                 </button>
               </div>
