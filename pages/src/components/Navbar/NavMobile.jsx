@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import index from "./styles/NavMobile.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
 
 function NavMobile({ isNav, setIsOpen, setIsNav }) {
   // const [isLang, setIsLang] = useState(false);
-  const router = useRouter();
+  // const router = useRouter();
   // const lang = router.query.lang;
   return (
     <>

@@ -11,7 +11,7 @@ import { action } from "@/store/reducers/navbarReducer";
 import { useSelector } from "react-redux";
 import Image from "next/image";
 
-function NavSearch({}) {
+function NavSearch() {
   const [query, setQuery] = useState("");
   const navRef = useRef();
   const isOpen = useSelector((state) => state.navbar.isOpen);
