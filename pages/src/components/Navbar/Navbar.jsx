@@ -4,16 +4,16 @@ import navbar from "./styles/Navbar.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import NavSearch from "./NavSearch";
-import Language from "./Language";
+// import Language from "./Language";
 import { Input } from "@/styles/global";
 import NavMobile from "./NavMobile";
-import store from "@/store";
+// import store from "@/store";
 import { action } from "@/store/reducers/navbarReducer";
 import { useSelector, useDispatch } from "react-redux";
 import { useRouter } from "next/router";
 
 function Navbar() {
-  const [isShow, setIsShow] = useState(false);
+  // const [isShow, setIsShow] = useState(false);
   const [routes, setRoutes] = useState(null);
   const [isNav, setIsNav] = useState(false);
   const isOpen = useSelector((state) => state.navbar.isOpen);

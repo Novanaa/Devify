@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styles from "./styles/DocsFooter.module.css";
 import { Link, scrollSpy } from "react-scroll";
 
-function DocsFooter({ docs, html }) {
+function DocsFooter({ docs }) {
   scrollSpy.update();
   let { content, slug: links } = docs;
   content = content == undefined ? [] : content;

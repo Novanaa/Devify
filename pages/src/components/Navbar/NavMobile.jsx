@@ -5,9 +5,9 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 function NavMobile({ isNav, setIsOpen, setIsNav }) {
-  const [isLang, setIsLang] = useState(false);
+  // const [isLang, setIsLang] = useState(false);
   const router = useRouter();
-  const lang = router.query.lang;
+  // const lang = router.query.lang;
   return (
     <>
       <div

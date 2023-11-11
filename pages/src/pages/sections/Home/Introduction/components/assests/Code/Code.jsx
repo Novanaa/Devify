@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import index from "./styles/Code.module.css";
 import Image from "next/image";
 

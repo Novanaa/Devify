@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import index from "./styles/Reason.module.css";
 import "react-loading-skeleton/dist/skeleton.css";
 import Image from "next/image";

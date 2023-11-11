@@ -1,6 +1,6 @@
 import React from "react";
 import index from "../styles/Introduction.module.css";
-import { PrimaryBtn, SecondaryBtn } from "@/styles/global";
+import { PrimaryBtn } from "@/styles/global";
 import Terminal from "@/pages/sections/Home/Introduction/components/assests/Terminal/Terminal";
 import Link from "next/link";
 
