@@ -23,6 +23,7 @@ app.use(FileUpload());
 app.use(cookieParser());
 app.use(handleRequestError);
 app.use(rateLimitter);
+app.set("trust proxy", 1);
 
 // Routes
 app.use("/", mainRoutes);
