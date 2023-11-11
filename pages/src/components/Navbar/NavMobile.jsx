@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import index from "./styles/NavMobile.module.css";
 import Image from "next/image";
 import Link from "next/link";
